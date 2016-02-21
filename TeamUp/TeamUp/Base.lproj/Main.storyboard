@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--forgetPassword-->
@@ -209,7 +209,7 @@ send you a temporary password.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="WSX-Fx-Mn1" kind="modal" id="eDG-sU-cWG"/>
+                                    <segue destination="pm7-8Q-qJO" kind="modal" id="eDG-sU-cWG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cpM-aS-MfX">
@@ -288,7 +288,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6f-Dw-LqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-836.39999999999998" y="-3.3133333333333335"/>
+            <point key="canvasLocation" x="-249.5" y="-3.5"/>
         </scene>
         <!--allGroupsForClass-->
         <scene sceneID="o5b-Zw-x3b">
@@ -358,9 +358,6 @@ send you a temporary password.</string>
                                         <state key="normal" title="Groups">
                                             <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="qix-Aq-Vg8" kind="modal" id="okZ-j2-4QY"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="//GroupName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y47-s9-EwP">
                                         <rect key="frame" x="111" y="18" width="164" height="40"/>
@@ -383,11 +380,23 @@ send you a temporary password.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.83137254901960789" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Group Chat" id="4Vq-pX-Pg4">
+                        <barButtonItem key="leftBarButtonItem" title="Go back" id="Mh3-4y-ZKb">
+                            <connections>
+                                <segue destination="qix-Aq-Vg8" kind="modal" id="pcw-IJ-FLm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="gqQ-Zq-rbN">
+                            <connections>
+                                <segue destination="6Y2-d6-1gv" kind="push" id="Rg2-ky-GUK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRf-hq-wuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1357.2" y="5.206666666666667"/>
+            <point key="canvasLocation" x="-770.5" y="4.5"/>
         </scene>
         <!--createGroup-->
         <scene sceneID="SbY-QW-KI2">
@@ -751,9 +760,6 @@ send you a temporary password.</string>
                                         <state key="normal" title="Chat">
                                             <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="WSX-Fx-Mn1" kind="modal" id="8Ue-zy-tdF"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gad-Lu-gFM">
                                         <rect key="frame" x="113" y="23" width="175" height="29"/>
@@ -810,11 +816,12 @@ send you a temporary password.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jkg-WU-uGd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdB-4g-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1350" y="792.83333333333337"/>
+            <point key="canvasLocation" x="-1307.5" y="802.5"/>
         </scene>
         <!--memberDetails-->
         <scene sceneID="ffw-FC-m0C">
@@ -929,7 +936,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-zb-gd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387.60000000000002" y="-3.3133333333333335"/>
+            <point key="canvasLocation" x="198.5" y="-3.5"/>
         </scene>
         <!--changeNewPassword-->
         <scene sceneID="TB0-D0-ecP">
@@ -984,16 +991,33 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKV-ca-Vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.799999999999997" y="13.253333333333334"/>
+            <point key="canvasLocation" x="631.5" y="12.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SRE-Oj-YyW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pm7-8Q-qJO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rvh-hA-Lrs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WSX-Fx-Mn1" kind="relationship" relationship="rootViewController" id="rbe-1D-253"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhX-3X-ZdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1357.5" y="4.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nLv-ED-4IM"/>
+        <segue reference="pcw-IJ-FLm"/>
         <segue reference="JZL-so-WAM"/>
-        <segue reference="okZ-j2-4QY"/>
-        <segue reference="eDG-sU-cWG"/>
+        <segue reference="nLv-ED-4IM"/>
     </inferredMetricsTieBreakers>
 </document>
