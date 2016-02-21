@@ -30,6 +30,9 @@
 		5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
+		9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
+		9820D2151C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
+		9820D2161C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,8 @@
 		5AC47BA71C726C23006DD3B5 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9820D2121C793F4C0001805F /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB480674000418BEE6F1B1D6 /* Pods-TeamUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +173,8 @@
 				54EA6C371C58A5E600BF3DC6 /* Supporting Files */,
 				5AC47BA71C726C23006DD3B5 /* SignInViewController.h */,
 				5AC47BA81C726C23006DD3B5 /* SignInViewController.m */,
+				9820D2121C793F4C0001805F /* ForgetPasswordViewController.h */,
+				9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */,
 			);
 			path = TeamUp;
 			sourceTree = "<group>";
@@ -403,6 +410,7 @@
 			files = (
 				5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */,
 				54EA6C3F1C58A5E600BF3DC6 /* ViewController.m in Sources */,
+				9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
 				54EA6C3C1C58A5E600BF3DC6 /* AppDelegate.m in Sources */,
 				54EA6C451C58A5E600BF3DC6 /* TeamUp.xcdatamodeld in Sources */,
 				5410FFB51C65CBC2001DA96D /* Message.swift in Sources */,
@@ -417,6 +425,7 @@
 			files = (
 				5AC47BA51C726BF4006DD3B5 /* main.m in Sources */,
 				5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */,
+				9820D2151C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
 				54EA6C551C58A5E600BF3DC6 /* TeamUpTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +436,7 @@
 			files = (
 				5AC47BA61C726BF4006DD3B5 /* main.m in Sources */,
 				5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */,
+				9820D2161C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
 				54EA6C601C58A5E600BF3DC6 /* TeamUpUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

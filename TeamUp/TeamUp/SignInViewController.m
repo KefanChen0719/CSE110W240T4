@@ -7,6 +7,8 @@
 //
 
 #import "SignInViewController.h"
+#import "ForgetPasswordViewController.h"
+#import "ViewController.h"
 #import <Firebase/Firebase.h>
 @interface SignInViewController ()
 
@@ -36,6 +38,7 @@ UIAlertAction* defaultAction1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.emailText.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordText.borderStyle = UITextBorderStyleRoundedRect;
     [self.passwordText setSecureTextEntry:YES];
@@ -69,6 +72,7 @@ UIAlertAction* defaultAction1;
     forget_frame.origin.x = view.frame.size.width / 7 * 6 - forget_frame.size.width;
     forget_frame.origin.y = password_frame.origin.y + password_frame.size.height - 3;
     self.forget.frame = forget_frame;
+    
     firebase1 = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
     defaultAction1 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}]; //initialize the default alertview action
     mainstoryboard1 = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -111,6 +115,17 @@ UIAlertAction* defaultAction1;
     [self sign];
     //[self.view endEditing:YES];
 }
+
+- (IBAction)signUp:(UIButton *)sender {
+    viewcontroller1 = [mainstoryboard1 instantiateViewControllerWithIdentifier:@"signUpViewController"];
+    [self presentViewController:viewcontroller1 animated:YES completion:nil];
+}
+
+- (IBAction)forgetPassword:(id)sender {
+    viewcontroller1 = [mainstoryboard1 instantiateViewControllerWithIdentifier:@"forgetPasswordViewController"];
+    [self presentViewController:viewcontroller1 animated:YES completion:nil];
+}
+
 
 - (void) sign {
     [firebase1 authUser:emailText.text password:passwordText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {

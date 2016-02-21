@@ -7,13 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "ForgetPasswordViewController.h"
+#import "SignInViewController.h"
 #import <Firebase/Firebase.h>
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-@synthesize enterEmailText, enterPasswordText, confirmPasswordText, groupNameText, maxPeopleText, resetPasswordText, memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch;
+@synthesize enterEmailText, enterPasswordText, confirmPasswordText, memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch;
 
 Firebase *firebase;
 Firebase *users_ref;
@@ -47,8 +49,6 @@ NSMutableDictionary *result;
     [self.enterPasswordText setSecureTextEntry:YES];
     self.confirmPasswordText.borderStyle = UITextBorderStyleRoundedRect;
     [self.confirmPasswordText setSecureTextEntry:YES];
-    self.groupNameText.borderStyle = UITextBorderStyleRoundedRect;
-    self.maxPeopleText.borderStyle = UITextBorderStyleRoundedRect;
     
     //all initialization goes here
     
@@ -63,11 +63,6 @@ NSMutableDictionary *result;
         classes = snapshot.value;
         allClassNames = classes.allKeys;
     }];
-//    info = [[UILabel alloc] initWithFrame:CGRectMake(37, 166, 301, 280)];
-//    info.text = @"AAAA";
-//    info.backgroundColor = [UIColor colorWithRed:230/255 green:230/255 blue:230/255 alpha:0.15];
-    // initialze the closeinfo button
-//    closeInfo = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 375, 667)];
     
     //initialization ends here
     //not run-time initialization
@@ -83,16 +78,6 @@ NSMutableDictionary *result;
   // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)showGroupInfo:(id)sender {
-//    [self.view addSubview:closeInfo];
-//    [self.view addSubview:info];
-//    [closeInfo addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
-//}
-//
-//- (void)btnClicked {
-//    [info removeFromSuperview];
-//    [closeInfo removeFromSuperview];
-//}
 
 
 - (IBAction)signUp:(id)sender{
@@ -182,17 +167,6 @@ NSMutableDictionary *result;
     }
 }
 
-- (IBAction)resetPassword:(id)sender{
-    [firebase resetPasswordForUser:resetPasswordText.text withCompletionBlock:^(NSError *error) {
-        if (error) {
-            NSLog(@"error when resetting password");
-            [resetPasswordText setText:@"error occured"];
-        } else {
-            NSLog(@"succeed sending resetting password");
-            [resetPasswordText setText:@"sent"];
-        }
-    }];
-}
 
 - (IBAction)memberInfoEditor:(id)sender{
     name = memberNameText.text;

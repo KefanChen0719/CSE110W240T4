@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *forget;
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;
 - (IBAction)signIn:(UIButton *)sender;
+- (IBAction)signUp:(UIButton *)sender;
+- (IBAction)forgetPassword:(UIButton *)sender;
 
 
 

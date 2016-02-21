@@ -11,10 +11,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *enterEmailText;
 @property (weak, nonatomic) IBOutlet UITextField *enterPasswordText;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordText;
-//@property (weak, nonatomic) IBOutlet UIButton *showInfo;
-@property (weak, nonatomic) IBOutlet UITextField *groupNameText;
-@property (weak, nonatomic) IBOutlet UITextField *maxPeopleText;
-@property (weak, nonatomic) IBOutlet UITextField *resetPasswordText;
 @property (weak, nonatomic) IBOutlet UITextField *memberNameText;
 @property (weak, nonatomic) IBOutlet UITextField *memberMajorText;
 @property (weak, nonatomic) IBOutlet UITextField *memberYearText;
@@ -31,9 +27,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *isPrivateSwitch;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-//- (IBAction)showGroupInfo:(id)sender;
 - (IBAction)signUp:(id)sender;
-- (IBAction)resetPassword:(id)sender;
 - (IBAction)signOut:(id)sender;
 - (IBAction)memberInfoEditor:(id)sender;
 - (IBAction)searchClasses:(id)sender;
