@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <Firebase/Firebase.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIStoryboard *storyboard;
+@property (strong, nonatomic) UIAlertAction *defaultAction;
+@property (strong, nonatomic) Firebase *firebase;
+@property (strong, nonatomic) NSString *uid;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) Firebase *users;
+@property (strong, nonatomic) Firebase *users_ref;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -19,7 +27,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
+- (void) loadData;
 
 @end
-

@@ -9,54 +9,34 @@
 #import "ViewController.h"
 #import "ForgetPasswordViewController.h"
 #import "SignInViewController.h"
+#import "SignUpViewController.h"
 #import <Firebase/Firebase.h>
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-@synthesize enterEmailText, enterPasswordText, confirmPasswordText, memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch;
+@synthesize memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch, appDelegate, viewcontroller;
 
-Firebase *firebase;
-Firebase *users_ref;
-Firebase *users;
 Firebase *class_ref;
 Firebase *class;
 Firebase *group_ref;
 Firebase *group;
-//UILabel *info;
-//UIButton *closeInfo;
-UIStoryboard *mainstoryboard;
-UIViewController *viewcontroller;
 NSString *email;
-NSString *uid; //store the valid cahracters of an email address (underscore _ , letters and numbers only)
-NSString *name;
-UIAlertAction* defaultAction;
 NSString *year;
 NSString *major;
 NSDictionary *classes;
 NSArray<NSString*> *allClassNames;
 NSMutableDictionary *result;
 
-
-
 - (void)viewDidLoad {
   [super viewDidLoad];
     [self.tableView reloadData];
     // Do any additional setup after loading the view, typically from a nib.
-    self.enterEmailText.borderStyle = UITextBorderStyleRoundedRect;
-    self.enterPasswordText.borderStyle = UITextBorderStyleRoundedRect;
-    [self.enterPasswordText setSecureTextEntry:YES];
-    self.confirmPasswordText.borderStyle = UITextBorderStyleRoundedRect;
-    [self.confirmPasswordText setSecureTextEntry:YES];
-    
     //all initialization goes here
-    
-    defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}]; //initialize the default alertview action
-    mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    firebase = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
-    users_ref = [firebase childByAppendingPath:@"users"];
-    class_ref = [firebase childByAppendingPath:@"classes"];
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    class_ref = [appDelegate.firebase childByAppendingPath:@"classes"];
     result = [[NSMutableDictionary alloc]initWithCapacity:20];
     [class_ref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         [self.tableView reloadData];
@@ -66,7 +46,7 @@ NSMutableDictionary *result;
     
     //initialization ends here
     //not run-time initialization
-    memberNameText.text = (name == nil)? @"" : name;
+    memberNameText.text = (appDelegate.name == nil)? @"" : appDelegate.name;
     memberMajorText.text = (major == nil)? @"" : major;
     memberYearText.text = (year == nil)? @"" : year;
     //end "not run-time initialization"
@@ -78,56 +58,8 @@ NSMutableDictionary *result;
   // Dispose of any resources that can be recreated.
 }
 
-
-
-- (IBAction)signUp:(id)sender{
-    NSString * domain = [enterEmailText.text substringFromIndex:MAX((int)[enterEmailText.text length]-8, 0)];    
-    if (![domain isEqualToString:@"ucsd.edu"]) {
-         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"You must use a ucsd email!" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
-    else if(![enterPasswordText.text isEqualToString:confirmPasswordText.text]){
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Different passwords" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
-        enterPasswordText.text = @"";
-        confirmPasswordText.text = @"";
-        return;
-    }
-    else{
-    [firebase createUser:enterEmailText.text password:enterPasswordText.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
-    if (error) {
-        NSString *errorMessage = [error localizedDescription];
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
-    } else {
-        email = enterEmailText.text;
-        uid = result[@"uid"];
-        [self loadData];
-        name = @"new user";
-        major = @"undecided";
-        year = @"0";
-        NSDictionary *user_info = @{
-                                    @"name" : name,
-                                    @"email" : email,
-                                    @"major" : major,
-                                    @"year" : year
-                                    };
-        NSDictionary *new_user = @{uid : user_info};
-        [users_ref updateChildValues:new_user];
-        NSLog(@"user should have signed up");
-        viewcontroller = [mainstoryboard instantiateViewControllerWithIdentifier:@"memberDetailsViewController"];
-        [self presentViewController:viewcontroller animated:YES completion:nil];
-    }
-    }];
-    }
-}
-
 - (IBAction)signOut:(id)sender{
-    [firebase unauth];
+    [appDelegate.firebase unauth];
     
     NSString *signOut  = @"True";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -138,12 +70,12 @@ NSMutableDictionary *result;
     
     NSLog(@"user should be signed out");
     email = @"";
-    uid = @"";
-    name = @"";
+    appDelegate.uid = @"";
+    appDelegate.name = @"";
     year = @"";
     major = @"";
     
-    viewcontroller = [mainstoryboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
     [self presentViewController:viewcontroller animated:YES completion:nil];
     
     
@@ -151,55 +83,38 @@ NSMutableDictionary *result;
 
 - (IBAction)keyboardExit:(id)sender{} //dismiss keyboard
 
-
-- (void) loadData{
-    if(uid!=nil){
-        users = [users_ref childByAppendingPath:uid];
-        [users observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-            if(!snapshot.exists){
-                NSLog(@"user info not found");
-                return;
-            }else{
-            name = snapshot.value[@"name"];
-            //do something
-            }
-        }];
-    }
-}
-
-
 - (IBAction)memberInfoEditor:(id)sender{
-    name = memberNameText.text;
+    appDelegate.name = memberNameText.text;
     year = memberYearText.text;
     major = memberMajorText.text;
-    NSDictionary *user_info = @{@"name" : name,
+    NSDictionary *user_info = @{@"name" : appDelegate.name,
                                 @"email" : email,
                                 @"major" : major,
                                 @"year" : year
                                 };
-    NSDictionary *new_user = @{uid : user_info};
-    [users_ref updateChildValues:new_user];
+    NSDictionary *new_user = @{appDelegate.uid : user_info};
+    [appDelegate.users_ref updateChildValues:new_user];
 }
 
 - (IBAction)updateNewPassword:(id)sender {
     if(![changeNewPasswordText.text isEqualToString:changeComfirmPasswordText.text]){
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Different passwords." preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:defaultAction];
+        [alert addAction:appDelegate.defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     
-    [firebase changePasswordForUser:email fromOld:changeOldPasswordText.text
+    [appDelegate.firebase changePasswordForUser:email fromOld:changeOldPasswordText.text
     toNew:changeNewPasswordText.text withCompletionBlock:^(NSError *error) {
         if (error) {
             NSString *errorMessage = [error localizedDescription];
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:defaultAction];
+            [alert addAction:appDelegate.defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else {
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Successfully change your password." preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:defaultAction];
+            [alert addAction:appDelegate.defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
@@ -241,21 +156,21 @@ NSMutableDictionary *result;
     newClassName = [newClassName stringByAppendingFormat:@"%@%@", addTermText.text, addSectionText.text ];
     NSDictionary *new_class = @{newClassName : new_class_info};
     [class_ref updateChildValues:new_class];
-    viewcontroller = [mainstoryboard instantiateViewControllerWithIdentifier:@"searchClassViewController"];
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"searchClassViewController"];
     [self presentViewController:viewcontroller animated:YES completion:nil];
 }
 
 - (IBAction)createGroup:(id)sender{
     if([addGroupNameText.text isEqualToString:@""] || [addMaxPeopleText.text isEqualToString:@""])
         return;
-    NSString *groupuid = [firebase.authData.uid stringByAppendingString:addGroupNameText.text];
+    NSString *groupuid = [appDelegate.firebase.authData.uid stringByAppendingString:addGroupNameText.text];
     NSString *groupName = addGroupNameText.text;
     NSString *groupNum = addMaxPeopleText.text;
     NSString *isPrivate = isPrivateSwitch.isOn? @"private" : @"public";
-    NSArray<NSString *> *teamMember = [NSArray arrayWithObjects: firebase.authData.uid, nil];
+    NSArray<NSString *> *teamMember = [NSArray arrayWithObjects: appDelegate.firebase.authData.uid, nil];
     NSDictionary *new_group_info = @{@"name" : groupName,
                                      @"teammember" : teamMember,
-                                     @"leader" : firebase.authData.uid,
+                                     @"leader" : appDelegate.firebase.authData.uid,
                                      @"groupinfo" : @"New group!",
                                      @"maxnumber" : groupNum,
                                      @"isprivate" : isPrivate,
@@ -264,7 +179,7 @@ NSMutableDictionary *result;
     [class updateChildValues:new_group];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Yeah!"
                                                                    message:@"created" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:defaultAction];
+    [alert addAction:appDelegate.defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -311,7 +226,7 @@ NSMutableDictionary *result;
         NSString *classuid = result[number];
         class = [[class_ref childByAppendingPath:classuid] childByAppendingPath:@"group"];
         NSLog(@"%@", classuid);
-        viewcontroller = [mainstoryboard instantiateViewControllerWithIdentifier:@"allGroupsForClassViewController"];
+        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"allGroupsForClassViewController"];
         [self presentViewController:viewcontroller animated:YES completion:nil];
     }
 }

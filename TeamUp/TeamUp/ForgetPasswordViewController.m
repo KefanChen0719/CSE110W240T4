@@ -9,17 +9,17 @@
 #import "ForgetPasswordViewController.h"
 #import "ViewController.h"
 #import "SignInViewController.h"
+#import "SignUpViewController.h"
+#import "AppDelegate.h"
+
 #import <Firebase/Firebase.h>
 
 @interface ForgetPasswordViewController ()
 
 @end
 
-Firebase *firebase2;
-UIStoryboard *mainstoryboard2;
-UIViewController *viewcontroller2;
-
 @implementation ForgetPasswordViewController
+@synthesize appDelegate, viewcontroller;
 
 
 - (void)viewDidLoad {
@@ -47,8 +47,7 @@ UIViewController *viewcontroller2;
     sendButton_frame.origin.x = view_frame.size.width - sendButton_frame.size.width - 10;
     self.sendButton.frame = sendButton_frame;
     
-    firebase2 = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
-    mainstoryboard2 = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,12 +66,12 @@ UIViewController *viewcontroller2;
 */
 
 - (IBAction)back:(UIButton *)sender {
-    viewcontroller2 = [mainstoryboard2 instantiateViewControllerWithIdentifier:@"SignInViewController"];
-    [self presentViewController:viewcontroller2 animated:YES completion:nil];
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
+    [self presentViewController:viewcontroller animated:YES completion:nil];
 }
 
 - (IBAction)resetPassword:(UIButton *)sender {
-    [firebase2 resetPasswordForUser:self.emailText.text withCompletionBlock:^(NSError *error) {
+    [appDelegate.firebase resetPasswordForUser:self.emailText.text withCompletionBlock:^(NSError *error) {
         if (error) {
             NSLog(@"error when resetting password");
             [self.emailText setText:@"error occured"];

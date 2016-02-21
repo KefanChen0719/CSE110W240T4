@@ -9,32 +9,20 @@
 #import "SignInViewController.h"
 #import "ForgetPasswordViewController.h"
 #import "ViewController.h"
+#import "SignUpViewController.h"
+#import "AppDelegate.h"
+
 #import <Firebase/Firebase.h>
+
 @interface SignInViewController ()
 
 @end
 @implementation SignInViewController
-@synthesize emailText, passwordText;
-
-Firebase *firebase1;
-Firebase *users_ref1;
-Firebase *users1;
-
-
-//NSString *account;
-//NSString *password;
-
+@synthesize emailText, passwordText, appDelegate, viewcontroller;
 
 NSString *email1;
-NSString *uid1;
-NSString *name1;
 NSString *year1;
 NSString *major1;
-
-UIStoryboard *mainstoryboard1;
-UIViewController *viewcontroller1;
-UIAlertAction* defaultAction1;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,9 +61,7 @@ UIAlertAction* defaultAction1;
     forget_frame.origin.y = password_frame.origin.y + password_frame.size.height - 3;
     self.forget.frame = forget_frame;
     
-    firebase1 = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
-    defaultAction1 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}]; //initialize the default alertview action
-    mainstoryboard1 = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -96,48 +82,33 @@ UIAlertAction* defaultAction1;
     [super didReceiveMemoryWarning];
 }
 
-- (void) loadData{
-    if(uid1!=nil){
-        users1 = [users_ref1 childByAppendingPath:uid1];
-        [users1 observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-            if(!snapshot.exists){
-                NSLog(@"user info not found");
-                return;
-            }else{
-                name1 = snapshot.value[@"name"];
-                //do something
-            }
-        }];
-    }
-}
-
 - (IBAction)signIn:(UIButton *)sender {
     [self sign];
     //[self.view endEditing:YES];
 }
 
 - (IBAction)signUp:(UIButton *)sender {
-    viewcontroller1 = [mainstoryboard1 instantiateViewControllerWithIdentifier:@"signUpViewController"];
-    [self presentViewController:viewcontroller1 animated:YES completion:nil];
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
+    [self presentViewController:viewcontroller animated:YES completion:nil];
 }
 
 - (IBAction)forgetPassword:(id)sender {
-    viewcontroller1 = [mainstoryboard1 instantiateViewControllerWithIdentifier:@"forgetPasswordViewController"];
-    [self presentViewController:viewcontroller1 animated:YES completion:nil];
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"forgetPasswordViewController"];
+    [self presentViewController:viewcontroller animated:YES completion:nil];
 }
 
 
 - (void) sign {
-    [firebase1 authUser:emailText.text password:passwordText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    [appDelegate.firebase authUser:emailText.text password:passwordText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
         if (error) {
             NSString *errorMessage = [error localizedDescription];
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:defaultAction1];
+            [alert addAction:appDelegate.defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
             email1 = emailText.text;
-            uid1 = authData.uid;
-            [self loadData];
+            appDelegate.uid = authData.uid;
+            [appDelegate loadData];
             
             NSString *account = [emailText text];
             NSString *password  = [passwordText text];
@@ -150,16 +121,16 @@ UIAlertAction* defaultAction1;
         
             [defaults synchronize];
             
-            users1 = [users_ref1 childByAppendingPath:uid1];
-            [users1 observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                name1 = snapshot.value[@"name"];
+            appDelegate.users = [appDelegate.users_ref childByAppendingPath:appDelegate.uid];
+            [appDelegate.users observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                appDelegate.name = snapshot.value[@"name"];
                 year1 = snapshot.value[@"year"];
                 major1 = snapshot.value[@"major"];
             } withCancelBlock:^(NSError *error) {
                 NSLog(@"%@", error.description);
             }];
-            viewcontroller1 = [mainstoryboard1 instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
-            [self presentViewController:viewcontroller1 animated:YES completion:nil];
+            viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
+            [self presentViewController:viewcontroller animated:YES completion:nil];
             NSLog(@"user should have signed in");
         }
     }];

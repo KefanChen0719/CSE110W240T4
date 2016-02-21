@@ -8,3 +8,5 @@
 #import <JSQMessagesViewController/JSQMessages.h>
 #import <JSQSystemSoundPlayer/JSQSystemSoundPlayer.h>
 #import "SignInViewController.h"
+#import "SignUpViewController.h"
+#import "ForgetPasswordViewController.h"

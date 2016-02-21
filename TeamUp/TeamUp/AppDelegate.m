@@ -39,10 +39,16 @@
 
 @implementation AppDelegate
 
+@synthesize firebase, storyboard, defaultAction, uid, users, users_ref, name;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-  return YES;
+    firebase = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
+    storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    users_ref = [firebase childByAppendingPath:@"users"];
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -160,6 +166,21 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)loadData{
+    if(uid!=nil){
+        users = [users_ref childByAppendingPath:uid];
+        [users observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            if(!snapshot.exists){
+                NSLog(@"user info not found");
+                return;
+            }
+            else{
+                name = snapshot.value[@"name"];
+            }
+        }];
+    }
 }
 
 @end

@@ -24,6 +24,9 @@
 		54EA6C551C58A5E600BF3DC6 /* TeamUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EA6C541C58A5E600BF3DC6 /* TeamUpTests.m */; };
 		54EA6C601C58A5E600BF3DC6 /* TeamUpUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EA6C5F1C58A5E600BF3DC6 /* TeamUpUITests.m */; };
 		5A9F60001C5D8735005225B7 /* 1169645.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A9F5FFF1C5D8735005225B7 /* 1169645.jpg */; };
+		5ABF97241C7A45C300AD8F82 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF97231C7A45C300AD8F82 /* SignUpViewController.m */; };
+		5ABF97251C7A45C300AD8F82 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF97231C7A45C300AD8F82 /* SignUpViewController.m */; };
+		5ABF97261C7A45C300AD8F82 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF97231C7A45C300AD8F82 /* SignUpViewController.m */; };
 		5AC47BA41C726BF4006DD3B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA31C726BF4006DD3B5 /* main.m */; };
 		5AC47BA51C726BF4006DD3B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA31C726BF4006DD3B5 /* main.m */; };
 		5AC47BA61C726BF4006DD3B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA31C726BF4006DD3B5 /* main.m */; };
@@ -83,6 +86,8 @@
 		54EA6C5F1C58A5E600BF3DC6 /* TeamUpUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamUpUITests.m; sourceTree = "<group>"; };
 		54EA6C611C58A5E600BF3DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A9F5FFF1C5D8735005225B7 /* 1169645.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1169645.jpg; sourceTree = "<group>"; };
+		5ABF97221C7A45C300AD8F82 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		5ABF97231C7A45C300AD8F82 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		5AC47BA31C726BF4006DD3B5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AC47BA71C726C23006DD3B5 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
@@ -175,6 +180,8 @@
 				5AC47BA81C726C23006DD3B5 /* SignInViewController.m */,
 				9820D2121C793F4C0001805F /* ForgetPasswordViewController.h */,
 				9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */,
+				5ABF97221C7A45C300AD8F82 /* SignUpViewController.h */,
+				5ABF97231C7A45C300AD8F82 /* SignUpViewController.m */,
 			);
 			path = TeamUp;
 			sourceTree = "<group>";
@@ -293,7 +300,7 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = V2J7D6MZET;
+						DevelopmentTeam = 8VDXBX38T3;
 					};
 					54EA6C4F1C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
@@ -416,6 +423,7 @@
 				5410FFB51C65CBC2001DA96D /* Message.swift in Sources */,
 				5AC47BA41C726BF4006DD3B5 /* main.m in Sources */,
 				5410FDB31C65B7AB001DA96D /* MessagesViewController.swift in Sources */,
+				5ABF97241C7A45C300AD8F82 /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC47BA51C726BF4006DD3B5 /* main.m in Sources */,
+				5ABF97251C7A45C300AD8F82 /* SignUpViewController.m in Sources */,
 				5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */,
 				9820D2151C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
 				54EA6C551C58A5E600BF3DC6 /* TeamUpTests.m in Sources */,
@@ -435,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC47BA61C726BF4006DD3B5 /* main.m in Sources */,
+				5ABF97261C7A45C300AD8F82 /* SignUpViewController.m in Sources */,
 				5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */,
 				9820D2161C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
 				54EA6C601C58A5E600BF3DC6 /* TeamUpUITests.m in Sources */,
@@ -593,7 +603,7 @@
 					"\"SystemConfiguration\"",
 					"-lxml2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.renoyin.TeamUp;
+				PRODUCT_BUNDLE_IDENTIFIER = "kefanchen0719-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TeamUp/TeamUp-Bridging-Header.h";
@@ -636,7 +646,7 @@
 					"\"SystemConfiguration\"",
 					"-lxml2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.renoyin.TeamUp;
+				PRODUCT_BUNDLE_IDENTIFIER = "kefanchen0719-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TeamUp/TeamUp-Bridging-Header.h";
