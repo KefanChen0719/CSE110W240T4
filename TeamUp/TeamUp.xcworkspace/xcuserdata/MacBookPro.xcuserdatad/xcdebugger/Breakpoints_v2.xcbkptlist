@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeamUp/ViewController.m"
-            timestampString = "476487979.166247"
+            timestampString = "478053336.66459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
