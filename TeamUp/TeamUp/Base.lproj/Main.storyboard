@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--forgetPassword-->
@@ -215,7 +215,7 @@ send you a temporary password.</string>
                                             <color key="titleColor" red="0.0" green="0.027450980392156862" blue="0.031372549019607843" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="signOut:" destination="qix-Aq-Vg8" eventType="touchUpInside" id="f4C-Dv-Pcb"/>
+                                            <action selector="signOut:" destination="qix-Aq-Vg8" eventType="touchUpInside" id="hVI-mP-zOg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -233,6 +233,9 @@ send you a temporary password.</string>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="signOut" destination="Lkb-u8-JJt" id="8g0-B2-Arc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6f-Dw-LqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

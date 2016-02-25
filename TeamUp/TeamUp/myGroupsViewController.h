@@ -12,7 +12,12 @@
 #import "AppDelegate.h"
 @interface myGroupsViewController : UIViewController
 @property (strong, nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic) IBOutlet UIButton *signOut;
+@property (strong, nonatomic) UIViewController *viewcontroller;
+- (IBAction)signOut:(id)sender;
+
 - (NSString *) getNameFromGroupUid:(NSString*) group_uid;
+
 @end
 
 #endif /* myGroupsViewController_h */

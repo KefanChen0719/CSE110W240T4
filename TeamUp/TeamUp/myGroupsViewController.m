@@ -11,8 +11,12 @@
 
 @end
 
+NSString *email4;
+NSString *year4;
+NSString *major4;
+
 @implementation myGroupsViewController
-@synthesize appDelegate;
+@synthesize appDelegate,viewcontroller;
 NSDictionary *groups;
 NSArray<NSString*> *groups_names;
 
@@ -50,7 +54,6 @@ NSArray<NSString*> *groups_names;
         [self.view addSubview:scrollView];
     }];
     
-    //Put number of groups here
     
 }
 
@@ -59,6 +62,29 @@ NSArray<NSString*> *groups_names;
 {
     NSLog(@"Button %ld", (long)button.tag);
 }
+
+- (IBAction)signOut:(id)sender{
+    [appDelegate.firebase unauth];
+    
+    NSString *signOut  = @"True";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:signOut forKey:@"signOut"];
+    
+    [defaults synchronize];
+    
+    NSLog(@"user should be signed out");
+    email4 = @"";
+    appDelegate.uid = @"";
+    appDelegate.name = @"";
+    year4 = @"";
+    major4 = @"";
+    
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
+    [self presentViewController:viewcontroller animated:YES completion:nil];
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning{
