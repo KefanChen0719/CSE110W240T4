@@ -34,11 +34,6 @@
 		5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
-		8EB706D51C7F923A0011D1DF /* Airship in Resources */ = {isa = PBXBuildFile; fileRef = 8EB706D41C7F923A0011D1DF /* Airship */; };
-		8EB706D71C7F92510011D1DF /* AirshipKit in Resources */ = {isa = PBXBuildFile; fileRef = 8EB706D61C7F92510011D1DF /* AirshipKit */; };
-		8EB706DE1C7F926F0011D1DF /* AirshipKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB706DD1C7F925B0011D1DF /* AirshipKit.framework */; };
-		8EB706DF1C7F926F0011D1DF /* AirshipKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB706DD1C7F925B0011D1DF /* AirshipKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8EB706E31C7F93400011D1DF /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB706E21C7F933F0011D1DF /* AirshipConfig.plist */; };
 		9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
 		9820D2151C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
 		9820D2161C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
@@ -59,20 +54,6 @@
 			remoteGlobalIDString = 54EA6C331C58A5E600BF3DC6;
 			remoteInfo = TeamUp;
 		};
-		8EB706DC1C7F925B0011D1DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EB706D81C7F925B0011D1DF /* AirshipKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 494DD9571B0EB677009C134E;
-			remoteInfo = AirshipKit;
-		};
-		8EB706E01C7F926F0011D1DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EB706D81C7F925B0011D1DF /* AirshipKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 494DD9561B0EB677009C134E;
-			remoteInfo = AirshipKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,7 +63,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8EB706DF1C7F926F0011D1DF /* AirshipKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,10 +107,6 @@
 		5AC47BA31C726BF4006DD3B5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AC47BA71C726C23006DD3B5 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
-		8EB706D41C7F923A0011D1DF /* Airship */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Airship; sourceTree = "<group>"; };
-		8EB706D61C7F92510011D1DF /* AirshipKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AirshipKit; sourceTree = "<group>"; };
-		8EB706D81C7F925B0011D1DF /* AirshipKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirshipKit.xcodeproj; path = "../../../CS Documents/libUAirship-7.0.2/AirshipKit/AirshipKit.xcodeproj"; sourceTree = "<group>"; };
-		8EB706E21C7F933F0011D1DF /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9820D2121C793F4C0001805F /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -142,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB706DE1C7F926F0011D1DF /* AirshipKit.framework in Frameworks */,
 				5410FFBD1C65D715001DA96D /* libicucore.A.dylib in Frameworks */,
 				5410FFBB1C65D6E8001DA96D /* libc++.1.dylib in Frameworks */,
 				5410FFB91C65D6C1001DA96D /* SystemConfiguration.framework in Frameworks */,
@@ -181,10 +156,6 @@
 		54EA6C2B1C58A5E500BF3DC6 = {
 			isa = PBXGroup;
 			children = (
-				8EB706E21C7F933F0011D1DF /* AirshipConfig.plist */,
-				8EB706D81C7F925B0011D1DF /* AirshipKit.xcodeproj */,
-				8EB706D61C7F92510011D1DF /* AirshipKit */,
-				8EB706D41C7F923A0011D1DF /* Airship */,
 				54EA6C361C58A5E600BF3DC6 /* TeamUp */,
 				54EA6C531C58A5E600BF3DC6 /* TeamUpTests */,
 				54EA6C5E1C58A5E600BF3DC6 /* TeamUpUITests */,
@@ -259,14 +230,6 @@
 			path = TeamUpUITests;
 			sourceTree = "<group>";
 		};
-		8EB706D91C7F925B0011D1DF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8EB706DD1C7F925B0011D1DF /* AirshipKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		9D74B3D79B174FB084240E0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +265,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8EB706E11C7F926F0011D1DF /* PBXTargetDependency */,
 			);
 			name = TeamUp;
 			productName = TeamUp;
@@ -357,7 +319,7 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = V2J7D6MZET;
+						DevelopmentTeam = 5YFX8A6H5D;
 					};
 					54EA6C4F1C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
@@ -382,12 +344,6 @@
 			mainGroup = 54EA6C2B1C58A5E500BF3DC6;
 			productRefGroup = 54EA6C351C58A5E600BF3DC6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8EB706D91C7F925B0011D1DF /* Products */;
-					ProjectRef = 8EB706D81C7F925B0011D1DF /* AirshipKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				54EA6C331C58A5E600BF3DC6 /* TeamUp */,
@@ -397,27 +353,14 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		8EB706DD1C7F925B0011D1DF /* AirshipKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AirshipKit.framework;
-			remoteRef = 8EB706DC1C7F925B0011D1DF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		54EA6C321C58A5E600BF3DC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				54EA6C4A1C58A5E600BF3DC6 /* LaunchScreen.storyboard in Resources */,
-				8EB706E31C7F93400011D1DF /* AirshipConfig.plist in Resources */,
 				5A9F60001C5D8735005225B7 /* 1169645.jpg in Resources */,
 				54EA6C471C58A5E600BF3DC6 /* Assets.xcassets in Resources */,
-				8EB706D51C7F923A0011D1DF /* Airship in Resources */,
-				8EB706D71C7F92510011D1DF /* AirshipKit in Resources */,
 				54EA6C421C58A5E600BF3DC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,11 +483,6 @@
 			isa = PBXTargetDependency;
 			target = 54EA6C331C58A5E600BF3DC6 /* TeamUp */;
 			targetProxy = 54EA6C5C1C58A5E600BF3DC6 /* PBXContainerItemProxy */;
-		};
-		8EB706E11C7F926F0011D1DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AirshipKit;
-			targetProxy = 8EB706E01C7F926F0011D1DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

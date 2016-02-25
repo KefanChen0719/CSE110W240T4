@@ -62,10 +62,13 @@ NSString *major1;
     self.forget.frame = forget_frame;
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-//    curr_user = [curr_user childByAppendingPath:@"groups"];
-//    NSDictionary *temp = @{@"cse110win16a00" : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
-//    [curr_user updateChildValues:temp];
+    if (![appDelegate.uid isEqualToString:@""]) {
+        Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+        curr_user = [curr_user childByAppendingPath:@"groups"];
+        NSDictionary *temp = @{@"cse110win16a00" : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
+        [curr_user updateChildValues:temp];
+
+    }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *account = [defaults objectForKey:@"account"];
