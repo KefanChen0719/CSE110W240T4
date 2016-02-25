@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3414B42B5125EB2CD8D96B1A /* libPods-TeamUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */; };
+		52EEA4271C7E7B0900EC8A5A /* myGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */; };
 		5410FDB31C65B7AB001DA96D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410FDB21C65B7AB001DA96D /* MessagesViewController.swift */; };
 		5410FFB51C65CBC2001DA96D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410FFB41C65CBC1001DA96D /* Message.swift */; };
 		5410FFB91C65D6C1001DA96D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5410FFB81C65D6C1001DA96D /* SystemConfiguration.framework */; };
@@ -57,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		0625B1D77D550F6A14140478 /* Pods-TeamUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.debug.xcconfig"; sourceTree = "<group>"; };
+		52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myGroupsViewController.m; sourceTree = "<group>"; };
+		52EEA4281C7E7B3200EC8A5A /* myGroupsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myGroupsViewController.h; sourceTree = "<group>"; };
 		5410FDB11C65B7AA001DA96D /* TeamUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TeamUp-Bridging-Header.h"; sourceTree = "<group>"; };
 		5410FDB21C65B7AB001DA96D /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		5410FFB41C65CBC1001DA96D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */,
 				5ABF97221C7A45C300AD8F82 /* SignUpViewController.h */,
 				5ABF97231C7A45C300AD8F82 /* SignUpViewController.m */,
+				52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */,
+				52EEA4281C7E7B3200EC8A5A /* myGroupsViewController.h */,
 			);
 			path = TeamUp;
 			sourceTree = "<group>";
@@ -300,7 +305,7 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 8VDXBX38T3;
+						DevelopmentTeam = 5YFX8A6H5D;
 					};
 					54EA6C4F1C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
@@ -415,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EEA4271C7E7B0900EC8A5A /* myGroupsViewController.m in Sources */,
 				5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */,
 				54EA6C3F1C58A5E600BF3DC6 /* ViewController.m in Sources */,
 				9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
