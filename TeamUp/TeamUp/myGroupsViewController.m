@@ -20,20 +20,19 @@ NSArray<NSString*> *groups_names;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
     
-//    Firebase *temp = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
-//    temp = [temp childByAppendingPath:@"users"];
-//    Firebase *curr_user = [temp childByAppendingPath:temp.authData.uid];
-//    curr_user = [curr_user childByAppendingPath:@"groups"];
-//    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//        groups = snapshot.value;
-//        groups_names = groups.allKeys;
-//        NSUInteger group_num = groups_names.count;
-//        NSLog(@"%lu: ", (unsigned long)group_num);
-//    }];
-//
+    Firebase *temp = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
+    temp = [temp childByAppendingPath:@"users"];
+    Firebase *curr_user = [temp childByAppendingPath:temp.authData.uid];
+    curr_user = [curr_user childByAppendingPath:@"groups"];
+    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        groups = snapshot.value;
+        groups_names = groups.allKeys;
+        NSUInteger group_num = groups_names.count;
+        NSLog(@"%lu: ", (unsigned long)group_num);
+    }];
     
     //Put number of groups here
     NSInteger numGroups = 5;

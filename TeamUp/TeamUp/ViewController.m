@@ -227,10 +227,10 @@ NSMutableDictionary *result;
         class = [[class_ref childByAppendingPath:classuid] childByAppendingPath:@"group"];
         NSLog(@"%@", classuid);
         
-//        Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-//        curr_user = [curr_user childByAppendingPath:@"groups"];
-//        NSDictionary *temp = @{classuid : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
-//        [curr_user updateChildValues:temp];
+        Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+        curr_user = [curr_user childByAppendingPath:@"groups"];
+        NSDictionary *temp = @{classuid : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
+        [curr_user updateChildValues:temp];
         viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"allGroupsForClassViewController"];
         [self presentViewController:viewcontroller animated:YES completion:nil];
     }
