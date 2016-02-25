@@ -9,8 +9,9 @@
 #ifndef myGroupsViewController_h
 #define myGroupsViewController_h
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 @interface myGroupsViewController : UIViewController
-
+@property (strong, nonatomic) AppDelegate *appDelegate;
 @end
 
 #endif /* myGroupsViewController_h */
