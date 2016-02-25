@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Firebase/Firebase.h"
-//#import "AirshipKit/AirshipKit/AirshipKit.h"
+#import "AirshipKit/AirshipKit/AirshipKit.h"
 //#import "UAirship.h"
 //#import "UAPush.h"
 
@@ -52,7 +52,8 @@
     storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
     users_ref = [firebase childByAppendingPath:@"users"];
-
+    [UAirship takeOff];
+    [UAirship push].userPushNotificationsEnabled = YES;
     
     return YES;
 }
