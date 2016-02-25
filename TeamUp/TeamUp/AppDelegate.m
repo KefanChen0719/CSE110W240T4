@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "Firebase/Firebase.h"
+#import "AirshipKit/AirshipKit/AirshipKit.h"
+#import "UAirship.h"
+#import "UAPush.h"
+
 @interface AppDelegate ()
 
 @end
@@ -43,11 +47,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
+ // Override point for customization after application launch.
     firebase = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
     storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
     users_ref = [firebase childByAppendingPath:@"users"];
+
+    
     return YES;
 }
 
