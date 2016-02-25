@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 @interface myGroupsViewController : UIViewController
 @property (strong, nonatomic) AppDelegate *appDelegate;
+- (NSString *) getNameFromGroupUid:(NSString*) group_uid;
 @end
 
 #endif /* myGroupsViewController_h */
