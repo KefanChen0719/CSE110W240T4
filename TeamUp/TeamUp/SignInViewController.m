@@ -70,7 +70,7 @@ NSString *major1;
 //    [curr_user updateChildValues:temp];
     
     spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [spinner setCenter:CGPointMake(view.frame.size.width/2, view.frame.size.height* 8/13)]; // I do this because I'm in landscape mode
+    [spinner setCenter:CGPointMake(view.frame.size.width/2,  (forget_frame.origin.y + button_frame.origin.y)/2)]; // I do this because I'm in landscape mode
     [self.view addSubview:spinner];
     
 
