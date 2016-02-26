@@ -34,8 +34,6 @@
 		5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
-		8EB706C41C7ED2800011D1DF /* Airship in Resources */ = {isa = PBXBuildFile; fileRef = 8EB706C31C7ED2800011D1DF /* Airship */; };
-		8EB706C61C7ED2B40011D1DF /* AirshipKit in Resources */ = {isa = PBXBuildFile; fileRef = 8EB706C51C7ED2B40011D1DF /* AirshipKit */; };
 		9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
 		9820D2151C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
 		9820D2161C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
@@ -109,8 +107,6 @@
 		5AC47BA31C726BF4006DD3B5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AC47BA71C726C23006DD3B5 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
-		8EB706C31C7ED2800011D1DF /* Airship */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Airship; sourceTree = "<group>"; };
-		8EB706C51C7ED2B40011D1DF /* AirshipKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AirshipKit; sourceTree = "<group>"; };
 		94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9820D2121C793F4C0001805F /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -182,8 +178,6 @@
 		54EA6C361C58A5E600BF3DC6 /* TeamUp */ = {
 			isa = PBXGroup;
 			children = (
-				8EB706C51C7ED2B40011D1DF /* AirshipKit */,
-				8EB706C31C7ED2800011D1DF /* Airship */,
 				54EA6C3A1C58A5E600BF3DC6 /* AppDelegate.h */,
 				54EA6C3B1C58A5E600BF3DC6 /* AppDelegate.m */,
 				5410FDB11C65B7AA001DA96D /* TeamUp-Bridging-Header.h */,
@@ -325,7 +319,7 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = V2J7D6MZET;
+						DevelopmentTeam = 5YFX8A6H5D;
 					};
 					54EA6C4F1C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
@@ -367,8 +361,6 @@
 				54EA6C4A1C58A5E600BF3DC6 /* LaunchScreen.storyboard in Resources */,
 				5A9F60001C5D8735005225B7 /* 1169645.jpg in Resources */,
 				54EA6C471C58A5E600BF3DC6 /* Assets.xcassets in Resources */,
-				8EB706C41C7ED2800011D1DF /* Airship in Resources */,
-				8EB706C61C7ED2B40011D1DF /* AirshipKit in Resources */,
 				54EA6C421C58A5E600BF3DC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

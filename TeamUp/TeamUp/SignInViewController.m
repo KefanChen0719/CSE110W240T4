@@ -62,6 +62,7 @@ NSString *major1;
     self.forget.frame = forget_frame;
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+<<<<<<< HEAD
 //    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
 //    curr_user = [curr_user childByAppendingPath:@"groups"];
 //    NSDictionary *temp = @{@"cse110win16a00" : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
@@ -71,6 +72,15 @@ NSString *major1;
     [spinner setCenter:CGPointMake(view.frame.size.width/2, view.frame.size.height* 8/13)]; // I do this because I'm in landscape mode
     [self.view addSubview:spinner];
     
+=======
+    if (![appDelegate.uid isEqualToString:@""]) {
+        Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+        curr_user = [curr_user childByAppendingPath:@"groups"];
+        NSDictionary *temp = @{@"cse110win16a00" : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
+        [curr_user updateChildValues:temp];
+
+    }
+>>>>>>> ece19b3996653648b064924fb1d9252a2c8ec8eb
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *account = [defaults objectForKey:@"account"];
