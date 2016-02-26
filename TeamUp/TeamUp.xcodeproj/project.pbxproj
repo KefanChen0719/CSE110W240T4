@@ -322,7 +322,7 @@
 						DevelopmentTeam = 5YFX8A6H5D;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
