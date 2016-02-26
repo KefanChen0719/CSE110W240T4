@@ -18,7 +18,7 @@
 
 @end
 @implementation SignInViewController
-@synthesize emailText, passwordText, appDelegate, viewcontroller;
+@synthesize emailText, passwordText, appDelegate, viewcontroller,spinner;
 
 NSString *email1;
 NSString *year1;
@@ -66,6 +66,11 @@ NSString *major1;
 //    curr_user = [curr_user childByAppendingPath:@"groups"];
 //    NSDictionary *temp = @{@"cse110win16a00" : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
 //    [curr_user updateChildValues:temp];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [spinner setCenter:CGPointMake(view.frame.size.width/2, view.frame.size.height* 8/13)]; // I do this because I'm in landscape mode
+    [self.view addSubview:spinner];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *account = [defaults objectForKey:@"account"];
@@ -102,6 +107,7 @@ NSString *major1;
 
 
 - (void) sign {
+    [spinner startAnimating];
     [appDelegate.firebase authUser:emailText.text password:passwordText.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
         if (error) {
             NSString *errorMessage = [error localizedDescription];

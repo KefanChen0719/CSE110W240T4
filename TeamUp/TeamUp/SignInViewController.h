@@ -20,6 +20,8 @@
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UIViewController *viewcontroller;
 
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
+
 - (IBAction)signIn:(UIButton *)sender;
 - (IBAction)signUp:(UIButton *)sender;
 - (IBAction)forgetPassword:(UIButton *)sender;
