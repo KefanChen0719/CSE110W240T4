@@ -50,6 +50,13 @@ NSMutableDictionary *result;
     memberMajorText.text = (major == nil)? @"" : major;
     memberYearText.text = (year == nil)? @"" : year;
     //end "not run-time initialization"
+    
+    [self searchCourseLayout];
+    [self addCourseLayout];
+    [self allGroupsLayout];
+    [self createGroupLayout];
+    [self memberDetailsLayout];
+    [self changePasswordLayout];
 
 }
 
@@ -218,7 +225,7 @@ NSMutableDictionary *result;
     return cell;
 }
 
--(void) tableView:(UITableView *)table didSelectRowAtIndexPath:(NSIndexPath*)indexPath{
+- (void) tableView:(UITableView *)table didSelectRowAtIndexPath:(NSIndexPath*)indexPath{
     UITableViewCell *cell = [table cellForRowAtIndexPath:indexPath];
     if(cell!=nil){
         NSString *number = @"";
@@ -231,5 +238,121 @@ NSMutableDictionary *result;
         viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"allGroupsForClassViewController"];
         [self presentViewController:viewcontroller animated:YES completion:nil];
     }
+}
+
+- (void)searchCourseLayout {
+    UIView *view = self.notFound.superview;
+    CGRect view_frame = view.frame;
+    CGRect notFound_frame = self.notFound.frame;
+    notFound_frame.origin.x = view_frame.size.width - notFound_frame.size.width - 10;
+    self.notFound.frame = notFound_frame;
+    CGRect table_frame = self.tableView.frame;
+    table_frame.size.width = view_frame.size.width;
+    self.tableView.frame = table_frame;
+}
+
+- (void)addCourseLayout {
+    UIView *view = self.courseUpdate.superview;
+    CGRect view_frame = view.frame;
+    CGRect update_frame = self.courseUpdate.frame;
+    update_frame.origin.x = view_frame.size.width - update_frame.size.width - 15;
+    self.courseUpdate.frame = update_frame;
+}
+
+- (void)allGroupsLayout {
+    UIView *view = self.courseView.superview;
+    CGRect view_frame = view.frame;
+    CGRect topView_frame = self.courseView.frame;
+    topView_frame.size.width = view_frame.size.width;
+    self.courseView.frame = topView_frame;
+    CGRect topLabel_frame = self.courseLabel.frame;
+    topLabel_frame.origin.x = view_frame.size.width / 4;
+    topLabel_frame.size.width = view_frame.size.width / 2;
+    self.courseLabel.frame = topLabel_frame;
+    CGRect add_frame = self.addButton.frame;
+    add_frame.origin.x = view_frame.size.width - add_frame.size.width - 10;
+    self.addButton.frame = add_frame;
+}
+
+- (void)createGroupLayout {
+    UIView *view = self.addGroupNameText.superview;
+    CGRect view_frame = view.frame;
+    CGRect name_frame = self.addGroupNameText.frame;
+    name_frame.origin.x = view_frame.size.width / 4;
+    name_frame.size.width = view_frame.size.width / 2;
+    self.addGroupNameText.frame = name_frame;
+    CGRect number_frame = self.addMaxPeopleText.frame;
+    number_frame.origin.x = view_frame.size.width / 4;
+    number_frame.size.width = view_frame.size.width / 2;
+    self.addMaxPeopleText.frame = number_frame;
+    CGRect label_frame = self.privateLabel.frame;
+    label_frame.origin.x = number_frame.origin.x;
+    self.privateLabel.frame = label_frame;
+    CGRect switch_frame = self.isPrivateSwitch.frame;
+    switch_frame.origin.x = number_frame.origin.x + number_frame.size.width - switch_frame.size.width;
+    self.isPrivateSwitch.frame = switch_frame;
+    CGRect create_frame = self.createGroup.frame;
+    create_frame.origin.x = view_frame.size.width / 4;
+    create_frame.size.width = view_frame.size.width / 2;
+    self.createGroup.frame = create_frame;
+}
+
+- (void)memberDetailsLayout {
+    UIView *view = self.constructionLabel.superview;
+    CGRect view_frame = view.frame;
+    CGRect topView_frame = self.topView.frame;
+    topView_frame.size.width = view_frame.size.width;
+    self.topView.frame = topView_frame;
+    CGRect update_frame = self.memberUpdate.frame;
+    update_frame.origin.x = view_frame.size.width - update_frame.size.width - 10;
+    self.memberUpdate.frame = update_frame;
+    CGRect label_frame = self.constructionLabel.frame;
+    label_frame.origin.x = view_frame.size.width / 4;
+    label_frame.size.width = view_frame.size.width / 2;
+    label_frame.origin.y = view_frame.size.height / 5;
+    self.constructionLabel.frame = label_frame;
+    CGRect nameText_frame = self.memberNameText.frame;
+    nameText_frame.origin.x = view_frame.size.width / 2;
+    self.memberNameText.frame = nameText_frame;
+    CGRect majorText_frame = self.memberMajorText.frame;
+    majorText_frame.origin.x = view_frame.size.width / 2;
+    self.memberMajorText.frame = majorText_frame;
+    CGRect yearText_frame = self.memberYearText.frame;
+    yearText_frame.origin.x = view_frame.size.width / 2;
+    self.memberYearText.frame = yearText_frame;
+    CGRect changePassword_frame = self.changePassword.frame;
+    changePassword_frame.origin.x = view_frame.size.width / 4;
+    changePassword_frame.size.width = view_frame.size.width / 2;
+    self.changePassword.frame = changePassword_frame;
+}
+
+- (void)changePasswordLayout {
+    UIView *view = self.changeOldPasswordText.superview;
+    CGRect view_frame = view.frame;
+    CGRect changeOldPasswordText_frame = self.changeOldPasswordText.frame;
+    changeOldPasswordText_frame.origin.x = view_frame.size.width / 4;
+    changeOldPasswordText_frame.origin.y = view_frame.size.height / 4;
+    changeOldPasswordText_frame.size.width = view_frame.size.width / 4 * 3;
+    self.changeOldPasswordText.frame = changeOldPasswordText_frame;
+    CGRect changeNewPasswordText_frame = self.changeNewPasswordText.frame;
+    changeNewPasswordText_frame.origin.x = view_frame.size.width / 4;
+    changeNewPasswordText_frame.size.width = view_frame.size.width / 4 * 3;
+    changeNewPasswordText_frame.origin.y = changeOldPasswordText_frame.origin.y + changeOldPasswordText_frame.size.height + 20;
+    self.changeNewPasswordText.frame = changeNewPasswordText_frame;
+    CGRect changeConfirmPasswordText_frame = self.changeComfirmPasswordText.frame;
+    changeConfirmPasswordText_frame.origin.x = view_frame.size.width / 4;
+    changeConfirmPasswordText_frame.size.width = view_frame.size.width / 4 * 3;
+    changeConfirmPasswordText_frame.origin.y = changeNewPasswordText_frame.origin.y + changeNewPasswordText_frame.size.height + 10;
+    self.changeComfirmPasswordText.frame = changeConfirmPasswordText_frame;
+    CGRect updateButton_frame = self.updateButton.frame;
+    updateButton_frame.origin.x = view_frame.size.width / 3;
+    updateButton_frame.size.width = view_frame.size.width / 3;
+    updateButton_frame.origin.y = changeConfirmPasswordText_frame.origin.y + 100;
+    self.updateButton.frame = updateButton_frame;
+    CGRect doneButton_frame = self.doneButton.frame;
+    doneButton_frame.origin.x = view_frame.size.width / 3;
+    doneButton_frame.size.width = view_frame.size.width / 3;
+    doneButton_frame.origin.y = updateButton_frame.origin.y + 50;
+    self.doneButton.frame = doneButton_frame;
 }
 @end

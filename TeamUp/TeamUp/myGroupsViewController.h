@@ -13,6 +13,10 @@
 @interface myGroupsViewController : UIViewController
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (weak, nonatomic) IBOutlet UIButton *signOut;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
+@property (weak, nonatomic) IBOutlet UIButton *add;
+@property (weak, nonatomic) IBOutlet UIButton *accountButton;
 @property (strong, nonatomic) UIViewController *viewcontroller;
 - (IBAction)signOut:(id)sender;
 
