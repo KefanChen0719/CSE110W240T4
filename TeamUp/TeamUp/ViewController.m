@@ -91,16 +91,22 @@ NSMutableDictionary *result;
 - (IBAction)keyboardExit:(id)sender{} //dismiss keyboard
 
 - (IBAction)memberInfoEditor:(id)sender{
-    appDelegate.name = memberNameText.text;
-    year = memberYearText.text;
-    major = memberMajorText.text;
-    NSDictionary *user_info = @{@"name" : appDelegate.name,
-                                @"email" : email,
-                                @"major" : major,
-                                @"year" : year
-                                };
-    NSDictionary *new_user = @{appDelegate.uid : user_info};
-    [appDelegate.users_ref updateChildValues:new_user];
+    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+    curr_user = [curr_user childByAppendingPath:@"groups"];
+    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSDictionary *groups = snapshot.value;
+        appDelegate.name = memberNameText.text;
+        year = memberYearText.text;
+        major = memberMajorText.text;
+        NSDictionary *user_info = @{@"name" : @"Jiasheng Zhu",
+                                    @"email" : email,
+                                    @"major" : major,
+                                    @"year" : year,
+                                    @"groups" : year
+                                    };
+        NSDictionary *new_user = @{appDelegate.uid : user_info};
+        [appDelegate.users_ref updateChildValues:new_user];
+    }];
 }
 
 - (IBAction)updateNewPassword:(id)sender {

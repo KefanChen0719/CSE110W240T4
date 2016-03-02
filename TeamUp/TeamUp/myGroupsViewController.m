@@ -87,7 +87,8 @@ NSArray<NSString*> *groups_names;
 // Put the connection of each button here.
 - (void)didTapButton:(UIButton *)button
 {
-    NSLog(@"Button %ld", (long)button.tag);
+    NSLog(@"Button %ld %@", (long)button.tag, groups[groups_names[button.tag]]);
+    appDelegate.currentGroupUid = groups[groups_names[button.tag]];
 }
 
 - (IBAction)signOut:(id)sender{
