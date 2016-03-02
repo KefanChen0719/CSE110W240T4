@@ -117,6 +117,8 @@ NSString *major1;
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:appDelegate.defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
+            [spinner stopAnimating];
+            
         } else {
             email1 = emailText.text;
             appDelegate.uid = authData.uid;
