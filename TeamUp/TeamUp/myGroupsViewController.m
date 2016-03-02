@@ -49,13 +49,18 @@ NSArray<NSString*> *groups_names;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
     Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
     curr_user = [curr_user childByAppendingPath:@"groups"];
-    if(curr_user)
     [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         groups = snapshot.value;
+        NSUInteger numGroups = 0;
+        if(snapshot.childrenCount != 0){
         groups_names = groups.allKeys;
         NSUInteger group_num = groups_names.count;
         NSLog(@"%lu: ", (unsigned long)group_num);
-        NSInteger numGroups = groups_names.count;
+        numGroups = groups_names.count;
+        }
+        else{
+            numGroups = 0;
+        }
         
         [scrollView setContentSize:CGSizeMake(scrollView.bounds.size.width, scrollView.bounds.size.height*3)];
         
