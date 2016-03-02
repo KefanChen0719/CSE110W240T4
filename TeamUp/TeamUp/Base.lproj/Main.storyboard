@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -200,7 +200,7 @@ send you a temporary password.</string>
                                             <segue destination="JD1-bk-77F" kind="modal" id="u1L-c5-W4l"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XW3-XK-B2J">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Groups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XW3-XK-B2J">
                                         <rect key="frame" x="145" y="34" width="108" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
@@ -234,7 +234,11 @@ send you a temporary password.</string>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="accountButton" destination="5bc-D9-s0a" id="ow8-Gm-z1F"/>
+                        <outlet property="add" destination="4li-Ce-Yp3" id="E8Q-tl-Inv"/>
                         <outlet property="signOut" destination="Lkb-u8-JJt" id="8g0-B2-Arc"/>
+                        <outlet property="topLabel" destination="XW3-XK-B2J" id="znw-oG-KiT"/>
+                        <outlet property="topView" destination="YW8-dz-vpm" id="7Yk-l7-eLK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6f-Dw-LqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,7 +275,7 @@ send you a temporary password.</string>
                                             <segue destination="R9Z-w6-5Kk" kind="modal" id="cqe-JA-amA"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" //CSE110 WI16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZM-zm-RbD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" CSE110 WI16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZM-zm-RbD">
                                         <rect key="frame" x="118" y="16" width="164" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="19"/>
@@ -285,6 +289,11 @@ send you a temporary password.</string>
                         <color key="backgroundColor" red="0.83137254901960789" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButton" destination="gob-qy-gd2" id="rmH-2I-uke"/>
+                        <outlet property="courseLabel" destination="YZM-zm-RbD" id="8C8-As-6QK"/>
+                        <outlet property="courseView" destination="1R1-SR-JeL" id="CgM-hS-bnE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZb-Yk-9yK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,7 +383,7 @@ send you a temporary password.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0dx-MG-8wZ">
-                                <rect key="frame" x="164" y="354" width="46" height="30"/>
+                                <rect key="frame" x="164" y="354" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
@@ -403,12 +412,14 @@ send you a temporary password.</string>
                     <connections>
                         <outlet property="addGroupNameText" destination="8aw-h2-V1Y" id="CUW-fl-Hhc"/>
                         <outlet property="addMaxPeopleText" destination="ELn-O5-lc2" id="vSb-AC-Phn"/>
+                        <outlet property="createGroup" destination="0dx-MG-8wZ" id="Ekm-od-ehE"/>
                         <outlet property="isPrivateSwitch" destination="2Bu-vu-fhB" id="eyB-Lc-dZS"/>
+                        <outlet property="privateLabel" destination="cVc-rX-vZC" id="LTF-5S-zhY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPB-D4-MFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387.60000000000002" y="1666.6066666666663"/>
+            <point key="canvasLocation" x="-388.5" y="1666.5"/>
         </scene>
         <!--signUp-->
         <scene sceneID="5JJ-HN-npT">
@@ -542,9 +553,10 @@ send you a temporary password.</string>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="notFound" destination="ufm-na-QHK" id="NUk-Qb-tSq"/>
                         <outlet property="searchDisplayController" destination="3yU-rY-PiN" id="L2H-xk-QIS"/>
                         <outlet property="searchText" destination="hDn-mv-zd1" id="0w7-cR-KBv"/>
-                        <outlet property="tableView" destination="l5W-PF-4n3" id="ltl-f0-Yrf"/>
+                        <outlet property="tableView" destination="l5W-PF-4n3" id="McV-HX-M0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V96-np-VA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,28 +604,28 @@ send you a temporary password.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qkT-Dx-0HJ">
-                                <rect key="frame" x="60" y="183" width="109" height="21"/>
+                                <rect key="frame" x="31" y="183" width="109" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zBQ-e2-SFO">
-                                <rect key="frame" x="91" y="251" width="78" height="21"/>
+                                <rect key="frame" x="62" y="251" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9zh-TC-bHO">
-                                <rect key="frame" x="125" y="364" width="44" height="21"/>
+                                <rect key="frame" x="96" y="364" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put name here" textAlignment="natural" minimumFontSize="17" id="s2d-n4-6ec">
-                                <rect key="frame" x="193" y="180" width="173" height="30"/>
+                                <rect key="frame" x="175" y="180" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -622,7 +634,7 @@ send you a temporary password.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put prof's name here" textAlignment="natural" minimumFontSize="17" id="E3b-z5-wwv">
-                                <rect key="frame" x="193" y="247" width="173" height="30"/>
+                                <rect key="frame" x="175" y="247" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -631,7 +643,7 @@ send you a temporary password.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put term here" textAlignment="natural" minimumFontSize="17" id="ABs-rU-fk0">
-                                <rect key="frame" x="193" y="360" width="173" height="30"/>
+                                <rect key="frame" x="175" y="360" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -651,14 +663,14 @@ send you a temporary password.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uD4-Pl-x1V">
-                                <rect key="frame" x="104" y="310" width="63" height="21"/>
+                                <rect key="frame" x="77" y="310" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your section here" textAlignment="natural" minimumFontSize="17" id="0Km-pI-6PR">
-                                <rect key="frame" x="193" y="306" width="162" height="30"/>
+                                <rect key="frame" x="175" y="306" width="162" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -686,6 +698,7 @@ send you a temporary password.</string>
                         <outlet property="addProfText" destination="E3b-z5-wwv" id="DBR-oS-oLR"/>
                         <outlet property="addSectionText" destination="0Km-pI-6PR" id="SRg-wX-nJc"/>
                         <outlet property="addTermText" destination="ABs-rU-fk0" id="Cff-F1-rK9"/>
+                        <outlet property="courseUpdate" destination="6Zp-1b-D0j" id="r58-v6-mIp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89r-Ye-Dsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -833,22 +846,13 @@ send you a temporary password.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Still in construction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hLC-92-OaS">
-                                <rect key="frame" x="114" y="127" width="147" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Still in construction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hLC-92-OaS">
+                                <rect key="frame" x="114" y="127" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your major here" textAlignment="natural" minimumFontSize="17" id="Ne1-un-cYg">
-                                <rect key="frame" x="152" y="277" width="168" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                <connections>
-                                    <action selector="keyboardExit:" destination="e0j-yR-2gV" eventType="editingDidEndOnExit" id="cfJ-b4-Nky"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your year here" textAlignment="natural" minimumFontSize="17" id="ZUz-Nf-TdA">
                                 <rect key="frame" x="152" y="338" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -859,7 +863,7 @@ send you a temporary password.</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFN-Yu-HeG">
-                                <rect key="frame" x="126" y="408" width="123" height="30"/>
+                                <rect key="frame" x="126" y="408" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change password"/>
                                 <connections>
@@ -875,14 +879,30 @@ send you a temporary password.</string>
                                     <action selector="keyboardExit:" destination="e0j-yR-2gV" eventType="editingDidEndOnExit" id="TAJ-X5-8eU"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your major here" textAlignment="natural" minimumFontSize="17" id="Ne1-un-cYg">
+                                <rect key="frame" x="152" y="277" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="keyboardExit:" destination="e0j-yR-2gV" eventType="editingDidEndOnExit" id="cfJ-b4-Nky"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="changePassword" destination="hFN-Yu-HeG" id="ImI-kt-bAP"/>
+                        <outlet property="constructionLabel" destination="hLC-92-OaS" id="cLq-qk-fUp"/>
+                        <outlet property="majorLabel" destination="6Gb-1g-B0f" id="TUS-Nc-zGq"/>
                         <outlet property="memberMajorText" destination="Ne1-un-cYg" id="cAB-9O-v4h"/>
                         <outlet property="memberNameText" destination="aWO-5A-eYr" id="KHe-qr-v2b"/>
+                        <outlet property="memberUpdate" destination="gaK-y9-wov" id="4Cs-WW-RB4"/>
                         <outlet property="memberYearText" destination="ZUz-Nf-TdA" id="Zy0-aG-R0i"/>
+                        <outlet property="nameLabel" destination="tLm-bA-8Vc" id="kXY-ez-kgd"/>
+                        <outlet property="topView" destination="nY6-3A-Nlu" id="nAt-bM-E86"/>
+                        <outlet property="yearLabel" destination="rCl-cn-3We" id="wbR-Y4-wFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-zb-gd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -938,6 +958,8 @@ send you a temporary password.</string>
                         <outlet property="changeComfirmPasswordText" destination="XE1-A7-9aw" id="4yI-c6-lsn"/>
                         <outlet property="changeNewPasswordText" destination="J5s-9Q-JOg" id="a2r-Wc-PxT"/>
                         <outlet property="changeOldPasswordText" destination="TQe-UL-vrG" id="Pwz-Gn-S64"/>
+                        <outlet property="doneButton" destination="0xv-ak-WTs" id="fYC-BV-OYi"/>
+                        <outlet property="updateButton" destination="bvJ-H3-UKj" id="ZqR-X7-ONR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKV-ca-Vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -967,8 +989,8 @@ send you a temporary password.</string>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u1L-c5-W4l"/>
-        <segue reference="Wb6-fH-OsW"/>
-        <segue reference="JZL-so-WAM"/>
+        <segue reference="ysN-Fc-aia"/>
+        <segue reference="tPV-cf-Y4b"/>
+        <segue reference="8BB-u2-kuq"/>
     </inferredMetricsTieBreakers>
 </document>
