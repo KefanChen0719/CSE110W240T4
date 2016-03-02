@@ -18,7 +18,8 @@
 @property (strong, nonatomic) Firebase *firebase;
 @property (strong, nonatomic) NSString *uid;
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *currentGroupUid;;
+@property (strong, nonatomic) NSString *currentGroupUid;
+@property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) Firebase *users;
 @property (strong, nonatomic) Firebase *users_ref;
 

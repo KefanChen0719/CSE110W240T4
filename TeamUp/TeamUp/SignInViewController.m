@@ -121,6 +121,7 @@ NSString *major1;
             
         } else {
             email1 = emailText.text;
+            appDelegate.email = emailText.text;
             appDelegate.uid = authData.uid;
             [appDelegate loadData];
             

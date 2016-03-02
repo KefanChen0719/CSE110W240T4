@@ -99,10 +99,10 @@ NSMutableDictionary *result;
         year = memberYearText.text;
         major = memberMajorText.text;
         NSDictionary *user_info = @{@"name" : @"Jiasheng Zhu",
-                                    @"email" : email,
+                                    @"email" : appDelegate.email,
                                     @"major" : major,
                                     @"year" : year,
-                                    @"groups" : year
+                                    @"groups" : groups
                                     };
         NSDictionary *new_user = @{appDelegate.uid : user_info};
         [appDelegate.users_ref updateChildValues:new_user];
