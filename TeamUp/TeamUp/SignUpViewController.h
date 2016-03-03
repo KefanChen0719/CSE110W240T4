@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface SignUpViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SignUpViewController : UIViewController //<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextField *emailText;

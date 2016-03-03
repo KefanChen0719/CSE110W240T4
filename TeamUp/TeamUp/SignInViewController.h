@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface SignInViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SignInViewController : UIViewController //<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextField *emailText;

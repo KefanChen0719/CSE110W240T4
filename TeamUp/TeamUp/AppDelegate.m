@@ -41,7 +41,7 @@
 
 @implementation AppDelegate
 
-@synthesize firebase, storyboard, defaultAction, uid, users, users_ref, name, currentGroupUid;
+@synthesize firebase, storyboard, defaultAction, uid, users, users_ref, name, currentGroupUid, currentClassUid;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

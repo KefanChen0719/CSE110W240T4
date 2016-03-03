@@ -18,7 +18,7 @@ NSString *major4;
 @implementation myGroupsViewController
 @synthesize appDelegate,viewcontroller;
 NSDictionary *groups;
-NSArray<NSString*> *groups_names;
+NSArray<NSString*> *groups_uid;
 
 
 
@@ -53,10 +53,10 @@ NSArray<NSString*> *groups_names;
         groups = snapshot.value;
         NSUInteger numGroups = 0;
         if(snapshot.childrenCount != 0){
-        groups_names = groups.allKeys;
-        NSUInteger group_num = groups_names.count;
+        groups_uid = groups.allKeys;
+        NSUInteger group_num = groups_uid.count;
         NSLog(@"%lu: ", (unsigned long)group_num);
-        numGroups = groups_names.count;
+        numGroups = groups_uid.count;
         }
         else{
             numGroups = 0;
@@ -72,7 +72,7 @@ NSArray<NSString*> *groups_names;
             button.frame = CGRectMake(scrollView.frame.size.width * 0.1, 10.0f + (100.0f * (CGFloat)index), self.view.frame.size.width*0.8,self.view.frame.size.height*0.1);
             [button setBackgroundColor:[UIColor colorWithRed:163/255.0 green:205/255.0 blue:210/255.0 alpha:1.0]];
             button.tag = index;
-            [button setTitle:[NSString stringWithFormat:[self getNameFromGroupUid: groups[groups_names[index]]], ((long)index + 1)] forState:UIControlStateNormal];
+            [button setTitle:[NSString stringWithFormat:[self getNameFromGroupUid: groups_uid[index]], ((long)index + 1)] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:button];
         }
@@ -87,8 +87,8 @@ NSArray<NSString*> *groups_names;
 // Put the connection of each button here.
 - (void)didTapButton:(UIButton *)button
 {
-    NSLog(@"Button %ld %@", (long)button.tag, groups[groups_names[button.tag]]);
-    appDelegate.currentGroupUid = groups[groups_names[button.tag]];
+    NSLog(@"Button %ld %@", (long)button.tag, groups[groups_uid[button.tag]]);
+    appDelegate.currentGroupUid = groups_uid[button.tag];
 }
 
 - (IBAction)signOut:(id)sender{

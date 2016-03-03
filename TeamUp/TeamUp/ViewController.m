@@ -239,9 +239,8 @@ NSMutableDictionary *result;
         NSString *classuid = result[number];
         class = [[class_ref childByAppendingPath:classuid] childByAppendingPath:@"group"];
         NSLog(@"%@", classuid);
-        
-
-        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"allGroupsForClassViewController"];
+        appDelegate.currentClassUid = classuid;
+        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"ClassGroupsViewController"];
         [self presentViewController:viewcontroller animated:YES completion:nil];
     }
 }

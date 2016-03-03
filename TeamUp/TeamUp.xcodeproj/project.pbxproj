@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3414B42B5125EB2CD8D96B1A /* libPods-TeamUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */; };
+		52ED95511C88179B00B71B4A /* ClassGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */; };
 		52EEA4271C7E7B0900EC8A5A /* myGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */; };
 		5410FDB31C65B7AB001DA96D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410FDB21C65B7AB001DA96D /* MessagesViewController.swift */; };
 		5410FFB51C65CBC2001DA96D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410FFB41C65CBC1001DA96D /* Message.swift */; };
@@ -71,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		0625B1D77D550F6A14140478 /* Pods-TeamUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.debug.xcconfig"; sourceTree = "<group>"; };
+		52ED954F1C88175D00B71B4A /* ClassGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassGroupsViewController.h; sourceTree = "<group>"; };
+		52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassGroupsViewController.m; sourceTree = "<group>"; };
 		52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myGroupsViewController.m; sourceTree = "<group>"; };
 		52EEA4281C7E7B3200EC8A5A /* myGroupsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myGroupsViewController.h; sourceTree = "<group>"; };
 		5410FDB11C65B7AA001DA96D /* TeamUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TeamUp-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -198,8 +201,10 @@
 				9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */,
 				5ABF97221C7A45C300AD8F82 /* SignUpViewController.h */,
 				5ABF97231C7A45C300AD8F82 /* SignUpViewController.m */,
-				52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */,
 				52EEA4281C7E7B3200EC8A5A /* myGroupsViewController.h */,
+				52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */,
+				52ED954F1C88175D00B71B4A /* ClassGroupsViewController.h */,
+				52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */,
 			);
 			path = TeamUp;
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 				54EA6C3C1C58A5E600BF3DC6 /* AppDelegate.m in Sources */,
 				54EA6C451C58A5E600BF3DC6 /* TeamUp.xcdatamodeld in Sources */,
 				5410FFB51C65CBC2001DA96D /* Message.swift in Sources */,
+				52ED95511C88179B00B71B4A /* ClassGroupsViewController.m in Sources */,
 				5AC47BA41C726BF4006DD3B5 /* main.m in Sources */,
 				5410FDB31C65B7AB001DA96D /* MessagesViewController.swift in Sources */,
 				5ABF97241C7A45C300AD8F82 /* SignUpViewController.m in Sources */,

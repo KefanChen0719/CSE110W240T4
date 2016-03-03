@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -245,59 +245,37 @@ send you a temporary password.</string>
             </objects>
             <point key="canvasLocation" x="-249.5" y="-3.5"/>
         </scene>
-        <!--allGroupsForClass-->
-        <scene sceneID="o5b-Zw-x3b">
+        <!--ClassGroups-->
+        <scene sceneID="hw7-ue-s0P">
             <objects>
-                <viewController storyboardIdentifier="allGroupsForClassViewController" title="allGroupsForClass" id="Sn0-nN-G2J" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hWw-B8-Kys">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="ClassGroupsViewController" title="ClassGroups" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r7I-xe-ELr" customClass="ClassGroupsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tDr-T3-PNV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="1R1-SR-JeL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kMY-qr-q2X">
+                                <rect key="frame" x="26" y="20" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h2O-gh-lac">
-                                        <rect key="frame" x="0.0" y="19" width="70" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="JD1-bk-77F" kind="modal" id="nLv-ED-4IM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="gob-qy-gd2">
-                                        <rect key="frame" x="341" y="27" width="22" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <segue destination="R9Z-w6-5Kk" kind="modal" id="cqe-JA-amA"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" CSE110 WI16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZM-zm-RbD">
-                                        <rect key="frame" x="118" y="16" width="164" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="19"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="JD1-bk-77F" kind="modal" id="s2f-eg-0mM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CN0-hz-iqB">
+                                <rect key="frame" x="95" y="20" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add unlisted group"/>
+                                <connections>
+                                    <segue destination="R9Z-w6-5Kk" kind="modal" id="kgZ-nq-fBd"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.83137254901960789" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="addButton" destination="gob-qy-gd2" id="rmH-2I-uke"/>
-                        <outlet property="courseLabel" destination="YZM-zm-RbD" id="8C8-As-6QK"/>
-                        <outlet property="courseView" destination="1R1-SR-JeL" id="CgM-hS-bnE"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AZb-Yk-9yK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="knc-mj-DV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-836.39999999999998" y="1666.6066666666663"/>
+            <point key="canvasLocation" x="-1339" y="1651"/>
         </scene>
         <!--groupChat-->
         <scene sceneID="Afe-up-4ge">
@@ -402,7 +380,7 @@ send you a temporary password.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="Sn0-nN-G2J" kind="modal" id="Mi5-L4-kS5"/>
+                                    <segue destination="r7I-xe-ELr" kind="modal" id="aqp-Cg-JfB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -989,8 +967,8 @@ send you a temporary password.</string>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ysN-Fc-aia"/>
-        <segue reference="tPV-cf-Y4b"/>
-        <segue reference="8BB-u2-kuq"/>
+        <segue reference="s2f-eg-0mM"/>
+        <segue reference="Wb6-fH-OsW"/>
+        <segue reference="JZL-so-WAM"/>
     </inferredMetricsTieBreakers>
 </document>

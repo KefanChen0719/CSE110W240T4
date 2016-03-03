@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface ForgetPasswordViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ForgetPasswordViewController : UIViewController //<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailText;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
