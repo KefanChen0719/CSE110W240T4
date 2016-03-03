@@ -23,6 +23,7 @@
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) Firebase *users;
 @property (strong, nonatomic) Firebase *users_ref;
+@property (strong, nonatomic) NSDictionary *currentGroupDictionary;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

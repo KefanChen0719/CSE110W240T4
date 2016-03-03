@@ -250,7 +250,7 @@ send you a temporary password.</string>
             <objects>
                 <viewController storyboardIdentifier="ClassGroupsViewController" title="ClassGroups" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r7I-xe-ELr" customClass="ClassGroupsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tDr-T3-PNV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kMY-qr-q2X">
@@ -403,7 +403,7 @@ send you a temporary password.</string>
         <scene sceneID="HWx-8l-H4J">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgc-5y-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="AddGroup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cMC-sb-AkV" userLabel="AddGroup" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddGroup" title="AddGroup2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cMC-sb-AkV" userLabel="AddGroup" customClass="AddGroupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qwz-Ns-v88">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -419,18 +419,28 @@ send you a temporary password.</string>
                                 <rect key="frame" x="19" y="25" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="r7I-xe-ELr" kind="modal" id="oxH-Qg-Ugh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BFm-kd-Xe3">
                                 <rect key="frame" x="275" y="25" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addGroup:" destination="cMC-sb-AkV" eventType="touchUpInside" id="Tbz-Ym-epU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="add" destination="BFm-kd-Xe3" id="dxo-DQ-x0k"/>
+                        <outlet property="back" destination="ChJ-PL-H1h" id="DZ6-BQ-uJm"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-322" y="1631"/>
+            <point key="canvasLocation" x="-372" y="1673"/>
         </scene>
         <!--signUp-->
         <scene sceneID="5JJ-HN-npT">
@@ -1000,8 +1010,9 @@ send you a temporary password.</string>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pcw-IJ-FLm"/>
+        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="u1L-c5-W4l"/>
+        <segue reference="Wb6-fH-OsW"/>
         <segue reference="JZL-so-WAM"/>
-        <segue reference="s2f-eg-0mM"/>
     </inferredMetricsTieBreakers>
 </document>
