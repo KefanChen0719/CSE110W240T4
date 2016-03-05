@@ -88,7 +88,13 @@ NSArray<NSString*> *groups_uid;
 - (void)didTapButton:(UIButton *)button
 {
     NSLog(@"Button %ld %@", (long)button.tag, groups[groups_uid[button.tag]]);
-    appDelegate.currentGroupUid = groups_uid[button.tag];
+    NSString * currentGroupUid = groups_uid[button.tag];
+  
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"MessagesViewContr"];
+  
+    MessagesViewController* vc = (MessagesViewController *) viewcontroller;
+    vc.groupID = currentGroupUid;
+    [self presentViewController:viewcontroller animated:YES completion:nil];
 }
 
 - (IBAction)signOut:(id)sender{
@@ -126,4 +132,9 @@ NSArray<NSString*> *groups_uid;
     group_name = [group_uid substringFromIndex:36];
     return group_name;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+}
+
 @end

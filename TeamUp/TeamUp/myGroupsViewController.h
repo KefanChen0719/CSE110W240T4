@@ -10,6 +10,8 @@
 #define myGroupsViewController_h
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "TeamUp-Swift.h"
+
 @interface myGroupsViewController : UIViewController
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (weak, nonatomic) IBOutlet UIButton *signOut;
@@ -21,6 +23,8 @@
 - (IBAction)signOut:(id)sender;
 
 - (NSString *) getNameFromGroupUid:(NSString*) group_uid;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
 @end
 

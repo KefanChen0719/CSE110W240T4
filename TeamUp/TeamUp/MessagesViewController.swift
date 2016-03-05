@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 //import Firebase
 
-class MessagesViewController: JSQMessagesViewController {
+@objc class MessagesViewController: JSQMessagesViewController {
   
   var user: FAuthData?
   
@@ -21,6 +21,7 @@ class MessagesViewController: JSQMessagesViewController {
   var senderImageUrl: String!
   var batchMessages = true
   var ref: Firebase!
+  var groupID: String!
   
   
   // *** STEP 1: STORE FIREBASE REFERENCES
@@ -28,7 +29,7 @@ class MessagesViewController: JSQMessagesViewController {
   
   func setupFirebase() {
     // *** STEP 2: SETUP FIREBASE
-    messagesRef = Firebase(url: "https://resplendent-inferno-8485.firebaseio.com/messages")
+    messagesRef = Firebase(url: "https://resplendent-inferno-8485.firebaseio.com/messages/\(groupID)")
     
     // *** STEP 4: RECEIVE MESSAGES FROM FIREBASE (limited to latest 25 messages)
     messagesRef.queryLimitedToNumberOfChildren(25).observeEventType(FEventType.ChildAdded, withBlock: { (snapshot) in
@@ -227,4 +228,5 @@ class MessagesViewController: JSQMessagesViewController {
     
     return kJSQMessagesCollectionViewCellLabelHeightDefault
   }
+  
 }

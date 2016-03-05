@@ -193,13 +193,6 @@ send you a temporary password.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="4li-Ce-Yp3">
-                                        <rect key="frame" x="340" y="34" width="22" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <segue destination="JD1-bk-77F" kind="modal" id="u1L-c5-W4l"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Groups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XW3-XK-B2J">
                                         <rect key="frame" x="145" y="34" width="108" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -216,6 +209,13 @@ send you a temporary password.</string>
                                         </state>
                                         <connections>
                                             <action selector="signOut:" destination="qix-Aq-Vg8" eventType="touchUpInside" id="hVI-mP-zOg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="4li-Ce-Yp3">
+                                        <rect key="frame" x="340" y="34" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="JD1-bk-77F" kind="modal" id="u1L-c5-W4l"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -280,7 +280,7 @@ send you a temporary password.</string>
         <!--groupChat-->
         <scene sceneID="Afe-up-4ge">
             <objects>
-                <viewController title="groupChat" id="WSX-Fx-Mn1" customClass="MessagesViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessagesViewContr" title="groupChat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WSX-Fx-Mn1" customClass="MessagesViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HPT-cF-wQ2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,7 +334,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRf-hq-wuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-770.5" y="4.5"/>
+            <point key="canvasLocation" x="-802.5" y="-55.5"/>
         </scene>
         <!--createGroup-->
         <scene sceneID="SbY-QW-KI2">
@@ -402,7 +402,6 @@ send you a temporary password.</string>
         <!--AddGroup-->
         <scene sceneID="HWx-8l-H4J">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgc-5y-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AddGroup" title="AddGroup2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cMC-sb-AkV" userLabel="AddGroup" customClass="AddGroupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qwz-Ns-v88">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -439,6 +438,7 @@ send you a temporary password.</string>
                         <outlet property="back" destination="ChJ-PL-H1h" id="DZ6-BQ-uJm"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgc-5y-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-372" y="1673"/>
         </scene>
@@ -1010,9 +1010,9 @@ send you a temporary password.</string>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="pcw-IJ-FLm"/>
         <segue reference="u1L-c5-W4l"/>
-        <segue reference="Wb6-fH-OsW"/>
         <segue reference="JZL-so-WAM"/>
+        <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>
 </document>
