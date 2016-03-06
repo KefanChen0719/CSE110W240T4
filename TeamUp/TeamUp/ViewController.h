@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 #import "AppDelegate.h"
+#import "QRCodeReaderDelegate.h"
 
 //Firebase *firebase;
 
@@ -29,13 +30,6 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *yearPicker;
 @property (strong, nonatomic)          NSArray *yearArray;
-
-
-
-
-
-
-
 @property (weak, nonatomic) IBOutlet UITextField *addProfText;
 @property (weak, nonatomic) IBOutlet UIButton *notFound;
 @property (weak, nonatomic) IBOutlet UITextField *searchText;
@@ -75,7 +69,7 @@
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component;
-
+- (IBAction)scanAction:(id)sender;
 @end
 
 
