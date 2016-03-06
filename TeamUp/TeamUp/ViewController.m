@@ -11,7 +11,8 @@
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
 #import <Firebase/Firebase.h>
-
+#import "QRCodeReaderViewController.h"
+#import "QRCodeReader.h"
 @interface ViewController ()
 
 @end
@@ -57,11 +58,6 @@ NSMutableDictionary *result;
     [self createGroupLayout];
     [self memberDetailsLayout];
     [self changePasswordLayout];
-    
-    
-    
-    
-    
     self.yearArray  = [[NSArray alloc]         initWithObjects:@"1",@"2",@"3",@"4", nil];
     
 
@@ -404,6 +400,75 @@ NSMutableDictionary *result;
 {
     
 }
+
+- (IBAction)scanAction:(id)sender
+{
+    //appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
+        static QRCodeReaderViewController *vc = nil;
+        static dispatch_once_t onceToken;
+        
+        dispatch_once(&onceToken, ^{
+            QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+            vc                   = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+            vc.modalPresentationStyle = UIModalPresentationFormSheet;
+        });
+        vc.delegate = self;
+        
+        [vc setCompletionWithBlock:^(NSString *resultAsString) {
+            NSLog(@"Completion with result: %@", resultAsString);
+            //appDelegate.uid = resultAsString;
+        }];
+        
+        [self presentViewController:vc animated:YES completion:NULL];
+    }
+    else {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Reader not supported by the current device" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:appDelegate.defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+#pragma mark - QRCodeReader Delegate Methods
+
+- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (![result isEqualToString:@"ERROR"]) {
+            appDelegate.currentClassUid = [[result componentsSeparatedByString:@";"] objectAtIndex:0];
+            appDelegate.currentGroupUid = [[result componentsSeparatedByString:@";"] objectAtIndex:1];
+            NSLog(@"%@ : %@", appDelegate.currentClassUid, appDelegate.currentGroupUid);
+            Firebase *check = [appDelegate.firebase childByAppendingPath:@"classes"];
+            check = [check childByAppendingPath:appDelegate.currentClassUid];
+            [check observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                if(snapshot.childrenCount==0){
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"There is error with the QRCode" preferredStyle:UIAlertControllerStyleAlert];
+                    [alert addAction:appDelegate.defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+                else{
+                    NSDictionary *double_check = snapshot.value[@"group"];
+                    if (double_check[appDelegate.currentGroupUid]) {
+                        appDelegate.currentGroupDictionary = double_check[appDelegate.currentGroupUid];
+                        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"AddGroup"];
+                        [self presentViewController:viewcontroller animated:YES completion:nil];
+                    }
+                }
+            }];
+        }
+        else{
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"There is error with the QRCode" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:appDelegate.defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+}
+
+- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 @end
 

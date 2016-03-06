@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		3414B42B5125EB2CD8D96B1A /* libPods-TeamUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */; };
 		52ED95511C88179B00B71B4A /* ClassGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */; };
+		52ED955D1C8CCE1000B71B4A /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95531C8CCE1000B71B4A /* QRCameraSwitchButton.m */; };
+		52ED955E1C8CCE1000B71B4A /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95551C8CCE1000B71B4A /* QRCodeReader.m */; };
+		52ED955F1C8CCE1000B71B4A /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95581C8CCE1000B71B4A /* QRCodeReaderView.m */; };
+		52ED95601C8CCE1000B71B4A /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED955A1C8CCE1000B71B4A /* QRCodeReaderViewController.m */; };
+		52ED95611C8CCE1000B71B4A /* QRToggleTorchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED955C1C8CCE1000B71B4A /* QRToggleTorchButton.m */; };
+		52ED95721C8CE29600B71B4A /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95621C8CE29600B71B4A /* bitstream.c */; };
+		52ED95731C8CE29600B71B4A /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95641C8CE29600B71B4A /* mask.c */; };
+		52ED95741C8CE29600B71B4A /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95661C8CE29600B71B4A /* qrencode.c */; };
+		52ED95751C8CE29600B71B4A /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95681C8CE29600B71B4A /* qrinput.c */; };
+		52ED95761C8CE29600B71B4A /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 52ED956A1C8CE29600B71B4A /* qrspec.c */; };
+		52ED95771C8CE29600B71B4A /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 52ED956C1C8CE29600B71B4A /* rscode.c */; };
+		52ED95781C8CE29600B71B4A /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 52ED956E1C8CE29600B71B4A /* split.c */; };
+		52ED95791C8CE29600B71B4A /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95711C8CE29600B71B4A /* UIImage+MDQRCode.m */; };
 		52EEA4271C7E7B0900EC8A5A /* myGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */; };
 		5410FDB31C65B7AB001DA96D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410FDB21C65B7AB001DA96D /* MessagesViewController.swift */; };
 		5410FFB51C65CBC2001DA96D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410FFB41C65CBC1001DA96D /* Message.swift */; };
@@ -75,6 +88,33 @@
 		0625B1D77D550F6A14140478 /* Pods-TeamUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.debug.xcconfig"; sourceTree = "<group>"; };
 		52ED954F1C88175D00B71B4A /* ClassGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassGroupsViewController.h; sourceTree = "<group>"; };
 		52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassGroupsViewController.m; sourceTree = "<group>"; };
+		52ED95521C8CCE1000B71B4A /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
+		52ED95531C8CCE1000B71B4A /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
+		52ED95541C8CCE1000B71B4A /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
+		52ED95551C8CCE1000B71B4A /* QRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReader.m; sourceTree = "<group>"; };
+		52ED95561C8CCE1000B71B4A /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
+		52ED95571C8CCE1000B71B4A /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
+		52ED95581C8CCE1000B71B4A /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
+		52ED95591C8CCE1000B71B4A /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
+		52ED955A1C8CCE1000B71B4A /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
+		52ED955B1C8CCE1000B71B4A /* QRToggleTorchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRToggleTorchButton.h; sourceTree = "<group>"; };
+		52ED955C1C8CCE1000B71B4A /* QRToggleTorchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRToggleTorchButton.m; sourceTree = "<group>"; };
+		52ED95621C8CE29600B71B4A /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		52ED95631C8CE29600B71B4A /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		52ED95641C8CE29600B71B4A /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		52ED95651C8CE29600B71B4A /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		52ED95661C8CE29600B71B4A /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		52ED95671C8CE29600B71B4A /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		52ED95681C8CE29600B71B4A /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		52ED95691C8CE29600B71B4A /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		52ED956A1C8CE29600B71B4A /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		52ED956B1C8CE29600B71B4A /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		52ED956C1C8CE29600B71B4A /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		52ED956D1C8CE29600B71B4A /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		52ED956E1C8CE29600B71B4A /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		52ED956F1C8CE29600B71B4A /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		52ED95701C8CE29600B71B4A /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
+		52ED95711C8CE29600B71B4A /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
 		52EEA4261C7E7B0900EC8A5A /* myGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myGroupsViewController.m; sourceTree = "<group>"; };
 		52EEA4281C7E7B3200EC8A5A /* myGroupsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myGroupsViewController.h; sourceTree = "<group>"; };
 		5410FDB11C65B7AA001DA96D /* TeamUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TeamUp-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -159,6 +199,47 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		52ED957A1C8CE36F00B71B4A /* QRReader */ = {
+			isa = PBXGroup;
+			children = (
+				52ED95521C8CCE1000B71B4A /* QRCameraSwitchButton.h */,
+				52ED95531C8CCE1000B71B4A /* QRCameraSwitchButton.m */,
+				52ED95541C8CCE1000B71B4A /* QRCodeReader.h */,
+				52ED95551C8CCE1000B71B4A /* QRCodeReader.m */,
+				52ED95561C8CCE1000B71B4A /* QRCodeReaderDelegate.h */,
+				52ED95571C8CCE1000B71B4A /* QRCodeReaderView.h */,
+				52ED95581C8CCE1000B71B4A /* QRCodeReaderView.m */,
+				52ED95591C8CCE1000B71B4A /* QRCodeReaderViewController.h */,
+				52ED955A1C8CCE1000B71B4A /* QRCodeReaderViewController.m */,
+				52ED955B1C8CCE1000B71B4A /* QRToggleTorchButton.h */,
+				52ED955C1C8CCE1000B71B4A /* QRToggleTorchButton.m */,
+			);
+			name = QRReader;
+			sourceTree = "<group>";
+		};
+		52ED957B1C8CE3A000B71B4A /* QRGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				52ED95621C8CE29600B71B4A /* bitstream.c */,
+				52ED95631C8CE29600B71B4A /* bitstream.h */,
+				52ED95641C8CE29600B71B4A /* mask.c */,
+				52ED95651C8CE29600B71B4A /* mask.h */,
+				52ED95661C8CE29600B71B4A /* qrencode.c */,
+				52ED95671C8CE29600B71B4A /* qrencode.h */,
+				52ED95681C8CE29600B71B4A /* qrinput.c */,
+				52ED95691C8CE29600B71B4A /* qrinput.h */,
+				52ED956A1C8CE29600B71B4A /* qrspec.c */,
+				52ED956B1C8CE29600B71B4A /* qrspec.h */,
+				52ED956C1C8CE29600B71B4A /* rscode.c */,
+				52ED956D1C8CE29600B71B4A /* rscode.h */,
+				52ED956E1C8CE29600B71B4A /* split.c */,
+				52ED956F1C8CE29600B71B4A /* split.h */,
+				52ED95701C8CE29600B71B4A /* UIImage+MDQRCode.h */,
+				52ED95711C8CE29600B71B4A /* UIImage+MDQRCode.m */,
+			);
+			name = QRGenerator;
+			sourceTree = "<group>";
+		};
 		54EA6C2B1C58A5E500BF3DC6 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +265,8 @@
 		54EA6C361C58A5E600BF3DC6 /* TeamUp */ = {
 			isa = PBXGroup;
 			children = (
+				52ED957B1C8CE3A000B71B4A /* QRGenerator */,
+				52ED957A1C8CE36F00B71B4A /* QRReader */,
 				54EA6C3A1C58A5E600BF3DC6 /* AppDelegate.h */,
 				54EA6C3B1C58A5E600BF3DC6 /* AppDelegate.m */,
 				5410FDB11C65B7AA001DA96D /* TeamUp-Bridging-Header.h */,
@@ -451,14 +534,27 @@
 			files = (
 				52EEA4271C7E7B0900EC8A5A /* myGroupsViewController.m in Sources */,
 				94FD5D291C88B7D3005C8FBF /* AddGroupViewController.m in Sources */,
+				52ED95771C8CE29600B71B4A /* rscode.c in Sources */,
+				52ED95611C8CCE1000B71B4A /* QRToggleTorchButton.m in Sources */,
+				52ED955E1C8CCE1000B71B4A /* QRCodeReader.m in Sources */,
 				5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */,
 				54EA6C3F1C58A5E600BF3DC6 /* ViewController.m in Sources */,
 				9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
+				52ED95721C8CE29600B71B4A /* bitstream.c in Sources */,
+				52ED95751C8CE29600B71B4A /* qrinput.c in Sources */,
+				52ED95731C8CE29600B71B4A /* mask.c in Sources */,
 				54EA6C3C1C58A5E600BF3DC6 /* AppDelegate.m in Sources */,
+				52ED95781C8CE29600B71B4A /* split.c in Sources */,
+				52ED95601C8CCE1000B71B4A /* QRCodeReaderViewController.m in Sources */,
 				54EA6C451C58A5E600BF3DC6 /* TeamUp.xcdatamodeld in Sources */,
+				52ED95741C8CE29600B71B4A /* qrencode.c in Sources */,
+				52ED955D1C8CCE1000B71B4A /* QRCameraSwitchButton.m in Sources */,
+				52ED95761C8CE29600B71B4A /* qrspec.c in Sources */,
 				5410FFB51C65CBC2001DA96D /* Message.swift in Sources */,
 				52ED95511C88179B00B71B4A /* ClassGroupsViewController.m in Sources */,
 				5AC47BA41C726BF4006DD3B5 /* main.m in Sources */,
+				52ED95791C8CE29600B71B4A /* UIImage+MDQRCode.m in Sources */,
+				52ED955F1C8CCE1000B71B4A /* QRCodeReaderView.m in Sources */,
 				5410FDB31C65B7AB001DA96D /* MessagesViewController.swift in Sources */,
 				5ABF97241C7A45C300AD8F82 /* SignUpViewController.m in Sources */,
 			);
