@@ -1005,6 +1005,19 @@ send you a temporary password.</string>
             </objects>
             <point key="canvasLocation" x="-1357.5" y="4.5"/>
         </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="P5f-UC-lqd">
+            <objects>
+                <viewController id="Gm0-Ue-jf3" customClass="MessagesViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bjG-tv-WI0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6E0-kG-fYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="1169645.jpg" width="634" height="368"/>

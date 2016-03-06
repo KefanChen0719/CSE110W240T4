@@ -77,6 +77,22 @@ NSString *group_uid;
         [groups setObject:appDelegate.currentClassUid forKey:appDelegate.currentGroupUid];
         [curr_user updateChildValues:groups];
     }];
+    
+    Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
+    curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
+    curr_group = [curr_group childByAppendingPath:@"group"];
+    curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
+    Firebase *teammember = [curr_group childByAppendingPath:@"teammember"];
+    [teammember observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSMutableArray<NSString *> *member = snapshot.value;
+//        NSNumber* index = [NSNumber numberWithInt:(int)members.count];
+//        NSString* index_str = index.stringValue;
+        if(![member containsObject:appDelegate.firebase.authData.uid]){
+            [member insertObject:appDelegate.firebase.authData.uid atIndex:member.count];
+        }
+        NSDictionary *update_info = @{@"teammember" : member};
+        [curr_group updateChildValues:update_info];
+    }];
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
     [self presentViewController:viewcontroller animated:YES completion:nil];
 
