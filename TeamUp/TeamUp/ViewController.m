@@ -57,6 +57,13 @@ NSMutableDictionary *result;
     [self createGroupLayout];
     [self memberDetailsLayout];
     [self changePasswordLayout];
+    
+    
+    
+    
+    
+    self.yearArray  = [[NSArray alloc]         initWithObjects:@"1",@"2",@"3",@"4", nil];
+    
 
 }
 
@@ -360,4 +367,41 @@ NSMutableDictionary *result;
     doneButton_frame.origin.y = updateButton_frame.origin.y + 50;
     self.doneButton.frame = doneButton_frame;
 }
+
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+    
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
+{
+    return 6;
+    
+}
+
+
+
+
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
+//{
+//    
+//}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
+    
+}
+
 @end
+
+
+
+
+
+
+
+

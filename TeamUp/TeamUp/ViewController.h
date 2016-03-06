@@ -12,7 +12,7 @@
 
 //Firebase *firebase;
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *majorLabel;
@@ -25,6 +25,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *changePassword;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIButton *courseUpdate;
+
+
+@property (weak, nonatomic) IBOutlet UIPickerView *yearPicker;
+@property (strong, nonatomic)          NSArray *yearArray;
+
+
+
+
+
+
 
 @property (weak, nonatomic) IBOutlet UITextField *addProfText;
 @property (weak, nonatomic) IBOutlet UIButton *notFound;
@@ -59,5 +69,16 @@
 - (IBAction)keyboardExit:(id)sender;
 - (IBAction)updateNewPassword:(id)sender;
 - (IBAction)createGroup:(id)sender;
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component;
+
 @end
+
+
+
+
 

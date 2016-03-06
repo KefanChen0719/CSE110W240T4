@@ -87,7 +87,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Era-z2-4E9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1271.2" y="-776.74000000000001"/>
+            <point key="canvasLocation" x="-1324.5" y="-798.5"/>
         </scene>
         <!--signIn-->
         <scene sceneID="tne-QT-ifu">
@@ -243,7 +243,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6f-Dw-LqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249.5" y="-3.5"/>
+            <point key="canvasLocation" x="-377.5" y="3.5"/>
         </scene>
         <!--ClassGroups-->
         <scene sceneID="hw7-ue-s0P">
@@ -275,7 +275,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knc-mj-DV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1307.5" y="1660.5"/>
+            <point key="canvasLocation" x="-1368" y="1684"/>
         </scene>
         <!--groupChat-->
         <scene sceneID="Afe-up-4ge">
@@ -334,7 +334,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRf-hq-wuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-802.5" y="-55.5"/>
+            <point key="canvasLocation" x="-868.5" y="-23.5"/>
         </scene>
         <!--createGroup-->
         <scene sceneID="SbY-QW-KI2">
@@ -397,7 +397,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPB-D4-MFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826.5" y="1666.5"/>
+            <point key="canvasLocation" x="-849.5" y="1690.5"/>
         </scene>
         <!--AddGroup-->
         <scene sceneID="HWx-8l-H4J">
@@ -425,7 +425,7 @@ send you a temporary password.</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BFm-kd-Xe3">
                                 <rect key="frame" x="275" y="25" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Join"/>
                                 <connections>
                                     <action selector="addGroup:" destination="cMC-sb-AkV" eventType="touchUpInside" id="Tbz-Ym-epU"/>
                                 </connections>
@@ -440,7 +440,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgc-5y-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="1673"/>
+            <point key="canvasLocation" x="-350" y="1684"/>
         </scene>
         <!--signUp-->
         <scene sceneID="5JJ-HN-npT">
@@ -518,7 +518,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTr-md-jN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="-797.56666666666661"/>
+            <point key="canvasLocation" x="-377.5" y="-798.5"/>
         </scene>
         <!--searchClass-->
         <scene sceneID="EZw-gh-Qjf">
@@ -614,7 +614,7 @@ send you a temporary password.</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-826.5" y="792.49999999999989"/>
+            <point key="canvasLocation" x="-849.5" y="792.5"/>
         </scene>
         <!--addCourse-->
         <scene sceneID="zfW-ji-vNS">
@@ -724,7 +724,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89r-Ye-Dsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387.60000000000002" y="792.83333333333337"/>
+            <point key="canvasLocation" x="-377.5" y="792.5"/>
         </scene>
         <!--groupDetailAsMember-->
         <scene sceneID="U6g-nl-02B">
@@ -806,7 +806,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdB-4g-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1307.5" y="802.5"/>
+            <point key="canvasLocation" x="-1330.5" y="810.5"/>
         </scene>
         <!--memberDetails-->
         <scene sceneID="ffw-FC-m0C">
@@ -901,7 +901,7 @@ send you a temporary password.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your major here" textAlignment="natural" minimumFontSize="17" id="Ne1-un-cYg">
-                                <rect key="frame" x="152" y="277" width="168" height="30"/>
+                                <rect key="frame" x="152" y="276" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -909,6 +909,10 @@ send you a temporary password.</string>
                                     <action selector="keyboardExit:" destination="e0j-yR-2gV" eventType="editingDidEndOnExit" id="cfJ-b4-Nky"/>
                                 </connections>
                             </textField>
+                            <pickerView contentMode="scaleToFill" id="D02-1w-cme">
+                                <rect key="frame" x="-6" y="421" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -924,11 +928,12 @@ send you a temporary password.</string>
                         <outlet property="nameLabel" destination="tLm-bA-8Vc" id="kXY-ez-kgd"/>
                         <outlet property="topView" destination="nY6-3A-Nlu" id="nAt-bM-E86"/>
                         <outlet property="yearLabel" destination="rCl-cn-3We" id="wbR-Y4-wFG"/>
+                        <outlet property="yearPicker" destination="D02-1w-cme" id="hXR-Zw-xg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-zb-gd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198.5" y="-3.5"/>
+            <point key="canvasLocation" x="153.5" y="3.5"/>
         </scene>
         <!--changeNewPassword-->
         <scene sceneID="TB0-D0-ecP">
@@ -985,7 +990,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKV-ca-Vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631.5" y="12.5"/>
+            <point key="canvasLocation" x="632.5" y="3.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SRE-Oj-YyW">
