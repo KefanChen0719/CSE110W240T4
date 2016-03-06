@@ -63,7 +63,8 @@ NSString* QR_UID;
         QR_UID = @"ERROR";
     }
     else{
-        QR_UID = appDelegate.firebase.authData.uid;
+        QR_UID = [appDelegate.currentClassUid stringByAppendingString:@";"];
+        QR_UID = [QR_UID stringByAppendingString:appDelegate.currentGroupUid];
     }
     CGFloat imageSize = ceilf(self.view.bounds.size.width * 0.6f);
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.5f - imageSize * 0.5f), floorf(self.view.bounds.size.height * 0.5f - imageSize * 0.5f), imageSize, imageSize)];
