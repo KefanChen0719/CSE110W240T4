@@ -40,20 +40,27 @@ NSArray<NSString*> *class_groups_uid;
         }
         
         [scrollView setContentSize:CGSizeMake(scrollView.bounds.size.width, scrollView.bounds.size.height*3)];
-        
+        CGRect contentRect = CGRectZero;
         
         for (NSInteger index = 0; index < numGroups; index++)
         {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             //button.frame = CGRectMake((scrollView.frame.size.width / 2.0f) - 50.0f, 10.0f + (50.0f * (CGFloat)index), 100.0f, 30.0f);
-            button.frame = CGRectMake(scrollView.frame.size.width * 0.1, 10.0f + (100.0f * (CGFloat)index), self.view.frame.size.width*0.8,self.view.frame.size.height*0.1);
-            [button setBackgroundColor:[UIColor colorWithRed:163/255.0 green:205/255.0 blue:210/255.0 alpha:1.0]];
+            //button.frame = CGRectMake(scrollView.frame.size.width * 0.1, 10.0f + (100.0f * (CGFloat)index), self.view.frame.size.width*0.8,self.view.frame.size.height*0.1);
+            button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
+            //[button setBackgroundColor:[UIColor colorWithRed:163/255.0 green:205/255.0 blue:210/255.0 alpha:1.0]];
+            [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
             button.tag = index;
             [button setTitle:[NSString stringWithFormat:[self getNameFromGroupUid: class_groups_uid[index]], ((long)index + 1)] forState:UIControlStateNormal];
+            [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [[button layer] setBorderWidth:2.0f];
+            button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
             [button addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:button];
+            contentRect = CGRectUnion(contentRect, button.frame);
         }
-        
+        scrollView.contentSize = contentRect.size;
         
         [self.view addSubview:scrollView];
     }];
