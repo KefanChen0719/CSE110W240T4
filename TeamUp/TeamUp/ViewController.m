@@ -197,6 +197,15 @@ NSMutableDictionary *result;
                                      @"password" : @"password"};
     NSDictionary *new_group = @{groupuid : new_group_info};
     [class updateChildValues:new_group];
+    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+    curr_user = [curr_user childByAppendingPath:@"groups"];
+    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
+        if(snapshot.childrenCount!=0)
+            [groups addEntriesFromDictionary:snapshot.value];
+        [groups setObject:appDelegate.currentClassUid forKey:groupuid];
+        [curr_user updateChildValues:groups];
+    }];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Yeah!"
                                                                    message:@"created" preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:appDelegate.defaultAction];
