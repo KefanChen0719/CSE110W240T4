@@ -1,15 +1,18 @@
 PODS:
+  - Batch (1.5.1)
   - Firebase (2.5.1)
   - JSQMessagesViewController (5.3.2):
     - JSQSystemSoundPlayer
   - JSQSystemSoundPlayer (4.3.0)
 
 DEPENDENCIES:
+  - Batch
   - Firebase (>= 2.5.0)
   - JSQMessagesViewController
   - JSQSystemSoundPlayer
 
 SPEC CHECKSUMS:
+  Batch: 968cfffd316d2f0e8cd652c97608c6c19e2ec099
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   JSQMessagesViewController: dc7194ed0ff8f32a7c972504ee3839e95505d91e
   JSQSystemSoundPlayer: 8021a6c823a8d83372c703f49ef7d1f31e7647ff

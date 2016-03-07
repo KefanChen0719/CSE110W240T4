@@ -7,6 +7,7 @@ target 'TeamUp' do
 pod 'Firebase', '>= 2.5.0'
 pod 'JSQSystemSoundPlayer'
 pod 'JSQMessagesViewController'
+pod 'Batch'
 end
 
 target 'TeamUpTests' do
