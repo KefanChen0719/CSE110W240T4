@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3414B42B5125EB2CD8D96B1A /* libPods-TeamUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */; };
+		296D59583F1D8DE067F6DFC0 /* Pods_TeamUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1048CC83F4A54261657627 /* Pods_TeamUp.framework */; };
 		52ED95511C88179B00B71B4A /* ClassGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */; };
 		52ED955D1C8CCE1000B71B4A /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95531C8CCE1000B71B4A /* QRCameraSwitchButton.m */; };
 		52ED955E1C8CCE1000B71B4A /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95551C8CCE1000B71B4A /* QRCodeReader.m */; };
@@ -151,12 +151,12 @@
 		5AC47BA31C726BF4006DD3B5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AC47BA71C726C23006DD3B5 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
-		94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FD5D271C88B7D3005C8FBF /* AddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGroupViewController.h; sourceTree = "<group>"; };
 		94FD5D281C88B7D3005C8FBF /* AddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupViewController.m; sourceTree = "<group>"; };
 		9820D2121C793F4C0001805F /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB480674000418BEE6F1B1D6 /* Pods-TeamUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.release.xcconfig"; sourceTree = "<group>"; };
+		EB1048CC83F4A54261657627 /* Pods_TeamUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +169,7 @@
 				5410FFB91C65D6C1001DA96D /* SystemConfiguration.framework in Frameworks */,
 				549612101C5C024800F8E67B /* Security.framework in Frameworks */,
 				5496120E1C5C024100F8E67B /* CFNetwork.framework in Frameworks */,
-				3414B42B5125EB2CD8D96B1A /* libPods-TeamUp.a in Frameworks */,
+				296D59583F1D8DE067F6DFC0 /* Pods_TeamUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +335,7 @@
 				549612111C5C028000F8E67B /* libxml2.2.dylib */,
 				5496120F1C5C024800F8E67B /* Security.framework */,
 				5496120D1C5C024100F8E67B /* CFNetwork.framework */,
-				94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */,
+				EB1048CC83F4A54261657627 /* Pods_TeamUp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

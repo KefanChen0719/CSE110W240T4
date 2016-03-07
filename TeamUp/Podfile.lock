@@ -1,5 +1,5 @@
 PODS:
-  - Firebase (2.5.0)
+  - Firebase (2.5.1)
   - JSQMessagesViewController (5.3.2):
     - JSQSystemSoundPlayer
   - JSQSystemSoundPlayer (4.3.0)
@@ -10,7 +10,7 @@ DEPENDENCIES:
   - JSQSystemSoundPlayer
 
 SPEC CHECKSUMS:
-  Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
+  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   JSQMessagesViewController: dc7194ed0ff8f32a7c972504ee3839e95505d91e
   JSQSystemSoundPlayer: 8021a6c823a8d83372c703f49ef7d1f31e7647ff
 
