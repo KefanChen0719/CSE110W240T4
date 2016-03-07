@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -87,7 +87,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Era-z2-4E9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1271.2" y="-776.74000000000001"/>
+            <point key="canvasLocation" x="-1324.5" y="-798.5"/>
         </scene>
         <!--signIn-->
         <scene sceneID="tne-QT-ifu">
@@ -103,23 +103,6 @@ send you a temporary password.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aOe-V5-5au">
-                                <rect key="frame" x="55" y="383" width="265" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.78823529410000004" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="0.2470588235" green="0.39607843139999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1l-yr-TKv"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Your UCSD Email" textAlignment="natural" minimumFontSize="17" id="JS8-Hd-avl">
                                 <rect key="frame" x="55" y="245" width="265" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -162,6 +145,23 @@ send you a temporary password.</string>
                                 </state>
                                 <connections>
                                     <action selector="forgetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9CF-IQ-ZtP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aOe-V5-5au">
+                                <rect key="frame" x="55" y="373" width="265" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82332381965944279" green="0.92549019607843142" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.2470588235" green="0.39607843139999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1l-yr-TKv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -275,7 +275,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knc-mj-DV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1307.5" y="1660.5"/>
+            <point key="canvasLocation" x="-1368" y="1684"/>
         </scene>
         <!--groupChat-->
         <scene sceneID="Afe-up-4ge">
@@ -388,7 +388,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPB-D4-MFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826.5" y="1666.5"/>
+            <point key="canvasLocation" x="-849.5" y="1690.5"/>
         </scene>
         <!--AddGroup-->
         <scene sceneID="HWx-8l-H4J">
@@ -398,13 +398,6 @@ send you a temporary password.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dxk-EY-Yic">
-                                <rect key="frame" x="88" y="98" width="144" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ChJ-PL-H1h">
                                 <rect key="frame" x="19" y="25" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -416,11 +409,18 @@ send you a temporary password.</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BFm-kd-Xe3">
                                 <rect key="frame" x="275" y="25" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Join"/>
                                 <connections>
                                     <action selector="addGroup:" destination="cMC-sb-AkV" eventType="touchUpInside" id="Tbz-Ym-epU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dxk-EY-Yic">
+                                <rect key="frame" x="88" y="18" width="144" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -431,7 +431,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgc-5y-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="1673"/>
+            <point key="canvasLocation" x="-350" y="1684"/>
         </scene>
         <!--signUp-->
         <scene sceneID="5JJ-HN-npT">
@@ -509,7 +509,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTr-md-jN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="-797.56666666666661"/>
+            <point key="canvasLocation" x="-377.5" y="-798.5"/>
         </scene>
         <!--searchClass-->
         <scene sceneID="EZw-gh-Qjf">
@@ -520,7 +520,7 @@ send you a temporary password.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xX8-FL-yo5">
-                                <rect key="frame" x="15" y="51" width="45" height="30"/>
+                                <rect key="frame" x="14" y="38" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Back">
@@ -531,7 +531,7 @@ send you a temporary password.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ufm-na-QHK">
-                                <rect key="frame" x="231" y="51" width="124" height="30"/>
+                                <rect key="frame" x="231" y="31" width="124" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Course not found">
@@ -560,6 +560,17 @@ send you a temporary password.</string>
                                     <outlet property="delegate" destination="JD1-bk-77F" id="22U-4P-bwU"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PxZ-WP-5kr">
+                                <rect key="frame" x="256" y="69" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Scan QRCode">
+                                    <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanAction:" destination="JD1-bk-77F" eventType="touchUpInside" id="VaZ-D5-PUd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -605,7 +616,7 @@ send you a temporary password.</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-826.5" y="792.49999999999989"/>
+            <point key="canvasLocation" x="-849.5" y="792.5"/>
         </scene>
         <!--addCourse-->
         <scene sceneID="zfW-ji-vNS">
@@ -715,7 +726,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89r-Ye-Dsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387.60000000000002" y="792.83333333333337"/>
+            <point key="canvasLocation" x="-377.5" y="792.5"/>
         </scene>
         <!--groupDetailAsMember-->
         <scene sceneID="U6g-nl-02B">
@@ -797,7 +808,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdB-4g-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1307.5" y="802.5"/>
+            <point key="canvasLocation" x="-1330.5" y="810.5"/>
         </scene>
         <!--memberDetails-->
         <scene sceneID="ffw-FC-m0C">
@@ -892,7 +903,7 @@ send you a temporary password.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your major here" textAlignment="natural" minimumFontSize="17" id="Ne1-un-cYg">
-                                <rect key="frame" x="152" y="277" width="168" height="30"/>
+                                <rect key="frame" x="152" y="276" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -900,6 +911,10 @@ send you a temporary password.</string>
                                     <action selector="keyboardExit:" destination="e0j-yR-2gV" eventType="editingDidEndOnExit" id="cfJ-b4-Nky"/>
                                 </connections>
                             </textField>
+                            <pickerView contentMode="scaleToFill" id="D02-1w-cme">
+                                <rect key="frame" x="-6" y="421" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -915,6 +930,7 @@ send you a temporary password.</string>
                         <outlet property="nameLabel" destination="tLm-bA-8Vc" id="kXY-ez-kgd"/>
                         <outlet property="topView" destination="nY6-3A-Nlu" id="nAt-bM-E86"/>
                         <outlet property="yearLabel" destination="rCl-cn-3We" id="wbR-Y4-wFG"/>
+                        <outlet property="yearPicker" destination="D02-1w-cme" id="hXR-Zw-xg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-zb-gd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -977,6 +993,19 @@ send you a temporary password.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKV-ca-Vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1695.5" y="12.5"/>
+        </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="P5f-UC-lqd">
+            <objects>
+                <viewController id="Gm0-Ue-jf3" customClass="MessagesViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bjG-tv-WI0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6E0-kG-fYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 #import "AddGroupViewController.h"
+#import "UIImage+MDQRCode.h"
 
 @interface AddGroupViewController ()
 
@@ -17,6 +18,7 @@
 @synthesize appDelegate,viewcontroller;
 
 NSString *group_uid;
+NSString* QR_UID;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,7 +29,7 @@ NSString *group_uid;
     
     //Group name label setting
     UILabel *groupName = [[UILabel alloc] init];
-    [groupName setFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/8 * 3,200,30)];
+    [groupName setFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/16 * 2,200,30)];
     groupName.backgroundColor=[UIColor clearColor];
     groupName.textColor=[UIColor blackColor];
     groupName.userInteractionEnabled=YES;
@@ -36,7 +38,7 @@ NSString *group_uid;
     
     //Group max number setting
     UILabel *maxNum = [[UILabel alloc] init];
-    [maxNum setFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/8 * 4,200,30)];
+    [maxNum setFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/16 * 3,200,30)];
     maxNum.backgroundColor=[UIColor clearColor];
     maxNum.textColor=[UIColor blackColor];
     maxNum.userInteractionEnabled=YES;
@@ -45,7 +47,7 @@ NSString *group_uid;
     
     
     UILabel *label_info = [[UILabel alloc] init];
-    [label_info setFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/8 * 5,200,30)];
+    [label_info setFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/16 * 4,200,30)];
     label_info.backgroundColor=[UIColor clearColor];
     label_info.textColor=[UIColor blackColor];
     label_info.userInteractionEnabled=YES;
@@ -57,6 +59,17 @@ NSString *group_uid;
     [groupinfo setText:[NSString stringWithFormat: @"%@", appDelegate.currentGroupDictionary[@"groupinfo"]]];
     [self.view addSubview:groupinfo];
     
+    if([appDelegate.firebase.authData.uid isEqualToString:@""]){
+        QR_UID = @"ERROR";
+    }
+    else{
+        QR_UID = [appDelegate.currentClassUid stringByAppendingString:@";"];
+        QR_UID = [QR_UID stringByAppendingString:appDelegate.currentGroupUid];
+    }
+    CGFloat imageSize = ceilf(self.view.bounds.size.width * 0.6f);
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.5f - imageSize * 0.5f), floorf(self.view.bounds.size.height * 0.5f - imageSize * 0.5f), imageSize, imageSize)];
+    imageView.image = [UIImage mdQRCodeForString:QR_UID size:imageView.bounds.size.width fillColor:[UIColor darkGrayColor]];
+    [self.view addSubview:imageView];
     
     
     
@@ -76,6 +89,22 @@ NSString *group_uid;
             [groups addEntriesFromDictionary:snapshot.value];
         [groups setObject:appDelegate.currentClassUid forKey:appDelegate.currentGroupUid];
         [curr_user updateChildValues:groups];
+    }];
+    
+    Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
+    curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
+    curr_group = [curr_group childByAppendingPath:@"group"];
+    curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
+    Firebase *teammember = [curr_group childByAppendingPath:@"teammember"];
+    [teammember observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSMutableArray<NSString *> *member = snapshot.value;
+//        NSNumber* index = [NSNumber numberWithInt:(int)members.count];
+//        NSString* index_str = index.stringValue;
+        if(![member containsObject:appDelegate.firebase.authData.uid]){
+            [member insertObject:appDelegate.firebase.authData.uid atIndex:member.count];
+        }
+        NSDictionary *update_info = @{@"teammember" : member};
+        [curr_group updateChildValues:update_info];
     }];
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
     [self presentViewController:viewcontroller animated:YES completion:nil];

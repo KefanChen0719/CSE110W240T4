@@ -11,7 +11,8 @@
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
 #import <Firebase/Firebase.h>
-
+#import "QRCodeReaderViewController.h"
+#import "QRCodeReader.h"
 @interface ViewController ()
 
 @end
@@ -57,6 +58,8 @@ NSMutableDictionary *result;
     [self createGroupLayout];
     [self memberDetailsLayout];
     [self changePasswordLayout];
+    self.yearArray  = [[NSArray alloc]         initWithObjects:@"1",@"2",@"3",@"4", nil];
+    
 
 }
 
@@ -189,11 +192,63 @@ NSMutableDictionary *result;
                                      @"isprivate" : isPrivate,
                                      @"password" : @"password"};
     NSDictionary *new_group = @{groupuid : new_group_info};
-    [class updateChildValues:new_group];
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Yeah!"
-                                                                   message:@"created" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:appDelegate.defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    __block NSDictionary *exist_groups;
+    class = [appDelegate.firebase childByAppendingPath:@"classes"];
+    class = [class childByAppendingPath:appDelegate.currentClassUid];
+    class = [class childByAppendingPath:@"group"];
+    [class observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        bool canAdd = true;
+        exist_groups = snapshot.value;
+        for(NSString* groupids in exist_groups){
+            if ([(exist_groups[groupids])[@"name"] isEqualToString: groupName]) {
+                canAdd = false;
+                NSLog(@"duplicate name: \n %@", exist_groups);
+            }
+        }
+        if(canAdd){
+            Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+            curr_user = [curr_user childByAppendingPath:@"groups"];
+            [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
+                if(snapshot.childrenCount!=0)
+                    [groups addEntriesFromDictionary:snapshot.value];
+                [groups setObject:appDelegate.currentClassUid forKey:groupuid];
+                [curr_user updateChildValues:groups];
+                [class updateChildValues:new_group];
+            }];
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Yeah!"
+                                                                           message:@"created" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"ClassGroupsViewController"];
+                [self presentViewController:viewcontroller animated:YES completion:nil];
+            }];
+            [alert addAction:alertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else{
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Sorry"
+                                                                           message:@"Name used, please try another name" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:appDelegate.defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+//    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+//    curr_user = [curr_user childByAppendingPath:@"groups"];
+//    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
+//        if(snapshot.childrenCount!=0)
+//            [groups addEntriesFromDictionary:snapshot.value];
+//        [groups setObject:appDelegate.currentClassUid forKey:groupuid];
+//        [curr_user updateChildValues:groups];
+//    }];
+//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Yeah!"
+//                                                                   message:@"created" preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+//        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"ClassGroupsViewController"];
+//        [self presentViewController:viewcontroller animated:YES completion:nil];
+//    }];
+//    [alert addAction:alertAction];
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -360,4 +415,115 @@ NSMutableDictionary *result;
     doneButton_frame.origin.y = updateButton_frame.origin.y + 50;
     self.doneButton.frame = doneButton_frame;
 }
+
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+    
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
+{
+    return 6;
+    
+}
+
+
+
+
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
+//{
+//    
+//}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
+    
+}
+
+- (IBAction)scanAction:(id)sender
+{
+    
+    //appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
+        static QRCodeReaderViewController *vc = nil;
+        static dispatch_once_t onceToken;
+        
+        dispatch_once(&onceToken, ^{
+            QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+            vc                   = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+            vc.modalPresentationStyle = UIModalPresentationFormSheet;
+        });
+        vc.delegate = self;
+        
+        [vc setCompletionWithBlock:^(NSString *resultAsString) {
+            NSLog(@"Completion with result: %@", resultAsString);
+            //appDelegate.uid = resultAsString;
+        }];
+        
+        [self presentViewController:vc animated:YES completion:NULL];
+    }
+    else {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Reader not supported by the current device" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:appDelegate.defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+#pragma mark - QRCodeReader Delegate Methods
+
+- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+{
+    __block NSString* tempClassUid;
+    __block NSString* tempGroupUid;
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (![result isEqualToString:@"ERROR"]) {
+            tempClassUid = [[result componentsSeparatedByString:@";"] objectAtIndex:0];
+            tempGroupUid = [[result componentsSeparatedByString:@";"] objectAtIndex:1];
+            NSLog(@"%@ : %@", tempClassUid, tempGroupUid);
+            Firebase *check = [appDelegate.firebase childByAppendingPath:@"classes"];
+            check = [check childByAppendingPath:tempClassUid];
+            [check observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                if(snapshot.childrenCount==0){
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"There is error with the QRCode" preferredStyle:UIAlertControllerStyleAlert];
+                    [alert addAction:appDelegate.defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+                else{
+                    NSDictionary *double_check = snapshot.value[@"group"];
+                    if (double_check[tempGroupUid]) {
+                        appDelegate.currentGroupDictionary = double_check[tempGroupUid];
+                        appDelegate.currentClassUid = tempClassUid;
+                        appDelegate.currentGroupUid = tempGroupUid;
+                        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"AddGroup"];
+                        [self presentViewController:viewcontroller animated:YES completion:nil];
+                    }
+                }
+            }];
+        }
+        else{
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"There is error with the QRCode" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:appDelegate.defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+}
+
+- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
 @end
+
+
+
+
+
+
+
+

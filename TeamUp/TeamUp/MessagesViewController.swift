@@ -24,7 +24,6 @@ import Foundation
   var ref: Firebase!
   var groupID: String!
   
-  
   // *** STEP 1: STORE FIREBASE REFERENCES
   var messagesRef: Firebase!
   
@@ -93,7 +92,7 @@ import Foundation
     avatars[name] = userImage
   }
   
-  override func viewDidLoad() {
+    override func viewDidLoad() {
     super.viewDidLoad()
   
     //self.topContentAdditionalInset = 44
