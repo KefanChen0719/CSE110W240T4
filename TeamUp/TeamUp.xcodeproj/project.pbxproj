@@ -48,6 +48,8 @@
 		5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
+		8E9543241C8E14A3002C35E3 /* Batch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543231C8E14A3002C35E3 /* Batch.framework */; };
+		8E9543261C8E14AB002C35E3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */; };
 		94FD5D291C88B7D3005C8FBF /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FD5D281C88B7D3005C8FBF /* AddGroupViewController.m */; };
 		9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
 		9820D2151C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
@@ -151,6 +153,8 @@
 		5AC47BA31C726BF4006DD3B5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AC47BA71C726C23006DD3B5 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		8E9543231C8E14A3002C35E3 /* Batch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Batch.framework; path = Pods/Batch.embeddedframework/Batch.framework; sourceTree = "<group>"; };
+		8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FD5D271C88B7D3005C8FBF /* AddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGroupViewController.h; sourceTree = "<group>"; };
 		94FD5D281C88B7D3005C8FBF /* AddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupViewController.m; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9543261C8E14AB002C35E3 /* libsqlite3.tbd in Frameworks */,
+				8E9543241C8E14A3002C35E3 /* Batch.framework in Frameworks */,
 				5410FFBD1C65D715001DA96D /* libicucore.A.dylib in Frameworks */,
 				5410FFBB1C65D6E8001DA96D /* libc++.1.dylib in Frameworks */,
 				5410FFB91C65D6C1001DA96D /* SystemConfiguration.framework in Frameworks */,
@@ -326,6 +332,8 @@
 		9D74B3D79B174FB084240E0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */,
+				8E9543231C8E14A3002C35E3 /* Batch.framework */,
 				5410FFBC1C65D715001DA96D /* libicucore.A.dylib */,
 				5410FFBA1C65D6E8001DA96D /* libc++.1.dylib */,
 				5410FFB81C65D6C1001DA96D /* SystemConfiguration.framework */,
@@ -412,7 +420,7 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 8VDXBX38T3;
+						DevelopmentTeam = G27F8AB9PH;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -714,6 +722,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Batch.embeddedframework",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -759,6 +768,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Batch.embeddedframework",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
