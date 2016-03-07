@@ -920,10 +920,6 @@ send you a temporary password.</string>
                                     <action selector="keyboardExit:" destination="e0j-yR-2gV" eventType="editingDidEndOnExit" id="cfJ-b4-Nky"/>
                                 </connections>
                             </textField>
-                            <pickerView contentMode="scaleToFill" id="D02-1w-cme">
-                                <rect key="frame" x="-6" y="421" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -939,7 +935,6 @@ send you a temporary password.</string>
                         <outlet property="nameLabel" destination="tLm-bA-8Vc" id="kXY-ez-kgd"/>
                         <outlet property="topView" destination="nY6-3A-Nlu" id="nAt-bM-E86"/>
                         <outlet property="yearLabel" destination="rCl-cn-3We" id="wbR-Y4-wFG"/>
-                        <outlet property="yearPicker" destination="D02-1w-cme" id="hXR-Zw-xg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-zb-gd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1040,7 +1035,7 @@ send you a temporary password.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u1L-c5-W4l"/>
-        <segue reference="Wb6-fH-OsW"/>
+        <segue reference="tPV-cf-Y4b"/>
         <segue reference="JZL-so-WAM"/>
         <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>
