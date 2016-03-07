@@ -412,7 +412,11 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
+<<<<<<< HEAD
+						DevelopmentTeam = V2J7D6MZET;
+=======
 						DevelopmentTeam = 8VDXBX38T3;
+>>>>>>> f525a168149375f46b93cd581c9766cabcbcd355
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
