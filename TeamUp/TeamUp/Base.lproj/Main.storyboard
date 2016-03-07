@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -103,23 +103,6 @@ send you a temporary password.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aOe-V5-5au">
-                                <rect key="frame" x="55" y="383" width="265" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.78823529410000004" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="0.2470588235" green="0.39607843139999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1l-yr-TKv"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Your UCSD Email" textAlignment="natural" minimumFontSize="17" id="JS8-Hd-avl">
                                 <rect key="frame" x="55" y="245" width="265" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -162,6 +145,23 @@ send you a temporary password.</string>
                                 </state>
                                 <connections>
                                     <action selector="forgetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9CF-IQ-ZtP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aOe-V5-5au">
+                                <rect key="frame" x="55" y="373" width="265" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82332381965944279" green="0.92549019607843142" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.2470588235" green="0.39607843139999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1l-yr-TKv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -243,7 +243,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6f-Dw-LqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-377.5" y="3.5"/>
+            <point key="canvasLocation" x="814.5" y="-3.5"/>
         </scene>
         <!--ClassGroups-->
         <scene sceneID="hw7-ue-s0P">
@@ -285,7 +285,7 @@ send you a temporary password.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="cpp-iA-5Xp">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="cpp-iA-5Xp">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -318,23 +318,14 @@ send you a temporary password.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.83137254901960789" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Group Chat" id="4Vq-pX-Pg4">
-                        <barButtonItem key="leftBarButtonItem" title="Go back" id="Mh3-4y-ZKb">
-                            <connections>
-                                <segue destination="qix-Aq-Vg8" kind="modal" id="pcw-IJ-FLm"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Details" id="gqQ-Zq-rbN">
-                            <connections>
-                                <segue destination="6Y2-d6-1gv" kind="push" id="Rg2-ky-GUK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="groupChatNavigation" destination="cpp-iA-5Xp" id="6bc-Ni-SAq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRf-hq-wuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868.5" y="-23.5"/>
+            <point key="canvasLocation" x="261.5" y="-55.5"/>
         </scene>
         <!--createGroup-->
         <scene sceneID="SbY-QW-KI2">
@@ -939,7 +930,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-zb-gd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153.5" y="3.5"/>
+            <point key="canvasLocation" x="1262.5" y="-3.5"/>
         </scene>
         <!--changeNewPassword-->
         <scene sceneID="TB0-D0-ecP">
@@ -996,25 +987,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKV-ca-Vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632.5" y="3.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="SRE-Oj-YyW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pm7-8Q-qJO" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rvh-hA-Lrs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WSX-Fx-Mn1" kind="relationship" relationship="rootViewController" id="rbe-1D-253"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dhX-3X-ZdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1357.5" y="4.5"/>
+            <point key="canvasLocation" x="1695.5" y="12.5"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="P5f-UC-lqd">
@@ -1034,8 +1007,10 @@ send you a temporary password.</string>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u1L-c5-W4l"/>
-        <segue reference="tPV-cf-Y4b"/>
+
+        <segue reference="Wb6-fH-OsW"/>
+        <segue reference="8BB-u2-kuq"/>
+
         <segue reference="JZL-so-WAM"/>
         <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>

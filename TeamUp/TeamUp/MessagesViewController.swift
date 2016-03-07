@@ -17,6 +17,7 @@ import Foundation
   var messages = [Message]()
   var avatars = Dictionary<String, UIImage>()
   var outgoingBubbleImageView = JSQMessagesBubbleImageFactory.outgoingMessageBubbleImageViewWithColor(UIColor.jsq_messageBubbleLightGrayColor())
+  @IBOutlet weak var groupChatNavigation: UIView!
   var incomingBubbleImageView = JSQMessagesBubbleImageFactory.incomingMessageBubbleImageViewWithColor(UIColor.jsq_messageBubbleGreenColor())
   var senderImageUrl: String!
   var batchMessages = true
@@ -93,6 +94,12 @@ import Foundation
   
     override func viewDidLoad() {
     super.viewDidLoad()
+  
+    //self.topContentAdditionalInset = 44
+    // self.edgesForExtendedLayout = UIRectEdgeNone
+    self.collectionView!.superview!.addSubview(self.groupChatNavigation)
+    
+    
     inputToolbar!.contentView!.leftBarButtonItem = nil
     automaticallyScrollsToMostRecentMessage = true
     
