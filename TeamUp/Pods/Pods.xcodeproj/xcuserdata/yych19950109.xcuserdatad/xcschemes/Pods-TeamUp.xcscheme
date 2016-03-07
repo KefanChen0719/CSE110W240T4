@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '07DFEF1277467E752B64BC21'
+               BlueprintIdentifier = '5D4DEF1A83B94E311366B434'
                BlueprintName = 'Pods-TeamUp'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_TeamUp.framework'>
+               BuildableName = 'libPods-TeamUp.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
