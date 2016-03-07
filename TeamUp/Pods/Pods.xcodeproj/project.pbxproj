@@ -192,6 +192,7 @@
 		8BB5F5A9D23425742AB5188A5D08B7C4 /* JSQMessagesCollectionViewCellIncoming.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesCollectionViewCellIncoming.xib; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellIncoming.xib; sourceTree = "<group>"; };
 		8D16684252EA5E9562DB2B9B0912AAF9 /* JSQMessagesCollectionViewCellOutgoing.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesCollectionViewCellOutgoing.xib; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellOutgoing.xib; sourceTree = "<group>"; };
 		8DF17834218A3324765152687033A817 /* bubble_tailless@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "bubble_tailless@2x.png"; path = "JSQMessagesViewController/Assets/Images/bubble_tailless@2x.png"; sourceTree = "<group>"; };
+		8E9543221C8E147E002C35E3 /* Batch.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Batch.embeddedframework; sourceTree = "<group>"; };
 		914B18FB1E263AA1078FDBBC596093EA /* JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessages.h; path = JSQMessagesViewController/JSQMessages.h; sourceTree = "<group>"; };
 		942AFB9A6862CF275C93589C7A68CD20 /* JSQMessagesCollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewDelegateFlowLayout.h; path = JSQMessagesViewController/Model/JSQMessagesCollectionViewDelegateFlowLayout.h; sourceTree = "<group>"; };
 		958623F30E3D151C210B25D8F806A660 /* JSQMessagesComposerTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesComposerTextView.h; path = JSQMessagesViewController/Views/JSQMessagesComposerTextView.h; sourceTree = "<group>"; };
@@ -463,6 +464,7 @@
 		F4CDA5FA9197A41E0081E84F932906EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E9543221C8E147E002C35E3 /* Batch.embeddedframework */,
 				580EC191E39C9A0C8580212854568626 /* iOS */,
 			);
 			name = Frameworks;

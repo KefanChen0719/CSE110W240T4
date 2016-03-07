@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Firebase/Firebase.h"
-
+@import Batch;
 
 @interface AppDelegate ()
 
@@ -45,6 +45,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [BatchPush setupPush];
+    [Batch startWithAPIKey:@"DEV56CF81FA4E5CC3DAD5F2A19BEA6"];
+    
+    [BatchPush registerForRemoteNotifications];
+    
  // Override point for customization after application launch.
     firebase = [[Firebase alloc] initWithUrl:@"https://resplendent-inferno-8485.firebaseio.com"];
     storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
