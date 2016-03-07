@@ -30,12 +30,6 @@ NSString *major;
 NSDictionary *classes;
 NSArray<NSString*> *allClassNames;
 NSMutableDictionary *result;
-NSArray<NSString*> *yearArray;
-
-
-
-
-
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -64,14 +58,7 @@ NSArray<NSString*> *yearArray;
     [self createGroupLayout];
     [self memberDetailsLayout];
     [self changePasswordLayout];
-    
-    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(5, 5, 200, 150)];
-    picker.delegate = self;
-    picker.dataSource = self;
-    
-    memberYearText.inputView = picker;
-    yearArray  = [[NSArray alloc] initWithObjects:@"Freshman",@"Sophomore",@"Junior",@"Senior", nil];
-    
+    self.yearArray  = [[NSArray alloc]         initWithObjects:@"1",@"2",@"3",@"4", nil];
     
 
 }
@@ -440,21 +427,22 @@ NSArray<NSString*> *yearArray;
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
 {
-    return yearArray.count;
+    return 6;
     
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
-{
-    return yearArray[row];
-}
+
+
+
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
+//{
+//    
+//}
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
 {
-    memberYearText.text = yearArray[row];
     
 }
-
 
 - (IBAction)scanAction:(id)sender
 {
