@@ -101,7 +101,7 @@ NSMutableDictionary *result;
         appDelegate.name = memberNameText.text;
         year = memberYearText.text;
         major = memberMajorText.text;
-        NSDictionary *user_info = @{@"name" : @"Jiasheng Zhu",
+        NSDictionary *user_info = @{@"name" : appDelegate.name,
                                     @"email" : appDelegate.email,
                                     @"major" : major,
                                     @"year" : year,

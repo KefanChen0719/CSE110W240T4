@@ -93,10 +93,12 @@ NSString *major3;
                 [alert addAction:appDelegate.defaultAction];
                 [self presentViewController:alert animated:YES completion:nil];
             } else {
+                [appDelegate.firebase authUser:self.emailText.text password:self.passwordText.text withCompletionBlock:nil];
                 email3 = self.emailText.text;
                 appDelegate.uid = result[@"uid"];
                 [appDelegate loadData];
                 appDelegate.name = @"new user";
+                appDelegate.email = self.emailText.text;
                 major3 = @"undecided";
                 year3 = @"0";
                 NSDictionary *user_info = @{
