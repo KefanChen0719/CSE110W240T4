@@ -28,8 +28,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *courseUpdate;
 
 
-@property (weak, nonatomic) IBOutlet UIPickerView *yearPicker;
-@property (strong, nonatomic)          NSArray *yearArray;
 @property (weak, nonatomic) IBOutlet UITextField *addProfText;
 @property (weak, nonatomic) IBOutlet UIButton *notFound;
 @property (weak, nonatomic) IBOutlet UITextField *searchText;
@@ -64,11 +62,7 @@
 - (IBAction)updateNewPassword:(id)sender;
 - (IBAction)createGroup:(id)sender;
 
-// returns the number of 'columns' to display.
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 
-// returns the # of rows in each component..
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component;
 - (IBAction)scanAction:(id)sender;
 @end
 

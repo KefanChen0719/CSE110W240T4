@@ -30,6 +30,13 @@ NSString *major;
 NSDictionary *classes;
 NSArray<NSString*> *allClassNames;
 NSMutableDictionary *result;
+NSArray<NSString*> *yearArray;
+NSArray<NSString*> *courseArray;
+
+UIPickerView *picker;
+UIPickerView *course_picker;
+
+
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -58,9 +65,21 @@ NSMutableDictionary *result;
     [self createGroupLayout];
     [self memberDetailsLayout];
     [self changePasswordLayout];
-    self.yearArray  = [[NSArray alloc]         initWithObjects:@"1",@"2",@"3",@"4", nil];
-    
 
+    picker = [[UIPickerView alloc] initWithFrame:CGRectMake(5, 5, 200, 150)];
+    picker.delegate = self;
+    picker.dataSource = self;
+    memberYearText.inputView = picker;
+    yearArray  = [[NSArray alloc] initWithObjects:@"Freshman",@"Sophomore",@"Junior",@"Senior", nil];
+    
+    
+    course_picker = [[UIPickerView alloc] initWithFrame:CGRectMake(5, 5, 200, 150)];
+    course_picker.delegate = self;
+    course_picker.dataSource = self;
+    addCourseText.inputView = course_picker;
+    courseArray  = [[NSArray alloc] initWithObjects:@"CSE",@"Math",@"Good",@"XXX", nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -417,32 +436,50 @@ NSMutableDictionary *result;
 }
 
 
-// returns the number of 'columns' to display.
+
+// Pickerview method override
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
     
 }
 
-// returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
 {
-    return 6;
+    if([pickerView isEqual: picker]){
+        return yearArray.count;
+    }
+    else if([pickerView isEqual: course_picker]){
+        return courseArray.count;
+    }
+    else return 0;
+    
     
 }
 
-
-
-
-//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
-//{
-//    
-//}
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
+{
+    if([pickerView isEqual: picker]){
+        return yearArray[row];
+    }
+    else if([pickerView isEqual: course_picker]){
+        return courseArray[row];
+    }
+    else return 0;
+}
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
 {
-    
+    if([pickerView isEqual: picker]){
+        memberYearText.text = yearArray[row];
+    }
+    else if([pickerView isEqual: course_picker]){
+        addCourseText.text = courseArray[row];
+    }
+    else{}
 }
+
+
 
 - (IBAction)scanAction:(id)sender
 {
