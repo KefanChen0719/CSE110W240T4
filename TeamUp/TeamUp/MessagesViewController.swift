@@ -12,8 +12,10 @@ import Foundation
 
 @objc class MessagesViewController: JSQMessagesViewController {
   
+  @IBOutlet weak var detailButton: UIButton!
   var user: FAuthData?
   
+  @IBOutlet weak var groupName: UILabel!
   var messages = [Message]()
   var avatars = Dictionary<String, UIImage>()
   var outgoingBubbleImageView = JSQMessagesBubbleImageFactory.outgoingMessageBubbleImageViewWithColor(UIColor.jsq_messageBubbleLightGrayColor())
@@ -98,8 +100,10 @@ import Foundation
     //self.topContentAdditionalInset = 44
     // self.edgesForExtendedLayout = UIRectEdgeNone
     self.collectionView!.superview!.addSubview(self.groupChatNavigation)
+    //self.detailButton.frame.origin.x = (self.detailButton.superview?.frame.size.width)! - self.detailButton.frame.size.width - 10
+    self.detailButton.frame.origin.x = self.view.frame.size.width - self.detailButton.frame.size.width
     
-    
+        
     inputToolbar!.contentView!.leftBarButtonItem = nil
     automaticallyScrollsToMostRecentMessage = true
     
@@ -114,6 +118,11 @@ import Foundation
     }
     
     setupFirebase()
+    let index = groupID.startIndex.advancedBy(36)
+    self.groupName.text = groupID.substringFromIndex(index)
+    groupName.frame.size.width = self.view.frame.size.width / 2
+    groupName.frame.origin.x = self.view.frame.size.width / 4
+    groupName.textAlignment = NSTextAlignment.Center
   }
   
   override func viewDidAppear(animated: Bool) {
