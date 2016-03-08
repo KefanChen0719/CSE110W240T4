@@ -270,6 +270,7 @@ UIPickerView *course_picker;
 //    [self presentViewController:alert animated:YES completion:nil];
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
@@ -553,6 +554,53 @@ UIPickerView *course_picker;
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+
+- (IBAction)quitGroup:(id)sender {
+    
+    NSLog(@"Hello!!!!!!!!!!!!!!!!");
+    
+    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+    
+    Firebase *group_dict = [curr_user childByAppendingPath:@"groups"];
+    
+   
+    
+    [group_dict observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSMutableDictionary *groups = snapshot.value;
+        //NSLog(@"OLD GROUP: %@", groups);
+        NSString *group_uid = appDelegate.currentGroupUid;
+        [groups removeObjectForKey:group_uid];
+        //NSLog(@"NEW GROUP: %@", groups);
+        NSDictionary* update_group = @{@"groups" : groups};
+        [[group_dict parent] updateChildValues:update_group];
+    }];
+    
+    Firebase *class_group = [class_ref childByAppendingPath:@"group"];
+    
+    Firebase *class = [class_group childByAppendingPath:appDelegate.Quit_ClassUid];
+    
+    NSLog(@"class_uid %@", appDelegate.Quit_ClassUid);
+    
+    Firebase *group_member = [class childByAppendingPath:@"teammember"];
+    
+    [group_member observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSMutableDictionary *member = snapshot.value;
+        NSLog(@"OLD GROUP: %@", member);
+        
+//        NSString *user_uid = appDelegate.uid;
+//        [member removeObjectForKey:user_uid];
+//        NSLog(@"NEW GROUP: %@", member);
+//        NSDictionary* update_group = @{@"groups" : member};
+//        [[group_member parent] updateChildValues:update_group];
+    }];
+    
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
+    [self presentViewController:viewcontroller animated:YES completion:nil];
+    
+    
+}
+
 
 
 @end

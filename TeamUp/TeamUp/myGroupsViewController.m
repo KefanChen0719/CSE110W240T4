@@ -46,42 +46,6 @@ NSArray<NSString*> *groups_uid;
     accountButton_frame.origin.y = view_frame.size.height - accountButton_frame.size.height - 5;
     self.accountButton.frame = accountButton_frame;
     
-//    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
-//    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-//    curr_user = [curr_user childByAppendingPath:@"groups"];
-//    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//        groups = snapshot.value;
-//        NSUInteger numGroups = 0;
-//        if(snapshot.childrenCount != 0){
-//        groups_uid = groups.allKeys;
-//        NSUInteger group_num = groups_uid.count;
-//        NSLog(@"%lu: ", (unsigned long)group_num);
-//        numGroups = groups_uid.count;
-//        }
-//        else{
-//            numGroups = 0;
-//        }
-//        
-//        [scrollView setContentSize:CGSizeMake(scrollView.bounds.size.width, scrollView.bounds.size.height*3)];
-//        
-//        
-//        for (NSInteger index = 0; index < numGroups; index++)
-//        {
-//            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//            //button.frame = CGRectMake((scrollView.frame.size.width / 2.0f) - 50.0f, 10.0f + (50.0f * (CGFloat)index), 100.0f, 30.0f);
-//            button.frame = CGRectMake(scrollView.frame.size.width * 0.1, 10.0f + (100.0f * (CGFloat)index), self.view.frame.size.width*0.8,self.view.frame.size.height*0.1);
-//            [button setBackgroundColor:[UIColor colorWithRed:163/255.0 green:205/255.0 blue:210/255.0 alpha:1.0]];
-//            button.tag = index;
-//            [button setTitle:[NSString stringWithFormat:[self getNameFromGroupUid: groups_uid[index]], ((long)index + 1)] forState:UIControlStateNormal];
-//            [button addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
-//            [scrollView addSubview:button];
-//        }
-//        
-//        
-//        [self.view addSubview:scrollView];
-//    }];
-    
-    
 }
 
 
@@ -117,6 +81,7 @@ NSArray<NSString*> *groups_uid;
             button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
             [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
             button.tag = index;
+            appDelegate.Quit_ClassUid = groups[groups_uid[index]];
             NSString *string = [NSString stringWithFormat:@"%@%@%@", [groups[groups_uid[index]] uppercaseString], @"  ", [self getNameFromGroupUid: groups_uid[index]]];
             [button setTitle:[NSString stringWithFormat:string, ((long)index + 1)] forState:UIControlStateNormal];
             //button.layer.cornerRadius = 9;
@@ -151,6 +116,7 @@ NSArray<NSString*> *groups_uid;
 {
     NSLog(@"Button %ld %@", (long)button.tag, groups[groups_uid[button.tag]]);
     NSString * currentGroupUid = groups_uid[button.tag];
+    appDelegate.currentGroupUid = currentGroupUid;
   
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"MessagesViewContr"];
   

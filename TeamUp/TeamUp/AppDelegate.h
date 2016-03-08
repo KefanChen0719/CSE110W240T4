@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *currentGroupUid;
 @property (strong, nonatomic) NSString *currentClassUid;
+@property (strong, nonatomic) NSString *Quit_ClassUid;
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) Firebase *users;
 @property (strong, nonatomic) Firebase *users_ref;

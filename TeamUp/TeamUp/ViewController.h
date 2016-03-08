@@ -15,6 +15,9 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIPickerViewDataSource,UIPickerViewDelegate>
 
+
+
+// Account Information
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *majorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
@@ -54,6 +57,16 @@
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UIViewController *viewcontroller;
 
+
+//Group Member scene
+@property (weak, nonatomic) IBOutlet UIButton *quitGroup_button;
+
+
+
+
+
+
+
 - (IBAction)signOut:(id)sender;
 - (IBAction)memberInfoEditor:(id)sender;
 - (IBAction)searchClasses:(id)sender;
@@ -61,6 +74,7 @@
 - (IBAction)keyboardExit:(id)sender;
 - (IBAction)updateNewPassword:(id)sender;
 - (IBAction)createGroup:(id)sender;
+- (IBAction)quitGroup:(id)sender;
 
 
 - (IBAction)scanAction:(id)sender;
