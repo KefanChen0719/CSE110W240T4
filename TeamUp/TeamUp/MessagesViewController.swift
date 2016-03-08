@@ -99,6 +99,7 @@ import Foundation
   
     //self.topContentAdditionalInset = 44
     // self.edgesForExtendedLayout = UIRectEdgeNone
+
     self.collectionView!.superview!.addSubview(self.groupChatNavigation)
     //self.detailButton.frame.origin.x = (self.detailButton.superview?.frame.size.width)! - self.detailButton.frame.size.width - 10
     self.detailButton.frame.origin.x = self.view.frame.size.width - self.detailButton.frame.size.width
