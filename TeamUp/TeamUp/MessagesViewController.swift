@@ -12,6 +12,7 @@ import Foundation
 
 @objc class MessagesViewController: JSQMessagesViewController {
   
+    @IBOutlet weak var topView: UIView!
   @IBOutlet weak var detailButton: UIButton!
   var user: FAuthData?
   
@@ -119,11 +120,12 @@ import Foundation
     }
     
     setupFirebase()
+    self.topView.frame.size.width = self.collectionView!.superview!.frame.size.width
     let index = groupID.startIndex.advancedBy(36)
     self.groupName.text = groupID.substringFromIndex(index)
-    groupName.frame.size.width = self.view.frame.size.width / 2
-    groupName.frame.origin.x = self.view.frame.size.width / 4
-    groupName.textAlignment = NSTextAlignment.Center
+    self.groupName.frame.size.width = self.groupName.superview!.frame.size.width / 2
+    self.groupName.frame.origin.x = self.groupName.superview!.frame.size.width / 4
+    self.groupName.textAlignment = NSTextAlignment.Center
   }
   
   override func viewDidAppear(animated: Bool) {

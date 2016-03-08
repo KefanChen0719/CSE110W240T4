@@ -18,7 +18,7 @@
 @end
 
 @implementation ViewController
-@synthesize memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch, appDelegate, viewcontroller, TeamMemberScrollView;
+@synthesize memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch, appDelegate, viewcontroller; //TeamMemberScrollView;
 
 Firebase *class_ref;
 Firebase *class;
@@ -54,6 +54,70 @@ UIPickerView *course_picker;
     
     //initialization ends here
     //not run-time initialization
+    NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+    
+    [dateformate setDateFormat:@"dd/MM/YYYY"];
+    
+    NSString *date_String=[dateformate stringFromDate:[NSDate date]];
+    
+    NSLog(@"User's current time in their preference format !!!!!!!!!!!!!!!!!!!:%@",date_String);
+    
+    NSString *date_year = [date_String substringWithRange:NSMakeRange(6, 4)];
+    
+    
+    
+    NSLog(@"year !!!!!!!!!!:%@", date_year);
+    
+    NSString *date_month = [date_String substringWithRange:NSMakeRange(4, 2)];
+    
+    int int_date_month = [date_month intValue];
+    
+    NSLog(@"month !!!!!!!!!!:%d", int_date_month);
+    
+    NSString *date_date = [date_String substringWithRange:NSMakeRange(0, 2)];
+    
+    int int_date_date = [date_date intValue];
+    
+     NSLog(@"date !!!!!!!!!!:%d", int_date_date);
+    
+    NSString *term_text;
+    
+    if (int_date_month >= 1 && int_date_date <= 2 ){
+        term_text = @"WIN";
+    }
+    else if (int_date_month == 3 ){
+        if (int_date_date <= 20){
+            term_text = @"WIN";
+        }
+        else{
+            term_text = @"SPR";
+        }
+    }
+    else if (int_date_month >= 4 && int_date_month <= 5){
+        term_text = @"SPR";
+    }
+    else if (int_date_month == 6){
+        if (int_date_date < 15)
+           term_text = @"SPR";
+        else
+           term_text = @"SUM";
+    }
+    else if (int_date_month >= 7 && int_date_month <= 8) {
+        term_text = @"SUM";
+    }
+    else if (int_date_month == 9){
+        if (int_date_date < 20)
+            term_text = @"SUM";
+        else
+            term_text = @"FALL";
+    }
+    else
+        term_text = @"FALL";
+    
+    
+    addSectionText.text = [NSString stringWithFormat:@"%@%@",term_text,date_year];
+
+    
     memberNameText.text = (appDelegate.name == nil)? @"" : appDelegate.name;
     memberMajorText.text = (appDelegate.major == nil)? @"" : appDelegate.major;
     memberYearText.text = (appDelegate.year == nil)? @"" : appDelegate.year;
@@ -87,40 +151,40 @@ UIPickerView *course_picker;
                     @"HIGR",@"HILA",@"HILD",@"HINE",@"HISC",@"HITO",@"HIUS",@"HLAW",@"HMNR",@"HUM",@"ICAM",
                     @"ICEP",@"INTL",@"IRCO",@"IRGN",@"IRLA",@"JAPN",@"JUDA",@"LATI",@"LAWS",@"LHCO",@"LIAB",@"LIDS",@"LIEO",@"LIFR",@"LIGM",@"LIGN",@"LIHI",@"LIHL",@"LIIT",@"LIPO",@"LISL",	@"LISP",@"LTAF",@"LTAM",@"LTCH",@"LTCO",@"LTCS",@"LTEA",@"LTEN",@"LTEU",
                     @"LTFR",@"LTGK",@"LTGM",@"LTHE",@"LTIT",@"LTKO",@"LTLA",@"LTPR",@"LTRU",@"LTSP",@"LTTH",@"LTWL",@"LTWR",@"MAE",@"MATH",@"MATS",@"MBC",@"MCWP",@"MDE",@"MED",@"MGT",@"MGTF",@"MMW",@"MSED",@"MSP",@"MUIR",@"MUS",@"NANO",@"NEU",@"OPTH",@"ORTH",@"PATH",@"PEDS",@"PHAR",@"PHIL",@"PHYS",@"POLI",@"PSY",@"RAD",@"RELI",@"REV",@"RMAS",@"RMED",@"SDCC",@"SE",@"SIO",@"SIOB",@"SIOC",@"SIOG",@"SOCD",@"SOCE",@"SOCG",@"SOCI",@"SOCL",@"SOMC",@"SPMI",@"SPPS",@"SURG",@"SXTH",@"TDAC",@"TDCH",@"TDDE",@"TDDR",@"TDGE",@"TDGR",@"TDHD",@"TDHT",@"TDMV",@"TDPF",@"TDPR",@"TDPW",@"TDTR",@"TMC",@"TWS",@"USP",@"VIS",@"WARR",@"WCWP",@"WES", nil];
-    if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
-        Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
-        curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
-        curr_group = [curr_group childByAppendingPath:@"group"];
-        curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
-        curr_group = [curr_group childByAppendingPath:@"teammember"];
-        [curr_group observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-            NSMutableArray<NSString *> *member = snapshot.value;
-            [TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width, TeamMemberScrollView.bounds.size.height*3)];
-            CGRect contentRect = CGRectZero;
-            for (NSInteger index = 0; index < member.count; index++)
-            {
-                __block NSString* memberName = @"";
-                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                Firebase* curr_user_name = [appDelegate.firebase childByAppendingPath:@"users"];
-                curr_user_name = [curr_user_name childByAppendingPath: member[index]];
-                [curr_user_name observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
-                [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
-                button.tag = index;
-                [button setTitle:[NSString stringWithFormat:snapshot.value[@"name"]] forState:UIControlStateNormal];
-                [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
-                [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                [[button layer] setBorderWidth:2.0f];
-                button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
-                }];
-                [TeamMemberScrollView addSubview:button];
-                contentRect = CGRectUnion(contentRect, button.frame);
-            }
-            TeamMemberScrollView.contentSize = contentRect.size;
-            [self.view addSubview:TeamMemberScrollView];
-        }];
-        
-    }
+//    if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
+//        Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
+//        curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
+//        curr_group = [curr_group childByAppendingPath:@"group"];
+//        curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
+//        curr_group = [curr_group childByAppendingPath:@"teammember"];
+//        [curr_group observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//            NSMutableArray<NSString *> *member = snapshot.value;
+//            [TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width, TeamMemberScrollView.bounds.size.height*3)];
+//            CGRect contentRect = CGRectZero;
+//            for (NSInteger index = 0; index < member.count; index++)
+//            {
+//                __block NSString* memberName = @"";
+//                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//                Firebase* curr_user_name = [appDelegate.firebase childByAppendingPath:@"users"];
+//                curr_user_name = [curr_user_name childByAppendingPath: member[index]];
+//                [curr_user_name observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//                button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
+//                [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
+//                button.tag = index;
+//                [button setTitle:[NSString stringWithFormat:snapshot.value[@"name"]] forState:UIControlStateNormal];
+//                [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
+//                [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//                [[button layer] setBorderWidth:2.0f];
+//                button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
+//                }];
+//                [TeamMemberScrollView addSubview:button];
+//                contentRect = CGRectUnion(contentRect, button.frame);
+//            }
+//            TeamMemberScrollView.contentSize = contentRect.size;
+//            [self.view addSubview:TeamMemberScrollView];
+//        }];
+//        
+//    }
     
     
 
@@ -228,14 +292,18 @@ UIPickerView *course_picker;
 - (IBAction)newClass:(id)sender{
     if([addCourseText.text isEqualToString:@""]||[addProfText.text isEqualToString:@""]||[addTermText.text isEqualToString:@""]||[addSectionText.text isEqualToString:@""])
         return;
-    NSDictionary *new_class_info = @{@"name":addCourseText.text,
-                                @"prof" :addProfText.text,
-                                @"term" :addTermText.text,
-                                @"section" : addSectionText.text,
+    
+    
+    
+    NSDictionary *new_class_info = @{@"name": [[NSString stringWithFormat:@"%@ %@",addCourseText.text,addTermText.text] uppercaseString],
+                                //@"prof" :@"",
+                                //@"term" :addTermText.text,
+                                @"term" :addSectionText.text,
+                                //@"section" : @"",
                                 @"group" : @""
                                 };
     NSString *newClassName = addCourseText.text;
-    newClassName = [newClassName stringByAppendingFormat:@"%@%@", addTermText.text, addSectionText.text ];
+    newClassName = [[newClassName stringByAppendingFormat:@"%@%@", addTermText.text, addSectionText.text ] uppercaseString];
     NSDictionary *new_class = @{newClassName : new_class_info};
     [class_ref updateChildValues:new_class];
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"searchClassViewController"];
@@ -606,46 +674,46 @@ UIPickerView *course_picker;
 }
 
 
-- (IBAction)quitGroup:(id)sender {
-    
-    
-    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-    
-    Firebase *group_dict = [curr_user childByAppendingPath:@"groups"];
-    
-   
-    
-    [group_dict observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSMutableDictionary *groups = snapshot.value;
-        NSString *group_uid = appDelegate.currentGroupUid;
-        [groups removeObjectForKey:group_uid];
-        NSDictionary* update_group = @{@"groups" : groups};
-        [[group_dict parent] updateChildValues:update_group];
-    }];
-    
-    Firebase *class = [class_ref childByAppendingPath:appDelegate.Quit_ClassUid];
-    class = [class childByAppendingPath:@"group"];
-    
-    Firebase* temp = [appDelegate.firebase childByAppendingPath:@"classes"];
-    temp = [temp childByAppendingPath:appDelegate.Quit_ClassUid];
-    temp = [temp childByAppendingPath:@"group"];
-    temp = [temp childByAppendingPath:appDelegate.currentGroupUid];
-    temp = [temp childByAppendingPath:@"teammember"];
-    [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSMutableArray *member = snapshot.value;
-        
-        NSString *user_uid = appDelegate.uid;
-        [member removeObject:user_uid];
-        //NSLog(@"NEW GROUP: %@", member);
-        NSDictionary* update_group = @{@"teammember" : member};
-        [[temp parent] updateChildValues:update_group];
-    }];
-    
-    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
-    [self presentViewController:viewcontroller animated:YES completion:nil];
-    
-    
-}
+//- (IBAction)quitGroup:(id)sender {
+//    
+//    
+//    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+//    
+//    Firebase *group_dict = [curr_user childByAppendingPath:@"groups"];
+//    
+//   
+//    
+//    [group_dict observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        NSMutableDictionary *groups = snapshot.value;
+//        NSString *group_uid = appDelegate.currentGroupUid;
+//        [groups removeObjectForKey:group_uid];
+//        NSDictionary* update_group = @{@"groups" : groups};
+//        [[group_dict parent] updateChildValues:update_group];
+//    }];
+//    
+//    Firebase *class = [class_ref childByAppendingPath:appDelegate.Quit_ClassUid];
+//    class = [class childByAppendingPath:@"group"];
+//    
+//    Firebase* temp = [appDelegate.firebase childByAppendingPath:@"classes"];
+//    temp = [temp childByAppendingPath:appDelegate.Quit_ClassUid];
+//    temp = [temp childByAppendingPath:@"group"];
+//    temp = [temp childByAppendingPath:appDelegate.currentGroupUid];
+//    temp = [temp childByAppendingPath:@"teammember"];
+//    [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        NSMutableArray *member = snapshot.value;
+//        
+//        NSString *user_uid = appDelegate.uid;
+//        [member removeObject:user_uid];
+//        //NSLog(@"NEW GROUP: %@", member);
+//        NSDictionary* update_group = @{@"teammember" : member};
+//        [[temp parent] updateChildValues:update_group];
+//    }];
+//    
+//    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
+//    [self presentViewController:viewcontroller animated:YES completion:nil];
+//    
+//    
+//}
 
 - (IBAction)backToChat:(id)sender{
 //    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"MessagesViewContr"];
