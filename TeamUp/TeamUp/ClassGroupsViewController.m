@@ -21,10 +21,21 @@ NSArray<NSString*> *class_groups_uid;
 - (void)viewDidLoad {
     [super viewDidLoad];
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    CGRect name_frame = self.classNameLabel.frame;
+    name_frame.size.width = self.view.frame.size.width / 2;
+    name_frame.origin.x = self.view.frame.size.width / 4;
+    self.classNameLabel.frame = name_frame;
+    CGRect button_frame = self.addButton.frame;
+    button_frame.origin.x = self.view.frame.size.width - button_frame.size.width - 10;
+    self.addButton.frame = button_frame;
     NSLog(@"ClassGroupsViewController: %@ ", appDelegate.currentClassUid);
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
     Firebase *curr_class = [appDelegate.firebase childByAppendingPath:@"classes"];
     curr_class = [curr_class childByAppendingPath:appDelegate.currentClassUid];
+        [curr_class observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            NSString* class_name = [snapshot.value valueForKey:@"name"];
+            self.classNameLabel.text = [class_name uppercaseString];
+        }];
     curr_class = [curr_class childByAppendingPath:@"group"];
     [curr_class observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         class_groups = snapshot.value;
@@ -64,8 +75,7 @@ NSArray<NSString*> *class_groups_uid;
         
         [self.view addSubview:scrollView];
     }];
-    
-    
+
 }
 
 // Put the connection of each button here.
