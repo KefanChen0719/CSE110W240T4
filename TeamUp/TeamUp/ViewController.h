@@ -10,8 +10,7 @@
 #import <Firebase/Firebase.h>
 #import "AppDelegate.h"
 #import "QRCodeReaderDelegate.h"
-
-//Firebase *firebase;
+//#import "TeamUp-Swift.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIPickerViewDataSource,UIPickerViewDelegate>
 
@@ -80,7 +79,7 @@
 - (IBAction)updateNewPassword:(id)sender;
 - (IBAction)createGroup:(id)sender;
 - (IBAction)quitGroup:(id)sender;
-
+- (IBAction)backToChat:(id)sender;
 
 - (IBAction)scanAction:(id)sender;
 @end

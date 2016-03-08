@@ -617,10 +617,8 @@ UIPickerView *course_picker;
     
     [group_dict observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSMutableDictionary *groups = snapshot.value;
-        //NSLog(@"OLD GROUP: %@", groups);
         NSString *group_uid = appDelegate.currentGroupUid;
         [groups removeObjectForKey:group_uid];
-        //NSLog(@"NEW GROUP: %@", groups);
         NSDictionary* update_group = @{@"groups" : groups};
         [[group_dict parent] updateChildValues:update_group];
     }];
@@ -628,7 +626,6 @@ UIPickerView *course_picker;
     Firebase *class = [class_ref childByAppendingPath:appDelegate.Quit_ClassUid];
     class = [class childByAppendingPath:@"group"];
     
-    //NSLog(@"class_uid %@", appDelegate.Quit_ClassUid);
     Firebase* temp = [appDelegate.firebase childByAppendingPath:@"classes"];
     temp = [temp childByAppendingPath:appDelegate.Quit_ClassUid];
     temp = [temp childByAppendingPath:@"group"];
@@ -636,7 +633,6 @@ UIPickerView *course_picker;
     temp = [temp childByAppendingPath:@"teammember"];
     [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSMutableArray *member = snapshot.value;
-        //NSLog(@"OLD GROUP: %@", snapshot.value);
         
         NSString *user_uid = appDelegate.uid;
         [member removeObject:user_uid];
@@ -651,7 +647,12 @@ UIPickerView *course_picker;
     
 }
 
-
+- (IBAction)backToChat:(id)sender{
+//    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"MessagesViewContr"];
+//    MessagesViewController* vc = (MessagesViewController *) viewcontroller;
+//    vc.groupID = appDelegate.currentGroupUid;
+//    [self presentViewController:viewcontroller animated:YES completion:nil];
+}
 
 @end
 

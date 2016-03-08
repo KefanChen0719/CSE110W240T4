@@ -420,7 +420,7 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = V2J7D6MZET;
+						DevelopmentTeam = 5YFX8A6H5D;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -732,21 +732,6 @@
 				INFOPLIST_FILE = TeamUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"Firebase\"",
-					"-l\"FirebaseStatic\"",
-					"-l\"c++\"",
-					"-l\"icucore\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-lxml2",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kefanchen0719-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -778,21 +763,6 @@
 				INFOPLIST_FILE = TeamUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"Firebase\"",
-					"-l\"FirebaseStatic\"",
-					"-l\"c++\"",
-					"-l\"icucore\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-lxml2",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kefanchen0719-gmail.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
