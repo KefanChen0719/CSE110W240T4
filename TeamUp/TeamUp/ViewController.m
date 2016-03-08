@@ -55,8 +55,8 @@ UIPickerView *course_picker;
     //initialization ends here
     //not run-time initialization
     memberNameText.text = (appDelegate.name == nil)? @"" : appDelegate.name;
-    memberMajorText.text = (major == nil)? @"" : major;
-    memberYearText.text = (year == nil)? @"" : year;
+    memberMajorText.text = (appDelegate.major == nil)? @"" : appDelegate.major;
+    memberYearText.text = (appDelegate.year == nil)? @"" : appDelegate.year;
     //end "not run-time initialization"
     
     [self searchCourseLayout];
@@ -101,8 +101,8 @@ UIPickerView *course_picker;
     email = @"";
     appDelegate.uid = @"";
     appDelegate.name = @"";
-    year = @"";
-    major = @"";
+    appDelegate.year = @"";
+    appDelegate.major = @"";
     
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
     [self presentViewController:viewcontroller animated:YES completion:nil];
@@ -119,11 +119,13 @@ UIPickerView *course_picker;
         NSDictionary *groups = snapshot.value;
         appDelegate.name = memberNameText.text;
         year = memberYearText.text;
+        appDelegate.year = memberYearText.text;
         major = memberMajorText.text;
+        appDelegate.major = memberMajorText.text;
         NSDictionary *user_info = @{@"name" : appDelegate.name,
                                     @"email" : appDelegate.email,
-                                    @"major" : major,
-                                    @"year" : year,
+                                    @"major" : appDelegate.major,
+                                    @"year" : appDelegate.year,
                                     @"groups" : groups
                                     };
         NSDictionary *new_user = @{appDelegate.uid : user_info};

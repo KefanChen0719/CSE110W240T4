@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -939,10 +939,10 @@ send you a temporary password.</string>
                         <outlet property="changePassword" destination="hFN-Yu-HeG" id="ImI-kt-bAP"/>
                         <outlet property="constructionLabel" destination="hLC-92-OaS" id="cLq-qk-fUp"/>
                         <outlet property="majorLabel" destination="6Gb-1g-B0f" id="TUS-Nc-zGq"/>
-                        <outlet property="memberMajorText" destination="Ne1-un-cYg" id="cAB-9O-v4h"/>
+                        <outlet property="memberMajorText" destination="Ne1-un-cYg" id="FZD-jA-qST"/>
                         <outlet property="memberNameText" destination="aWO-5A-eYr" id="KHe-qr-v2b"/>
                         <outlet property="memberUpdate" destination="gaK-y9-wov" id="4Cs-WW-RB4"/>
-                        <outlet property="memberYearText" destination="ZUz-Nf-TdA" id="Zy0-aG-R0i"/>
+                        <outlet property="memberYearText" destination="ZUz-Nf-TdA" id="07s-ge-cOF"/>
                         <outlet property="nameLabel" destination="tLm-bA-8Vc" id="kXY-ez-kgd"/>
                         <outlet property="topView" destination="nY6-3A-Nlu" id="nAt-bM-E86"/>
                         <outlet property="yearLabel" destination="rCl-cn-3We" id="wbR-Y4-wFG"/>
@@ -1028,9 +1028,9 @@ send you a temporary password.</string>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s2f-eg-0mM"/>
         <segue reference="oxH-Qg-Ugh"/>
-        <segue reference="W4o-04-TMG"/>
+        <segue reference="s2f-eg-0mM"/>
         <segue reference="JZL-so-WAM"/>
+        <segue reference="tPV-cf-Y4b"/>
     </inferredMetricsTieBreakers>
 </document>
