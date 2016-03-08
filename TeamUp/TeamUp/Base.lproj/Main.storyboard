@@ -768,7 +768,7 @@ send you a temporary password.</string>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ELo-zg-TyW">
-                                <rect key="frame" x="80" y="399" width="228" height="30"/>
+                                <rect key="frame" x="80" y="617" width="228" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.1122704859737057" blue="0.21968304723541188" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -779,45 +779,17 @@ send you a temporary password.</string>
                                     <action selector="quitGroup:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="GeR-Eh-bfs"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1169645.jpg" id="cCy-rt-XXQ">
-                                <rect key="frame" x="33" y="110" width="80" height="80"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tUE-WL-SV3">
+                                <rect key="frame" x="20" y="87" width="335" height="511"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1169645.jpg" id="GoR-pU-qnx">
-                                <rect key="frame" x="147" y="110" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1169645.jpg" id="1TB-fC-E9X">
-                                <rect key="frame" x="266" y="110" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xinghang Li" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lCr-r5-flV">
-                                <rect key="frame" x="144" y="217" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xinghang Li" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SbY-gj-Cc9">
-                                <rect key="frame" x="261" y="217" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xinghang Li" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qG-e8-hdJ">
-                                <rect key="frame" x="28" y="217" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jkg-WU-uGd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="TeamMemberScrollView" destination="tUE-WL-SV3" id="dsZ-Gz-hT1"/>
                         <outlet property="quitGroup_button" destination="ELo-zg-TyW" id="JKF-fN-QGs"/>
                     </connections>
                 </viewController>
@@ -1019,13 +991,10 @@ send you a temporary password.</string>
             <point key="canvasLocation" x="217" y="79"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="1169645.jpg" width="634" height="368"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u1L-c5-W4l"/>
-        <segue reference="W4o-04-TMG"/>
         <segue reference="JZL-so-WAM"/>
+        <segue reference="Wb6-fH-OsW"/>
+        <segue reference="u1L-c5-W4l"/>
         <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>
 </document>

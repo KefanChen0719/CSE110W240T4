@@ -18,7 +18,7 @@
 @end
 
 @implementation ViewController
-@synthesize memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch, appDelegate, viewcontroller;
+@synthesize memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch, appDelegate, viewcontroller, TeamMemberScrollView;
 
 Firebase *class_ref;
 Firebase *class;
@@ -78,8 +78,40 @@ UIPickerView *course_picker;
     course_picker.dataSource = self;
     addCourseText.inputView = course_picker;
     courseArray  = [[NSArray alloc] initWithObjects:@"CSE",@"Math",@"Good",@"XXX", nil];
-    
-    
+    if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
+        Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
+        curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
+        curr_group = [curr_group childByAppendingPath:@"group"];
+        curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
+        curr_group = [curr_group childByAppendingPath:@"teammember"];
+        [curr_group observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            NSMutableArray<NSString *> *member = snapshot.value;
+            [TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width, TeamMemberScrollView.bounds.size.height*3)];
+            CGRect contentRect = CGRectZero;
+            for (NSInteger index = 0; index < member.count; index++)
+            {
+                __block NSString* memberName = @"";
+                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                Firebase* curr_user_name = [appDelegate.firebase childByAppendingPath:@"users"];
+                curr_user_name = [curr_user_name childByAppendingPath: member[index]];
+                [curr_user_name observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
+                [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
+                button.tag = index;
+                [button setTitle:[NSString stringWithFormat:snapshot.value[@"name"]] forState:UIControlStateNormal];
+                [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
+                [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [[button layer] setBorderWidth:2.0f];
+                button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
+                }];
+                [TeamMemberScrollView addSubview:button];
+                contentRect = CGRectUnion(contentRect, button.frame);
+            }
+            TeamMemberScrollView.contentSize = contentRect.size;
+            [self.view addSubview:TeamMemberScrollView];
+        }];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -160,10 +192,11 @@ UIPickerView *course_picker;
     NSString *toSearch = searchText.text;
     NSCharacterSet *notAllowedChars = [[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"] invertedSet];
     toSearch = [[toSearch componentsSeparatedByCharactersInSet:notAllowedChars] componentsJoinedByString:@""];
+    toSearch = [toSearch uppercaseString];
     NSString *index = @"";
     int number = 0;
     if (toSearch.length > 0) {
-        class = [class_ref childByAppendingPath:toSearch];
+        //class = [class_ref childByAppendingPath:toSearch];
         for(int i = 0; i < allClassNames.count; ++i){
             if([allClassNames[i] containsString:toSearch] || [toSearch containsString:allClassNames[i]]){
                 index = @"";
@@ -218,6 +251,7 @@ UIPickerView *course_picker;
     [class observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         bool canAdd = true;
         exist_groups = snapshot.value;
+        if(snapshot.childrenCount!=0)
         for(NSString* groupids in exist_groups){
             if ([(exist_groups[groupids])[@"name"] isEqualToString: groupName]) {
                 canAdd = false;
@@ -251,23 +285,6 @@ UIPickerView *course_picker;
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
-//    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-//    curr_user = [curr_user childByAppendingPath:@"groups"];
-//    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//        NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
-//        if(snapshot.childrenCount!=0)
-//            [groups addEntriesFromDictionary:snapshot.value];
-//        [groups setObject:appDelegate.currentClassUid forKey:groupuid];
-//        [curr_user updateChildValues:groups];
-//    }];
-//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Yeah!"
-//                                                                   message:@"created" preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-//        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"ClassGroupsViewController"];
-//        [self presentViewController:viewcontroller animated:YES completion:nil];
-//    }];
-//    [alert addAction:alertAction];
-//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
@@ -578,7 +595,7 @@ UIPickerView *course_picker;
     Firebase *class = [class_ref childByAppendingPath:appDelegate.Quit_ClassUid];
     class = [class childByAppendingPath:@"group"];
     
-    NSLog(@"class_uid %@", appDelegate.Quit_ClassUid);
+    //NSLog(@"class_uid %@", appDelegate.Quit_ClassUid);
     Firebase* temp = [appDelegate.firebase childByAppendingPath:@"classes"];
     temp = [temp childByAppendingPath:appDelegate.Quit_ClassUid];
     temp = [temp childByAppendingPath:@"group"];
@@ -586,11 +603,11 @@ UIPickerView *course_picker;
     temp = [temp childByAppendingPath:@"teammember"];
     [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSMutableArray *member = snapshot.value;
-        NSLog(@"OLD GROUP: %@", snapshot.value);
+        //NSLog(@"OLD GROUP: %@", snapshot.value);
         
         NSString *user_uid = appDelegate.uid;
         [member removeObject:user_uid];
-        NSLog(@"NEW GROUP: %@", member);
+        //NSLog(@"NEW GROUP: %@", member);
         NSDictionary* update_group = @{@"teammember" : member};
         [[temp parent] updateChildValues:update_group];
     }];

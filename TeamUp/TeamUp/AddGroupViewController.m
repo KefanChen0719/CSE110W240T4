@@ -98,8 +98,6 @@ NSString* QR_UID;
     Firebase *teammember = [curr_group childByAppendingPath:@"teammember"];
     [teammember observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSMutableArray<NSString *> *member = snapshot.value;
-//        NSNumber* index = [NSNumber numberWithInt:(int)members.count];
-//        NSString* index_str = index.stringValue;
         if(![member containsObject:appDelegate.firebase.authData.uid]){
             [member insertObject:appDelegate.firebase.authData.uid atIndex:member.count];
         }
