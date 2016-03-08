@@ -558,7 +558,6 @@ UIPickerView *course_picker;
 
 - (IBAction)quitGroup:(id)sender {
     
-    NSLog(@"Hello!!!!!!!!!!!!!!!!");
     
     Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
     
@@ -576,23 +575,24 @@ UIPickerView *course_picker;
         [[group_dict parent] updateChildValues:update_group];
     }];
     
-    Firebase *class_group = [class_ref childByAppendingPath:@"group"];
-    
-    Firebase *class = [class_group childByAppendingPath:appDelegate.Quit_ClassUid];
+    Firebase *class = [class_ref childByAppendingPath:appDelegate.Quit_ClassUid];
+    class = [class childByAppendingPath:@"group"];
     
     NSLog(@"class_uid %@", appDelegate.Quit_ClassUid);
-    
-    Firebase *group_member = [class childByAppendingPath:@"teammember"];
-    
-    [group_member observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSMutableDictionary *member = snapshot.value;
-        NSLog(@"OLD GROUP: %@", member);
+    Firebase* temp = [appDelegate.firebase childByAppendingPath:@"classes"];
+    temp = [temp childByAppendingPath:appDelegate.Quit_ClassUid];
+    temp = [temp childByAppendingPath:@"group"];
+    temp = [temp childByAppendingPath:appDelegate.currentGroupUid];
+    temp = [temp childByAppendingPath:@"teammember"];
+    [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSMutableArray *member = snapshot.value;
+        NSLog(@"OLD GROUP: %@", snapshot.value);
         
-//        NSString *user_uid = appDelegate.uid;
-//        [member removeObjectForKey:user_uid];
-//        NSLog(@"NEW GROUP: %@", member);
-//        NSDictionary* update_group = @{@"groups" : member};
-//        [[group_member parent] updateChildValues:update_group];
+        NSString *user_uid = appDelegate.uid;
+        [member removeObject:user_uid];
+        NSLog(@"NEW GROUP: %@", member);
+        NSDictionary* update_group = @{@"teammember" : member};
+        [[temp parent] updateChildValues:update_group];
     }];
     
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
