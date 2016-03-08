@@ -637,22 +637,15 @@ send you a temporary password.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qkT-Dx-0HJ">
-                                <rect key="frame" x="31" y="183" width="109" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qkT-Dx-0HJ">
+                                <rect key="frame" x="36" y="183" width="104" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zBQ-e2-SFO">
-                                <rect key="frame" x="62" y="251" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9zh-TC-bHO">
-                                <rect key="frame" x="96" y="364" width="44" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9zh-TC-bHO">
+                                <rect key="frame" x="54" y="278" width="86" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -667,24 +660,6 @@ send you a temporary password.</string>
                                     <action selector="keyboardExit:" destination="JYW-I3-O00" eventType="editingDidEnd" id="EbM-1O-bZj"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put prof's name here" textAlignment="natural" minimumFontSize="17" id="E3b-z5-wwv">
-                                <rect key="frame" x="175" y="247" width="173" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                <connections>
-                                    <action selector="keyboardExit:" destination="JYW-I3-O00" eventType="editingDidEnd" id="sfg-yR-wbG"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put term here" textAlignment="natural" minimumFontSize="17" id="ABs-rU-fk0">
-                                <rect key="frame" x="175" y="360" width="173" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                <connections>
-                                    <action selector="keyboardExit:" destination="JYW-I3-O00" eventType="editingDidEnd" id="1ef-jp-N2Z"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bSf-JM-sB0">
                                 <rect key="frame" x="28" y="55" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -696,15 +671,15 @@ send you a temporary password.</string>
                                     <segue destination="JD1-bk-77F" kind="modal" id="8BB-u2-kuq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uD4-Pl-x1V">
-                                <rect key="frame" x="77" y="310" width="63" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uD4-Pl-x1V">
+                                <rect key="frame" x="77" y="376" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your section here" textAlignment="natural" minimumFontSize="17" id="0Km-pI-6PR">
-                                <rect key="frame" x="175" y="306" width="162" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put your term here" textAlignment="natural" minimumFontSize="17" id="0Km-pI-6PR">
+                                <rect key="frame" x="169" y="373" width="162" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -723,13 +698,28 @@ send you a temporary password.</string>
                                     <action selector="newClass:" destination="JYW-I3-O00" eventType="touchUpInside" id="KJN-Em-svS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Class Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p0O-pm-fge">
+                                <rect key="frame" x="93" y="128" width="188" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Put course no. here" textAlignment="natural" minimumFontSize="17" id="ABs-rU-fk0">
+                                <rect key="frame" x="164" y="278" width="173" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="keyboardExit:" destination="JYW-I3-O00" eventType="editingDidEnd" id="1ef-jp-N2Z"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addCourseText" destination="s2d-n4-6ec" id="5lV-bx-h03"/>
-                        <outlet property="addProfText" destination="E3b-z5-wwv" id="DBR-oS-oLR"/>
                         <outlet property="addSectionText" destination="0Km-pI-6PR" id="SRg-wX-nJc"/>
                         <outlet property="addTermText" destination="ABs-rU-fk0" id="Cff-F1-rK9"/>
                         <outlet property="courseUpdate" destination="6Zp-1b-D0j" id="r58-v6-mIp"/>
@@ -1028,9 +1018,9 @@ send you a temporary password.</string>
         <image name="1169645.jpg" width="634" height="368"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oxH-Qg-Ugh"/>
-        <segue reference="s2f-eg-0mM"/>
+        <segue reference="8BB-u2-kuq"/>
         <segue reference="JZL-so-WAM"/>
         <segue reference="tPV-cf-Y4b"/>
+        <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>
 </document>

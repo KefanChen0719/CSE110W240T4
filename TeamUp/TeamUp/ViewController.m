@@ -54,6 +54,70 @@ UIPickerView *course_picker;
     
     //initialization ends here
     //not run-time initialization
+    NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+    
+    [dateformate setDateFormat:@"dd/MM/YYYY"];
+    
+    NSString *date_String=[dateformate stringFromDate:[NSDate date]];
+    
+    NSLog(@"User's current time in their preference format !!!!!!!!!!!!!!!!!!!:%@",date_String);
+    
+    NSString *date_year = [date_String substringWithRange:NSMakeRange(6, 4)];
+    
+    
+    
+    NSLog(@"year !!!!!!!!!!:%@", date_year);
+    
+    NSString *date_month = [date_String substringWithRange:NSMakeRange(4, 2)];
+    
+    int int_date_month = [date_month intValue];
+    
+    NSLog(@"month !!!!!!!!!!:%d", int_date_month);
+    
+    NSString *date_date = [date_String substringWithRange:NSMakeRange(0, 2)];
+    
+    int int_date_date = [date_date intValue];
+    
+     NSLog(@"date !!!!!!!!!!:%d", int_date_date);
+    
+    NSString *term_text;
+    
+    if (int_date_month >= 1 && int_date_date <= 2 ){
+        term_text = @"WIN";
+    }
+    else if (int_date_month == 3 ){
+        if (int_date_date <= 20){
+            term_text = @"WIN";
+        }
+        else{
+            term_text = @"SPR";
+        }
+    }
+    else if (int_date_month >= 4 && int_date_month <= 5){
+        term_text = @"SPR";
+    }
+    else if (int_date_month == 6){
+        if (int_date_date < 15)
+           term_text = @"SPR";
+        else
+           term_text = @"SUM";
+    }
+    else if (int_date_month >= 7 && int_date_month <= 8) {
+        term_text = @"SUM";
+    }
+    else if (int_date_month == 9){
+        if (int_date_date < 20)
+            term_text = @"SUM";
+        else
+            term_text = @"FALL";
+    }
+    else
+        term_text = @"FALL";
+    
+    
+    addSectionText.text = [NSString stringWithFormat:@"%@%@",term_text,date_year];
+
+    
     memberNameText.text = (appDelegate.name == nil)? @"" : appDelegate.name;
     memberMajorText.text = (appDelegate.major == nil)? @"" : appDelegate.major;
     memberYearText.text = (appDelegate.year == nil)? @"" : appDelegate.year;
@@ -183,14 +247,18 @@ UIPickerView *course_picker;
 - (IBAction)newClass:(id)sender{
     if([addCourseText.text isEqualToString:@""]||[addProfText.text isEqualToString:@""]||[addTermText.text isEqualToString:@""]||[addSectionText.text isEqualToString:@""])
         return;
-    NSDictionary *new_class_info = @{@"name":addCourseText.text,
-                                @"prof" :addProfText.text,
-                                @"term" :addTermText.text,
-                                @"section" : addSectionText.text,
+    
+    
+    
+    NSDictionary *new_class_info = @{@"name": [[NSString stringWithFormat:@"%@ %@",addCourseText.text,addTermText.text] uppercaseString],
+                                //@"prof" :@"",
+                                //@"term" :addTermText.text,
+                                @"term" :addSectionText.text,
+                                //@"section" : @"",
                                 @"group" : @""
                                 };
     NSString *newClassName = addCourseText.text;
-    newClassName = [newClassName stringByAppendingFormat:@"%@%@", addTermText.text, addSectionText.text ];
+    newClassName = [[newClassName stringByAppendingFormat:@"%@%@", addTermText.text, addSectionText.text ] uppercaseString];
     NSDictionary *new_class = @{newClassName : new_class_info};
     [class_ref updateChildValues:new_class];
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"searchClassViewController"];

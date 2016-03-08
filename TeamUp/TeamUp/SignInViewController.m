@@ -64,10 +64,20 @@ NSString *major1;
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     
-//    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-//    curr_user = [curr_user childByAppendingPath:@"groups"];
-//    NSDictionary *temp = @{@"cse110win16a00" : @"332dcaad-8752-4622-9ee2-5b5b9b1b24e4test"};
-//    [curr_user updateChildValues:temp];
+
+    
+//    NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+//    
+//    [dateformate setDateFormat:@"dd/MM/YYYY"];
+//    
+//    NSString *date_String=[dateformate stringFromDate:[NSDate date]];
+//    
+//    NSLog(@"User's current time in their preference format !!!!!!!!!!!!!!!!!!!:%@",date_String);
+    
+    
+    
+    
+    
     
     spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [spinner setCenter:CGPointMake(view.frame.size.width/2,  (forget_frame.origin.y + button_frame.origin.y)/2)]; // I do this because I'm in landscape mode
