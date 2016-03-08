@@ -71,8 +71,13 @@ NSString* QR_UID;
     imageView.image = [UIImage mdQRCodeForString:QR_UID size:imageView.bounds.size.width fillColor:[UIColor darkGrayColor]];
     [self.view addSubview:imageView];
     
-    
-    
+    CGRect group_frame = self.groupLabel.frame;
+    group_frame.size.width = self.view.frame.size.width / 2;
+    group_frame.origin.x = self.view.frame.size.width / 4;
+    self.groupLabel.frame = group_frame;
+    CGRect add_frame = self.add.frame;
+    add_frame.origin.x = self.view.frame.size.width - add_frame.size.width - 10;
+    self.add.frame = add_frame;
 }
 
 
@@ -98,8 +103,6 @@ NSString* QR_UID;
     Firebase *teammember = [curr_group childByAppendingPath:@"teammember"];
     [teammember observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSMutableArray<NSString *> *member = snapshot.value;
-//        NSNumber* index = [NSNumber numberWithInt:(int)members.count];
-//        NSString* index_str = index.stringValue;
         if(![member containsObject:appDelegate.firebase.authData.uid]){
             [member insertObject:appDelegate.firebase.authData.uid atIndex:member.count];
         }

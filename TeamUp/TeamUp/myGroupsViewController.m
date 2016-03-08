@@ -117,7 +117,7 @@ NSArray<NSString*> *groups_uid;
     NSLog(@"Button %ld %@", (long)button.tag, groups[groups_uid[button.tag]]);
     NSString * currentGroupUid = groups_uid[button.tag];
     appDelegate.currentGroupUid = currentGroupUid;
-  
+    appDelegate.currentClassUid = groups[groups_uid[button.tag]];
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"MessagesViewContr"];
   
     MessagesViewController* vc = (MessagesViewController *) viewcontroller;
@@ -161,8 +161,8 @@ NSArray<NSString*> *groups_uid;
     return group_name;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//  
+//}
 
 @end

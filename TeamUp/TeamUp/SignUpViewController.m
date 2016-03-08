@@ -60,6 +60,11 @@ NSString *major3;
     signUp_frame.origin.x = view_frame.size.width / 7;
     signUp_frame.origin.y = view_frame.size.height / 4 * 3;
     self.signUpButton.frame = signUp_frame;
+    CGRect back_frame = self.backButton.frame;
+    back_frame.size.width = view_frame.size.width / 7 * 5;
+    back_frame.origin.x = view_frame.size.width / 7;
+    back_frame.origin.y = signUp_frame.origin.y + signUp_frame.size.height + 10;
+    self.backButton.frame = back_frame;
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }

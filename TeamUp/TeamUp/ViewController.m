@@ -18,7 +18,7 @@
 @end
 
 @implementation ViewController
-@synthesize memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch, appDelegate, viewcontroller;
+@synthesize memberMajorText,memberNameText,memberYearText, searchText, tableView, addCourseText, addProfText, addTermText, addSectionText, changeOldPasswordText, changeNewPasswordText, changeComfirmPasswordText, addGroupNameText, addMaxPeopleText, isPrivateSwitch, appDelegate, viewcontroller, TeamMemberScrollView;
 
 Firebase *class_ref;
 Firebase *class;
@@ -141,9 +141,53 @@ UIPickerView *course_picker;
     course_picker.delegate = self;
     course_picker.dataSource = self;
     addCourseText.inputView = course_picker;
-    courseArray  = [[NSArray alloc] initWithObjects:@"CSE",@"Math",@"Good",@"XXX", nil];
+    courseArray  = [[NSArray alloc] initWithObjects:@"AAS",@"AESE",@"AIP",@"ANAR",@"ANBI",@"ANES",@"ANSC",@"ANTH",@"AUD",
+                    @"BENG",@"BGGN",@"BGJC",@"BGRD",@"BGSE",@"BIBC",@"BICD",@"BIEB",@"BILD",@"BIMM",@"BIOM",
+                    @"BIPN",@"BISP",@"BNFO",@"CAT",@"CENG",@"CGS",@"CHEM",@"CHIN",@"CLAS", @"CLIN",@"CLRE",
+                    @"CLSS",@"CMM",@"COGN",@"COGR",@"COGS",@"COMM",@"CONT",@"COSF",@"CSE",
+                    @"DSE",	@"DOC",	@"DSGN", @"EAP", @"ECE",@"ECON",@"EDS",	@"ELWR",@"EMED",@"ENG",@"ENVR",
+                    @"ERC",@"ESYS",
+                    @"ETHN",@"EXPR",@"FILM",@"FPM",@"FPMU",@"GLBH",@"GMST",@"HDP",@"HIAF",@"HIEA",@"HIEU",
+                    @"HIGR",@"HILA",@"HILD",@"HINE",@"HISC",@"HITO",@"HIUS",@"HLAW",@"HMNR",@"HUM",@"ICAM",
+                    @"ICEP",@"INTL",@"IRCO",@"IRGN",@"IRLA",@"JAPN",@"JUDA",@"LATI",@"LAWS",@"LHCO",@"LIAB",@"LIDS",@"LIEO",@"LIFR",@"LIGM",@"LIGN",@"LIHI",@"LIHL",@"LIIT",@"LIPO",@"LISL",	@"LISP",@"LTAF",@"LTAM",@"LTCH",@"LTCO",@"LTCS",@"LTEA",@"LTEN",@"LTEU",
+                    @"LTFR",@"LTGK",@"LTGM",@"LTHE",@"LTIT",@"LTKO",@"LTLA",@"LTPR",@"LTRU",@"LTSP",@"LTTH",@"LTWL",@"LTWR",@"MAE",@"MATH",@"MATS",@"MBC",@"MCWP",@"MDE",@"MED",@"MGT",@"MGTF",@"MMW",@"MSED",@"MSP",@"MUIR",@"MUS",@"NANO",@"NEU",@"OPTH",@"ORTH",@"PATH",@"PEDS",@"PHAR",@"PHIL",@"PHYS",@"POLI",@"PSY",@"RAD",@"RELI",@"REV",@"RMAS",@"RMED",@"SDCC",@"SE",@"SIO",@"SIOB",@"SIOC",@"SIOG",@"SOCD",@"SOCE",@"SOCG",@"SOCI",@"SOCL",@"SOMC",@"SPMI",@"SPPS",@"SURG",@"SXTH",@"TDAC",@"TDCH",@"TDDE",@"TDDR",@"TDGE",@"TDGR",@"TDHD",@"TDHT",@"TDMV",@"TDPF",@"TDPR",@"TDPW",@"TDTR",@"TMC",@"TWS",@"USP",@"VIS",@"WARR",@"WCWP",@"WES", nil];
+    if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
+        Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
+        curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
+        curr_group = [curr_group childByAppendingPath:@"group"];
+        curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
+        curr_group = [curr_group childByAppendingPath:@"teammember"];
+        [curr_group observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            NSMutableArray<NSString *> *member = snapshot.value;
+            [TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width, TeamMemberScrollView.bounds.size.height*3)];
+            CGRect contentRect = CGRectZero;
+            for (NSInteger index = 0; index < member.count; index++)
+            {
+                __block NSString* memberName = @"";
+                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                Firebase* curr_user_name = [appDelegate.firebase childByAppendingPath:@"users"];
+                curr_user_name = [curr_user_name childByAppendingPath: member[index]];
+                [curr_user_name observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
+                [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
+                button.tag = index;
+                [button setTitle:[NSString stringWithFormat:snapshot.value[@"name"]] forState:UIControlStateNormal];
+                [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
+                [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [[button layer] setBorderWidth:2.0f];
+                button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
+                }];
+                [TeamMemberScrollView addSubview:button];
+                contentRect = CGRectUnion(contentRect, button.frame);
+            }
+            TeamMemberScrollView.contentSize = contentRect.size;
+            [self.view addSubview:TeamMemberScrollView];
+        }];
+        
+    }
     
     
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -226,10 +270,11 @@ UIPickerView *course_picker;
     NSString *toSearch = searchText.text;
     NSCharacterSet *notAllowedChars = [[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"] invertedSet];
     toSearch = [[toSearch componentsSeparatedByCharactersInSet:notAllowedChars] componentsJoinedByString:@""];
+    toSearch = [toSearch uppercaseString];
     NSString *index = @"";
     int number = 0;
     if (toSearch.length > 0) {
-        class = [class_ref childByAppendingPath:toSearch];
+        //class = [class_ref childByAppendingPath:toSearch];
         for(int i = 0; i < allClassNames.count; ++i){
             if([allClassNames[i] containsString:toSearch] || [toSearch containsString:allClassNames[i]]){
                 index = @"";
@@ -288,6 +333,7 @@ UIPickerView *course_picker;
     [class observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         bool canAdd = true;
         exist_groups = snapshot.value;
+        if(snapshot.childrenCount!=0)
         for(NSString* groupids in exist_groups){
             if ([(exist_groups[groupids])[@"name"] isEqualToString: groupName]) {
                 canAdd = false;
@@ -321,23 +367,6 @@ UIPickerView *course_picker;
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
-//    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-//    curr_user = [curr_user childByAppendingPath:@"groups"];
-//    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//        NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
-//        if(snapshot.childrenCount!=0)
-//            [groups addEntriesFromDictionary:snapshot.value];
-//        [groups setObject:appDelegate.currentClassUid forKey:groupuid];
-//        [curr_user updateChildValues:groups];
-//    }];
-//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Yeah!"
-//                                                                   message:@"created" preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-//        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"ClassGroupsViewController"];
-//        [self presentViewController:viewcontroller animated:YES completion:nil];
-//    }];
-//    [alert addAction:alertAction];
-//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
@@ -391,22 +420,33 @@ UIPickerView *course_picker;
 }
 
 - (void)searchCourseLayout {
-    UIView *view = self.notFound.superview;
+    UIView *view = self.view;
     CGRect view_frame = view.frame;
-    CGRect notFound_frame = self.notFound.frame;
-    notFound_frame.origin.x = view_frame.size.width - notFound_frame.size.width - 10;
-    self.notFound.frame = notFound_frame;
+//    CGRect notFound_frame = self.notFound.frame;
+//    notFound_frame.origin.x = view_frame.size.width - notFound_frame.size.width - 10;
+//    self.notFound.frame = notFound_frame;
     CGRect table_frame = self.tableView.frame;
     table_frame.size.width = view_frame.size.width;
     self.tableView.frame = table_frame;
+    CGRect notFound_frame = self.notFound.frame;
+    notFound_frame.origin.x = view_frame.size.width - notFound_frame.size.width - 10;
+    self.notFound.frame = notFound_frame;
+    CGRect search_course_frame = self.searchCourseLabel.frame;
+    search_course_frame.size.width = view_frame.size.width / 2;
+    search_course_frame.origin.x = view_frame.size.width / 4;
+    self.searchCourseLabel.frame = search_course_frame;
 }
 
 - (void)addCourseLayout {
-    UIView *view = self.courseUpdate.superview;
+    UIView *view = self.view;
     CGRect view_frame = view.frame;
     CGRect update_frame = self.courseUpdate.frame;
-    update_frame.origin.x = view_frame.size.width - update_frame.size.width - 15;
+    update_frame.origin.x = view_frame.size.width - update_frame.size.width - 10;
     self.courseUpdate.frame = update_frame;
+    CGRect add_course_frame = self.addCourseLabel.frame;
+    add_course_frame.size.width = view_frame.size.width / 2;
+    add_course_frame.origin.x = view_frame.size.width / 4;
+    self.addCourseLabel.frame = add_course_frame;
 }
 
 - (void)allGroupsLayout {
@@ -425,7 +465,7 @@ UIPickerView *course_picker;
 }
 
 - (void)createGroupLayout {
-    UIView *view = self.addGroupNameText.superview;
+    UIView *view = self.view;
     CGRect view_frame = view.frame;
     CGRect name_frame = self.addGroupNameText.frame;
     name_frame.origin.x = view_frame.size.width / 4;
@@ -442,9 +482,13 @@ UIPickerView *course_picker;
     switch_frame.origin.x = number_frame.origin.x + number_frame.size.width - switch_frame.size.width;
     self.isPrivateSwitch.frame = switch_frame;
     CGRect create_frame = self.createGroup.frame;
-    create_frame.origin.x = view_frame.size.width / 4;
-    create_frame.size.width = view_frame.size.width / 2;
+    create_frame.origin.x = view_frame.size.width - create_frame.size.width - 10;
+    //create_frame.size.width = view_frame.size.width / 2;
     self.createGroup.frame = create_frame;
+    CGRect new_group_frame = self.createNewGroupLabel.frame;
+    new_group_frame.size.width = view_frame.size.width / 2;
+    new_group_frame.origin.x = view_frame.size.width / 4;
+    self.createNewGroupLabel.frame = new_group_frame;
 }
 
 - (void)memberDetailsLayout {
@@ -495,15 +539,19 @@ UIPickerView *course_picker;
     changeConfirmPasswordText_frame.origin.y = changeNewPasswordText_frame.origin.y + changeNewPasswordText_frame.size.height + 10;
     self.changeComfirmPasswordText.frame = changeConfirmPasswordText_frame;
     CGRect updateButton_frame = self.updateButton.frame;
-    updateButton_frame.origin.x = view_frame.size.width / 3;
-    updateButton_frame.size.width = view_frame.size.width / 3;
-    updateButton_frame.origin.y = changeConfirmPasswordText_frame.origin.y + 100;
+    updateButton_frame.origin.x = view_frame.size.width - updateButton_frame.size.width - 10;
+    //updateButton_frame.size.width = view_frame.size.width / 3;
+    //updateButton_frame.origin.y = changeConfirmPasswordText_frame.origin.y + 100;
     self.updateButton.frame = updateButton_frame;
-    CGRect doneButton_frame = self.doneButton.frame;
-    doneButton_frame.origin.x = view_frame.size.width / 3;
-    doneButton_frame.size.width = view_frame.size.width / 3;
-    doneButton_frame.origin.y = updateButton_frame.origin.y + 50;
-    self.doneButton.frame = doneButton_frame;
+//    CGRect doneButton_frame = self.doneButton.frame;
+//    doneButton_frame.origin.x = view_frame.size.width / 3;
+//    doneButton_frame.size.width = view_frame.size.width / 3;
+//    doneButton_frame.origin.y = updateButton_frame.origin.y + 50;
+//    self.doneButton.frame = doneButton_frame;
+    CGRect change_password_frame = self.changePasswordLabel.frame;
+    change_password_frame.size.width = self.view.frame.size.width / 2;
+    change_password_frame.origin.x = self.view.frame.size.width / 4;
+    self.changePasswordLabel.frame = change_password_frame;
 }
 
 
@@ -637,10 +685,8 @@ UIPickerView *course_picker;
     
     [group_dict observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSMutableDictionary *groups = snapshot.value;
-        //NSLog(@"OLD GROUP: %@", groups);
         NSString *group_uid = appDelegate.currentGroupUid;
         [groups removeObjectForKey:group_uid];
-        //NSLog(@"NEW GROUP: %@", groups);
         NSDictionary* update_group = @{@"groups" : groups};
         [[group_dict parent] updateChildValues:update_group];
     }];
@@ -648,7 +694,6 @@ UIPickerView *course_picker;
     Firebase *class = [class_ref childByAppendingPath:appDelegate.Quit_ClassUid];
     class = [class childByAppendingPath:@"group"];
     
-    NSLog(@"class_uid %@", appDelegate.Quit_ClassUid);
     Firebase* temp = [appDelegate.firebase childByAppendingPath:@"classes"];
     temp = [temp childByAppendingPath:appDelegate.Quit_ClassUid];
     temp = [temp childByAppendingPath:@"group"];
@@ -656,11 +701,10 @@ UIPickerView *course_picker;
     temp = [temp childByAppendingPath:@"teammember"];
     [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSMutableArray *member = snapshot.value;
-        NSLog(@"OLD GROUP: %@", snapshot.value);
         
         NSString *user_uid = appDelegate.uid;
         [member removeObject:user_uid];
-        NSLog(@"NEW GROUP: %@", member);
+        //NSLog(@"NEW GROUP: %@", member);
         NSDictionary* update_group = @{@"teammember" : member};
         [[temp parent] updateChildValues:update_group];
     }];
@@ -671,7 +715,12 @@ UIPickerView *course_picker;
     
 }
 
-
+- (IBAction)backToChat:(id)sender{
+//    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"MessagesViewContr"];
+//    MessagesViewController* vc = (MessagesViewController *) viewcontroller;
+//    vc.groupID = appDelegate.currentGroupUid;
+//    [self presentViewController:viewcontroller animated:YES completion:nil];
+}
 
 @end
 

@@ -10,8 +10,7 @@
 #import <Firebase/Firebase.h>
 #import "AppDelegate.h"
 #import "QRCodeReaderDelegate.h"
-
-//Firebase *firebase;
+//#import "TeamUp-Swift.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIPickerViewDataSource,UIPickerViewDelegate>
 
@@ -46,7 +45,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *changeComfirmPasswordText;
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UILabel *changePasswordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *searchCourseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createNewGroupLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *addCourseLabel;
 @property (weak, nonatomic) IBOutlet UITextField *addGroupNameText;
 @property (weak, nonatomic) IBOutlet UITextField *addMaxPeopleText;
 @property (weak, nonatomic) IBOutlet UILabel *privateLabel;
@@ -56,6 +59,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UIViewController *viewcontroller;
+@property (weak, nonatomic) IBOutlet UIScrollView *TeamMemberScrollView;
 
 
 //Group Member scene
@@ -75,7 +79,7 @@
 - (IBAction)updateNewPassword:(id)sender;
 - (IBAction)createGroup:(id)sender;
 - (IBAction)quitGroup:(id)sender;
-
+- (IBAction)backToChat:(id)sender;
 
 - (IBAction)scanAction:(id)sender;
 @end
