@@ -55,8 +55,8 @@ UIPickerView *course_picker;
     //initialization ends here
     //not run-time initialization
     memberNameText.text = (appDelegate.name == nil)? @"" : appDelegate.name;
-    memberMajorText.text = (major == nil)? @"" : major;
-    memberYearText.text = (year == nil)? @"" : year;
+    memberMajorText.text = (appDelegate.major == nil)? @"" : appDelegate.major;
+    memberYearText.text = (appDelegate.year == nil)? @"" : appDelegate.year;
     //end "not run-time initialization"
     
     [self searchCourseLayout];
@@ -77,7 +77,16 @@ UIPickerView *course_picker;
     course_picker.delegate = self;
     course_picker.dataSource = self;
     addCourseText.inputView = course_picker;
-    courseArray  = [[NSArray alloc] initWithObjects:@"CSE",@"Math",@"Good",@"XXX", nil];
+    courseArray  = [[NSArray alloc] initWithObjects:@"AAS",@"AESE",@"AIP",@"ANAR",@"ANBI",@"ANES",@"ANSC",@"ANTH",@"AUD",
+                    @"BENG",@"BGGN",@"BGJC",@"BGRD",@"BGSE",@"BIBC",@"BICD",@"BIEB",@"BILD",@"BIMM",@"BIOM",
+                    @"BIPN",@"BISP",@"BNFO",@"CAT",@"CENG",@"CGS",@"CHEM",@"CHIN",@"CLAS", @"CLIN",@"CLRE",
+                    @"CLSS",@"CMM",@"COGN",@"COGR",@"COGS",@"COMM",@"CONT",@"COSF",@"CSE",
+                    @"DSE",	@"DOC",	@"DSGN", @"EAP", @"ECE",@"ECON",@"EDS",	@"ELWR",@"EMED",@"ENG",@"ENVR",
+                    @"ERC",@"ESYS",
+                    @"ETHN",@"EXPR",@"FILM",@"FPM",@"FPMU",@"GLBH",@"GMST",@"HDP",@"HIAF",@"HIEA",@"HIEU",
+                    @"HIGR",@"HILA",@"HILD",@"HINE",@"HISC",@"HITO",@"HIUS",@"HLAW",@"HMNR",@"HUM",@"ICAM",
+                    @"ICEP",@"INTL",@"IRCO",@"IRGN",@"IRLA",@"JAPN",@"JUDA",@"LATI",@"LAWS",@"LHCO",@"LIAB",@"LIDS",@"LIEO",@"LIFR",@"LIGM",@"LIGN",@"LIHI",@"LIHL",@"LIIT",@"LIPO",@"LISL",	@"LISP",@"LTAF",@"LTAM",@"LTCH",@"LTCO",@"LTCS",@"LTEA",@"LTEN",@"LTEU",
+                    @"LTFR",@"LTGK",@"LTGM",@"LTHE",@"LTIT",@"LTKO",@"LTLA",@"LTPR",@"LTRU",@"LTSP",@"LTTH",@"LTWL",@"LTWR",@"MAE",@"MATH",@"MATS",@"MBC",@"MCWP",@"MDE",@"MED",@"MGT",@"MGTF",@"MMW",@"MSED",@"MSP",@"MUIR",@"MUS",@"NANO",@"NEU",@"OPTH",@"ORTH",@"PATH",@"PEDS",@"PHAR",@"PHIL",@"PHYS",@"POLI",@"PSY",@"RAD",@"RELI",@"REV",@"RMAS",@"RMED",@"SDCC",@"SE",@"SIO",@"SIOB",@"SIOC",@"SIOG",@"SOCD",@"SOCE",@"SOCG",@"SOCI",@"SOCL",@"SOMC",@"SPMI",@"SPPS",@"SURG",@"SXTH",@"TDAC",@"TDCH",@"TDDE",@"TDDR",@"TDGE",@"TDGR",@"TDHD",@"TDHT",@"TDMV",@"TDPF",@"TDPR",@"TDPW",@"TDTR",@"TMC",@"TWS",@"USP",@"VIS",@"WARR",@"WCWP",@"WES", nil];
     if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
         Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
         curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
@@ -112,6 +121,9 @@ UIPickerView *course_picker;
         }];
         
     }
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,8 +145,8 @@ UIPickerView *course_picker;
     email = @"";
     appDelegate.uid = @"";
     appDelegate.name = @"";
-    year = @"";
-    major = @"";
+    appDelegate.year = @"";
+    appDelegate.major = @"";
     
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
     [self presentViewController:viewcontroller animated:YES completion:nil];
@@ -151,11 +163,13 @@ UIPickerView *course_picker;
         NSDictionary *groups = snapshot.value;
         appDelegate.name = memberNameText.text;
         year = memberYearText.text;
+        appDelegate.year = memberYearText.text;
         major = memberMajorText.text;
+        appDelegate.major = memberMajorText.text;
         NSDictionary *user_info = @{@"name" : appDelegate.name,
                                     @"email" : appDelegate.email,
-                                    @"major" : major,
-                                    @"year" : year,
+                                    @"major" : appDelegate.major,
+                                    @"year" : appDelegate.year,
                                     @"groups" : groups
                                     };
         NSDictionary *new_user = @{appDelegate.uid : user_info};
@@ -338,22 +352,33 @@ UIPickerView *course_picker;
 }
 
 - (void)searchCourseLayout {
-    UIView *view = self.notFound.superview;
+    UIView *view = self.view;
     CGRect view_frame = view.frame;
-    CGRect notFound_frame = self.notFound.frame;
-    notFound_frame.origin.x = view_frame.size.width - notFound_frame.size.width - 10;
-    self.notFound.frame = notFound_frame;
+//    CGRect notFound_frame = self.notFound.frame;
+//    notFound_frame.origin.x = view_frame.size.width - notFound_frame.size.width - 10;
+//    self.notFound.frame = notFound_frame;
     CGRect table_frame = self.tableView.frame;
     table_frame.size.width = view_frame.size.width;
     self.tableView.frame = table_frame;
+    CGRect notFound_frame = self.notFound.frame;
+    notFound_frame.origin.x = view_frame.size.width - notFound_frame.size.width - 10;
+    self.notFound.frame = notFound_frame;
+    CGRect search_course_frame = self.searchCourseLabel.frame;
+    search_course_frame.size.width = view_frame.size.width / 2;
+    search_course_frame.origin.x = view_frame.size.width / 4;
+    self.searchCourseLabel.frame = search_course_frame;
 }
 
 - (void)addCourseLayout {
-    UIView *view = self.courseUpdate.superview;
+    UIView *view = self.view;
     CGRect view_frame = view.frame;
     CGRect update_frame = self.courseUpdate.frame;
-    update_frame.origin.x = view_frame.size.width - update_frame.size.width - 15;
+    update_frame.origin.x = view_frame.size.width - update_frame.size.width - 10;
     self.courseUpdate.frame = update_frame;
+    CGRect add_course_frame = self.addCourseLabel.frame;
+    add_course_frame.size.width = view_frame.size.width / 2;
+    add_course_frame.origin.x = view_frame.size.width / 4;
+    self.addCourseLabel.frame = add_course_frame;
 }
 
 - (void)allGroupsLayout {
@@ -372,7 +397,7 @@ UIPickerView *course_picker;
 }
 
 - (void)createGroupLayout {
-    UIView *view = self.addGroupNameText.superview;
+    UIView *view = self.view;
     CGRect view_frame = view.frame;
     CGRect name_frame = self.addGroupNameText.frame;
     name_frame.origin.x = view_frame.size.width / 4;
@@ -389,9 +414,13 @@ UIPickerView *course_picker;
     switch_frame.origin.x = number_frame.origin.x + number_frame.size.width - switch_frame.size.width;
     self.isPrivateSwitch.frame = switch_frame;
     CGRect create_frame = self.createGroup.frame;
-    create_frame.origin.x = view_frame.size.width / 4;
-    create_frame.size.width = view_frame.size.width / 2;
+    create_frame.origin.x = view_frame.size.width - create_frame.size.width - 10;
+    //create_frame.size.width = view_frame.size.width / 2;
     self.createGroup.frame = create_frame;
+    CGRect new_group_frame = self.createNewGroupLabel.frame;
+    new_group_frame.size.width = view_frame.size.width / 2;
+    new_group_frame.origin.x = view_frame.size.width / 4;
+    self.createNewGroupLabel.frame = new_group_frame;
 }
 
 - (void)memberDetailsLayout {
@@ -442,15 +471,19 @@ UIPickerView *course_picker;
     changeConfirmPasswordText_frame.origin.y = changeNewPasswordText_frame.origin.y + changeNewPasswordText_frame.size.height + 10;
     self.changeComfirmPasswordText.frame = changeConfirmPasswordText_frame;
     CGRect updateButton_frame = self.updateButton.frame;
-    updateButton_frame.origin.x = view_frame.size.width / 3;
-    updateButton_frame.size.width = view_frame.size.width / 3;
-    updateButton_frame.origin.y = changeConfirmPasswordText_frame.origin.y + 100;
+    updateButton_frame.origin.x = view_frame.size.width - updateButton_frame.size.width - 10;
+    //updateButton_frame.size.width = view_frame.size.width / 3;
+    //updateButton_frame.origin.y = changeConfirmPasswordText_frame.origin.y + 100;
     self.updateButton.frame = updateButton_frame;
-    CGRect doneButton_frame = self.doneButton.frame;
-    doneButton_frame.origin.x = view_frame.size.width / 3;
-    doneButton_frame.size.width = view_frame.size.width / 3;
-    doneButton_frame.origin.y = updateButton_frame.origin.y + 50;
-    self.doneButton.frame = doneButton_frame;
+//    CGRect doneButton_frame = self.doneButton.frame;
+//    doneButton_frame.origin.x = view_frame.size.width / 3;
+//    doneButton_frame.size.width = view_frame.size.width / 3;
+//    doneButton_frame.origin.y = updateButton_frame.origin.y + 50;
+//    self.doneButton.frame = doneButton_frame;
+    CGRect change_password_frame = self.changePasswordLabel.frame;
+    change_password_frame.size.width = self.view.frame.size.width / 2;
+    change_password_frame.origin.x = self.view.frame.size.width / 4;
+    self.changePasswordLabel.frame = change_password_frame;
 }
 
 

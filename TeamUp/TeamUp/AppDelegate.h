@@ -18,6 +18,9 @@
 @property (strong, nonatomic) Firebase *firebase;
 @property (strong, nonatomic) NSString *uid;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *major;
+@property (strong, nonatomic) NSString *year;
+
 @property (strong, nonatomic) NSString *currentGroupUid;
 @property (strong, nonatomic) NSString *currentClassUid;
 @property (strong, nonatomic) NSString *Quit_ClassUid;

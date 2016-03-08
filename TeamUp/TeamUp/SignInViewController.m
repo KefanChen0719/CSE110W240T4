@@ -140,7 +140,9 @@ NSString *major1;
             [appDelegate.users observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
                 appDelegate.name = snapshot.value[@"name"];
                 year1 = snapshot.value[@"year"];
+                appDelegate.year = snapshot.value[@"year"];
                 major1 = snapshot.value[@"major"];
+                appDelegate.major = snapshot.value[@"major"];
             } withCancelBlock:^(NSError *error) {
                 NSLog(@"%@", error.description);
             }];

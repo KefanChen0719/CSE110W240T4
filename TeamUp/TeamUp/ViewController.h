@@ -46,7 +46,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *changeComfirmPasswordText;
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UILabel *changePasswordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *searchCourseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createNewGroupLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *addCourseLabel;
 @property (weak, nonatomic) IBOutlet UITextField *addGroupNameText;
 @property (weak, nonatomic) IBOutlet UITextField *addMaxPeopleText;
 @property (weak, nonatomic) IBOutlet UILabel *privateLabel;
