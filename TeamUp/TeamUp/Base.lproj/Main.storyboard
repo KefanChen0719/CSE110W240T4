@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vDl-nW-5oo">
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
->>>>>>> d12fe0951baf60af88e5710711417db6497136a8
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -845,14 +841,6 @@ send you a temporary password.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-<<<<<<< HEAD
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DAE-4y-dzy">
-                                        <rect key="frame" x="311" y="23" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="vDl-nW-5oo" kind="push" id="Z9Z-tr-QZ3"/>
-=======
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f6n-Q8-Iwe">
                                         <rect key="frame" x="296" y="21" width="68" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -862,7 +850,6 @@ send you a temporary password.</string>
                                         </state>
                                         <connections>
                                             <action selector="UpdateGroupInfo:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="wRa-4M-RzS"/>
->>>>>>> d12fe0951baf60af88e5710711417db6497136a8
                                         </connections>
                                     </button>
                                 </subviews>
@@ -909,7 +896,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdB-4g-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2274.5" y="102.5"/>
+            <point key="canvasLocation" x="-1330.5" y="810.5"/>
         </scene>
         <!--memberDetails-->
         <scene sceneID="ffw-FC-m0C">
@@ -1032,99 +1019,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-zb-gd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849.5" y="66.5"/>
-        </scene>
-        <!--memberDetails-->
-        <scene sceneID="CQH-gM-FjD">
-            <objects>
-                <viewController storyboardIdentifier="groupmemberDetailsViewController" title="memberDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vDl-nW-5oo" customClass="GroupMemberDetails" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Egv-n3-ulZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m0D-d4-2Sm">
-                                <rect key="frame" x="75" y="342" width="39" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJC-px-vaz">
-                                <rect key="frame" x="66" y="280" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HEh-QQ-Lyr">
-                                <rect key="frame" x="66" y="215" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WKx-76-tAO">
-                                <rect key="frame" x="101" y="131" width="173" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" id="bxY-5W-zY2">
-                                <rect key="frame" x="0.0" y="-15" width="401" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nE7-Kc-WcN">
-                                        <rect key="frame" x="10" y="39" width="46" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="Done">
-                                            <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="6Y2-d6-1gv" kind="push" id="tg4-g5-1Tm"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YYS-ko-yVw">
-                                <rect key="frame" x="151" y="215" width="42" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Ru-CH-per">
-                                <rect key="frame" x="151" y="280" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pyc-48-tSn">
-                                <rect key="frame" x="151" y="342" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="kTf-wo-fWB"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="accountLabel" destination="WKx-76-tAO" id="97U-nS-QpV"/>
-                        <outlet property="majorLabel" destination="4Ru-CH-per" id="Nds-fP-6EW"/>
-                        <outlet property="nameLabel" destination="YYS-ko-yVw" id="gQW-H7-ypI"/>
-                        <outlet property="topView1" destination="bxY-5W-zY2" id="BrO-sR-WnZ"/>
-                        <outlet property="yearLabel" destination="pyc-48-tSn" id="ep1-kO-GxZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C2H-z7-lDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1873.5" y="-119.5"/>
+            <point key="canvasLocation" x="-805.5" y="48.5"/>
         </scene>
         <!--changeNewPassword-->
         <scene sceneID="TB0-D0-ecP">
@@ -1256,17 +1151,9 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="JZL-so-WAM"/>
-        <segue reference="tPV-cf-Y4b"/>
-        <segue reference="u1L-c5-W4l"/>
-        <segue reference="oxH-Qg-Ugh"/>
-        <segue reference="tg4-g5-1Tm"/>
-=======
         <segue reference="9BC-IL-v2N"/>
         <segue reference="u1L-c5-W4l"/>
         <segue reference="oxH-Qg-Ugh"/>
         <segue reference="ysN-Fc-aia"/>
->>>>>>> d12fe0951baf60af88e5710711417db6497136a8
     </inferredMetricsTieBreakers>
 </document>

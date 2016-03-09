@@ -49,7 +49,6 @@
 		5AC47BA91C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
-		8E048DCC1C8FD99900244245 /* GroupMemberDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E048DCB1C8FD99900244245 /* GroupMemberDetails.m */; };
 		8E9543241C8E14A3002C35E3 /* Batch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543231C8E14A3002C35E3 /* Batch.framework */; };
 		8E9543261C8E14AB002C35E3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */; };
 		940390C71C8FDCAA0096B3B7 /* groupMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940390C61C8FDCAA0096B3B7 /* groupMemberViewController.m */; };
@@ -158,8 +157,6 @@
 		5AC47BA31C726BF4006DD3B5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AC47BA71C726C23006DD3B5 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
-		8E048DCA1C8FD97B00244245 /* GroupMemberDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMemberDetails.h; sourceTree = "<group>"; };
-		8E048DCB1C8FD99900244245 /* GroupMemberDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMemberDetails.m; sourceTree = "<group>"; };
 		8E9543231C8E14A3002C35E3 /* Batch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Batch.framework; path = Pods/Batch.embeddedframework/Batch.framework; sourceTree = "<group>"; };
 		8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		940390C51C8FDCAA0096B3B7 /* groupMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupMemberViewController.h; sourceTree = "<group>"; };
@@ -310,13 +307,8 @@
 				52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */,
 				52D7C0241C8F90FA005652F7 /* MemberDetailViewController.h */,
 				52D7C0251C8F9111005652F7 /* MemberDetailViewController.m */,
-<<<<<<< HEAD
-				8E048DCA1C8FD97B00244245 /* GroupMemberDetails.h */,
-				8E048DCB1C8FD99900244245 /* GroupMemberDetails.m */,
-=======
 				940390C51C8FDCAA0096B3B7 /* groupMemberViewController.h */,
 				940390C61C8FDCAA0096B3B7 /* groupMemberViewController.m */,
->>>>>>> d12fe0951baf60af88e5710711417db6497136a8
 			);
 			path = TeamUp;
 			sourceTree = "<group>";
@@ -438,7 +430,7 @@
 				TargetAttributes = {
 					54EA6C331C58A5E600BF3DC6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = G27F8AB9PH;
+						DevelopmentTeam = 5YFX8A6H5D;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -570,7 +562,6 @@
 				52ED95721C8CE29600B71B4A /* bitstream.c in Sources */,
 				52ED95751C8CE29600B71B4A /* qrinput.c in Sources */,
 				52ED95731C8CE29600B71B4A /* mask.c in Sources */,
-				8E048DCC1C8FD99900244245 /* GroupMemberDetails.m in Sources */,
 				54EA6C3C1C58A5E600BF3DC6 /* AppDelegate.m in Sources */,
 				52ED95781C8CE29600B71B4A /* split.c in Sources */,
 				52ED95601C8CCE1000B71B4A /* QRCodeReaderViewController.m in Sources */,
