@@ -59,7 +59,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UIViewController *viewcontroller;
-@property (weak, nonatomic) IBOutlet UIScrollView *TeamMemberScrollView;
+//@property (weak, nonatomic) IBOutlet UIScrollView *TeamMemberScrollView;
 
 
 //Group Member scene
