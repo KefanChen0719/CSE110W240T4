@@ -16,6 +16,8 @@
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UIViewController *viewcontroller;
 @property (weak, nonatomic) IBOutlet UIButton *quitButton;
+@property (weak, nonatomic) IBOutlet UIButton *updateButton;
+@property (weak, nonatomic) IBOutlet UIButton *memberDetailButton;
 @property (weak, nonatomic) IBOutlet UILabel *GroupNameLabel;
 - (IBAction)quitGroup:(id)sender;
 - (IBAction)UpdateGroupInfo:(id)sender;

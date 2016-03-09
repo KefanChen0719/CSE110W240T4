@@ -24,6 +24,14 @@ UITextView *groupinfo;
     quit_frame.origin.x = self.view.frame.size.width / 4;
     quit_frame.origin.y = self.view.frame.size.height - quit_frame.size.height - 10;
     self.quitButton.frame = quit_frame;
+    CGRect update_frame = self.updateButton.frame;
+    update_frame.origin.x = self.view.frame.size.width - update_frame.size.width - 10;
+    self.updateButton.frame = update_frame;
+    CGRect detail_frame = self.memberDetailButton.frame;
+    detail_frame.size.width = self.view.frame.size.width / 2;
+    detail_frame.origin.x = self.view.frame.size.width / 4;
+    detail_frame.origin.y = quit_frame.origin.y - detail_frame.size.height - 5;
+    self.memberDetailButton.frame = detail_frame;
 
     if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
         Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
