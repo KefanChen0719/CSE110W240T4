@@ -250,7 +250,7 @@ send you a temporary password.</string>
             <objects>
                 <viewController storyboardIdentifier="ClassGroupsViewController" title="ClassGroups" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r7I-xe-ELr" customClass="ClassGroupsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tDr-T3-PNV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="vTX-7N-eMX">
@@ -1266,6 +1266,6 @@ send you a temporary password.</string>
         <segue reference="nvB-E5-fds"/>
         <segue reference="712-gk-ksQ"/>
         <segue reference="8BB-u2-kuq"/>
-        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="aqp-Cg-JfB"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,10 +13,16 @@
 @end
 
 @implementation MemberDetailViewController
-@synthesize appDelegate,viewcontroller, GroupNameLabel;
+@synthesize appDelegate,viewcontroller, GroupNameLabel,spinner;
 UITextView *groupinfo;
 UITextField *maxNumer;
 - (void)viewDidLoad {
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner setCenter:CGPointMake(self.view.frame.size.width/2,  self.view.frame.size.height/2)]; // I do this because I'm in landscape mode
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+
     __block NSString* QR_UID = @"";
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -66,7 +72,11 @@ UITextField *maxNumer;
             [self.view addSubview:maxNumer];
             [self.view addSubview:imageView];
             [self.view addSubview:groupinfo];
+            [spinner stopAnimating];
+            
         }];
+        
+  
         
     }
     
