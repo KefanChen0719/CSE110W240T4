@@ -856,6 +856,11 @@ send you a temporary password.</string>
                                     <action selector="quitGroup:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="pjv-3c-032"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nBB-wF-UeF">
+                                <rect key="frame" x="133" y="579" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Member Details"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -997,7 +1002,7 @@ send you a temporary password.</string>
             <objects>
                 <viewController title="changeNewPassword" id="wta-lS-iQI" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkz-FY-T8n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" id="J5s-9Q-JOg">
@@ -1108,6 +1113,9 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-
+        <segue reference="ysN-Fc-aia"/>
+        <segue reference="tPV-cf-Y4b"/>
+        <segue reference="u1L-c5-W4l"/>
+        <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>
 </document>

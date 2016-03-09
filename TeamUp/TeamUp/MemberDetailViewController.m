@@ -30,10 +30,8 @@
         curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
         curr_group = [curr_group childByAppendingPath:@"group"];
         curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
-        //curr_group = [curr_group childByAppendingPath:@"teammember"];
         [curr_group observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
             NSDictionary *member = snapshot.value;
-            //__block NSString* memberName = @"";
             if([appDelegate.firebase.authData.uid isEqualToString:@""]){
                 QR_UID = @"ERROR";
             }
@@ -41,39 +39,20 @@
                 QR_UID = [appDelegate.currentClassUid stringByAppendingString:@";"];
                 QR_UID = [QR_UID stringByAppendingString:appDelegate.currentGroupUid];
             }
-            CGFloat imageSize = ceilf(self.view.bounds.size.width * 0.6f);
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.5f - imageSize * 0.5f), floorf(self.view.frame.size.height*0.15), imageSize, imageSize)];
-            imageView.image = [UIImage mdQRCodeForString:QR_UID size:imageView.bounds.size.width fillColor:[UIColor darkGrayColor]];
-            //UIScrollView *TeamMemberScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
-            //[TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width,  member.count * self.view.frame.size.height*0.1 + imageSize + 200)];
-            //[TeamMemberScrollView addSubview:imageView];
-            UITextView *groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, floorf(self.view.frame.size.height*0.15) + imageSize, 200, 100)];
+            CGFloat infoSize = ceilf(self.view.bounds.size.width * 0.8f);
+            UITextView *groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15), infoSize, infoSize/2)];
             [groupinfo setText:[NSString stringWithFormat: @"%@", member[@"groupinfo"]]];
+            CGFloat imageSize = ceilf(self.view.bounds.size.width * 0.8f);
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15) + infoSize/2, imageSize, imageSize)];
+            imageView.image = [UIImage mdQRCodeForString:QR_UID size:imageView.bounds.size.width fillColor:[UIColor darkGrayColor]];
             [self.view addSubview:imageView];
             [self.view addSubview:groupinfo];
-            //[TeamMemberScrollView addSubview:groupinfo];
-//            for (NSInteger index = 0; index < member.count; index++)
-//            {
-//                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//                Firebase* curr_user_name = [appDelegate.firebase childByAppendingPath:@"users"];
-//                curr_user_name = [curr_user_name childByAppendingPath: member[index]];
-//                [curr_user_name observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//                    button.frame = CGRectMake(0, 100+imageSize + self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
-//                    [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
-//                    button.tag = index;
-//                    [button setTitle:[NSString stringWithFormat:snapshot.value[@"name"], ((long)index + 1)] forState:UIControlStateNormal];
-//                    [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
-//                    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//                    [[button layer] setBorderWidth:2.0f];
-//                    button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
-//                }];
-//                [TeamMemberScrollView addSubview:button];
-//            }
-            //[self.view addSubview:TeamMemberScrollView];
         }];
         
     }
 }
+
+
 
 - (IBAction)quitGroup:(id)sender {
     
