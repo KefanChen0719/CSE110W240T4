@@ -53,15 +53,15 @@ NSArray<NSString*> *class_groups_uid;
         
         [scrollView setContentSize:CGSizeMake(scrollView.bounds.size.width, scrollView.bounds.size.height*3)];
         CGRect contentRect = CGRectZero;
-        
+        NSInteger startpos = 0;
         for (NSInteger index = 0; index < numGroups; index++)
         {
-//            if([class_groups[class_groups_uid[index]][@"isprivate"] isEqualToString:@"private"]){
-//                index++;
-//                continue;
-//            }
+            if([class_groups[class_groups_uid[index]][@"isprivate"] isEqualToString:@"private"]){
+                index++;
+                continue;
+            }
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
+            button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)startpos, self.view.frame.size.width,self.view.frame.size.height*0.1);
             [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
             button.tag = index;
             [button setTitle:[NSString stringWithFormat:[self getNameFromGroupUid: class_groups_uid[index]], ((long)index + 1)] forState:UIControlStateNormal];
@@ -73,6 +73,7 @@ NSArray<NSString*> *class_groups_uid;
             [scrollView addSubview:button];
             contentRect = CGRectUnion(contentRect, button.frame);
             scrollView.contentSize = contentRect.size;
+            startpos++;
         }
         
         [self.view addSubview:scrollView];
