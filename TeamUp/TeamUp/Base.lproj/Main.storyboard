@@ -1020,7 +1020,7 @@ send you a temporary password.</string>
         <!--groupmemberDetails-->
         <scene sceneID="F3h-hl-oGW">
             <objects>
-                <viewController storyboardIdentifier="groupmemberDetailsViewController" title="memberDetails" id="2qd-OK-Oqq" userLabel="groupmemberDetails" customClass="groupMemberDetails" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="groupmemberDetailsViewController" title="memberDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2qd-OK-Oqq" userLabel="groupmemberDetails" customClass="groupMemberDetails" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s5K-qd-reU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1058,7 +1058,7 @@ send you a temporary password.</string>
                                             <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="6Y2-d6-1gv" kind="push" id="7Dd-Be-zpM"/>
+                                            <segue destination="6yP-8B-GXm" kind="modal" id="wMe-kH-TiM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1262,10 +1262,11 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="nvB-E5-fds"/>
         <segue reference="ysN-Fc-aia"/>
         <segue reference="tPV-cf-Y4b"/>
-        <segue reference="7Dd-Be-zpM"/>
-        <segue reference="s2f-eg-0mM"/>
         <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="s2f-eg-0mM"/>
+        <segue reference="wMe-kH-TiM"/>
     </inferredMetricsTieBreakers>
 </document>
