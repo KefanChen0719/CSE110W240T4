@@ -989,7 +989,7 @@ send you a temporary password.</string>
             <objects>
                 <viewController title="changeNewPassword" id="wta-lS-iQI" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkz-FY-T8n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" id="J5s-9Q-JOg">
@@ -1100,18 +1100,9 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<!-- <<<<<<< HEAD
-        <segue reference="s2f-eg-0mM"/>
-        <segue reference="oxH-Qg-Ugh"/>
-        <segue reference="JZL-so-WAM"/>
-        <segue reference="tPV-cf-Y4b"/>
-=======
-        <segue reference="W4o-04-TMG"/>
-
-        <segue reference="u1L-c5-W4l"/>
-
-        <segue reference="oxH-Qg-Ugh"/>
         <segue reference="ysN-Fc-aia"/>
->>>>>>> 944a0dacf277d02fe31d3bd09471bd1716af4889 -->
+        <segue reference="tPV-cf-Y4b"/>
+        <segue reference="u1L-c5-W4l"/>
+        <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>
 </document>

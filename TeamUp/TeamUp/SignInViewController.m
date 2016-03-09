@@ -79,7 +79,7 @@ NSString *major1;
     
     
     
-    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner setCenter:CGPointMake(view.frame.size.width/2,  (forget_frame.origin.y + button_frame.origin.y)/2)]; // I do this because I'm in landscape mode
     [self.view addSubview:spinner];
     
