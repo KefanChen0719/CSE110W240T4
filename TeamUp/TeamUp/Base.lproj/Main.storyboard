@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -870,17 +870,13 @@ send you a temporary password.</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nBB-wF-UeF">
                                 <rect key="frame" x="80" y="579" width="228" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<!-- <<<<<<< HEAD
-                                <state key="normal" title="Member Details"/>
-                                <connections>
-                                    <segue destination="6yP-8B-GXm" kind="modal" id="tid-sc-g4a"/>
-                                </connections>
-======= -->
                                 <color key="backgroundColor" red="0.87941880230000002" green="1" blue="0.99064612289999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Member Details">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-<!-- >>>>>>> ee3f3a875e2c583d85e0c68656cfb569cf60df7b -->
+                                <connections>
+                                    <segue destination="6yP-8B-GXm" kind="modal" id="712-gk-ksQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>

@@ -87,7 +87,7 @@ NSString* QR_UID;
 //    NSLog(@"Button %ld %@", (long)button.tag, class_groups[class_groups_uid[button.tag]]);
 //    appDelegate.currentGroupUid = class_groups_uid[button.tag];
 //    appDelegate.currentGroupDictionary = class_groups[class_groups_uid[button.tag]];
-   
+    NSLog(@"new group");
     
     Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
     curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
@@ -124,6 +124,9 @@ NSString* QR_UID;
         viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
         [self presentViewController:viewcontroller animated:YES completion:nil];
         }
+        }
+        else{
+            NSLog(@"group is null");//TODO
         }
     }];
  
