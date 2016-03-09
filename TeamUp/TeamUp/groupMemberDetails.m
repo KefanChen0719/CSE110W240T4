@@ -26,6 +26,10 @@
         _majorLabel.text = snapshot.value[@"major"];
         _yearLabel.text = snapshot.value[@"year"];
     }];
+    CGRect label_frame = self.informationLabel.frame;
+    label_frame.size.width = self.view.frame.size.width / 2;
+    label_frame.origin.x = self.view.frame.size.width / 4;
+    self.informationLabel.frame = label_frame;
 }
 
 @end

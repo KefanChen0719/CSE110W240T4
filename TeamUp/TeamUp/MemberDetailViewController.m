@@ -67,6 +67,11 @@ UITextField *maxNumer;
         }];
         
     }
+    
+    CGRect name_frame = self.GroupNameLabel.frame;
+    name_frame.size.width = self.view.frame.size.width / 2;
+    name_frame.origin.x = self.view.frame.size.width / 4;
+    self.GroupNameLabel.frame = name_frame;
 }
 
 - (IBAction)UpdateGroupInfo:(id)sender{
