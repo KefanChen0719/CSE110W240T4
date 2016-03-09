@@ -12,7 +12,7 @@
 @end
 
 @implementation ClassGroupsViewController
-@synthesize appDelegate,viewcontroller;
+@synthesize appDelegate,viewcontroller,spinner;
 NSDictionary *class_groups;
 NSArray<NSString*> *class_groups_uid;
 
@@ -21,6 +21,11 @@ NSArray<NSString*> *class_groups_uid;
 - (void)viewDidLoad {
     [super viewDidLoad];
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner setCenter:CGPointMake(self.view.frame.size.width/2,  self.view.frame.size.height/2)]; // I do this because I'm in landscape mode
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
 
     CGRect name_frame = self.classNameLabel.frame;
     name_frame.size.width = self.view.frame.size.width / 2;
@@ -77,8 +82,9 @@ NSArray<NSString*> *class_groups_uid;
         }
         
         [self.view addSubview:scrollView];
+        [spinner stopAnimating];
     }];
-
+     
 }
 
 // Put the connection of each button here.
@@ -117,4 +123,5 @@ NSArray<NSString*> *class_groups_uid;
     group_name = [group_uid substringFromIndex:36];
     return group_name;
 }
+
 @end

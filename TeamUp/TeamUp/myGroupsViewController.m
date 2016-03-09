@@ -16,7 +16,7 @@ NSString *year4;
 NSString *major4;
 
 @implementation myGroupsViewController
-@synthesize appDelegate,viewcontroller;
+@synthesize appDelegate,viewcontroller,spinner;
 NSDictionary *groups;
 NSArray<NSString*> *groups_uid;
 
@@ -46,11 +46,17 @@ NSArray<NSString*> *groups_uid;
     accountButton_frame.origin.y = view_frame.size.height - accountButton_frame.size.height - 5;
     self.accountButton.frame = accountButton_frame;
     
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner setCenter:CGPointMake(view.frame.size.width/2,  view.frame.size.height/2)]; // I do this because I'm in landscape mode
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+    
 }
 
 
 - (void) viewDidAppear:(BOOL)animated {
-
+    
    
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.topView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height*0.8)];
     //UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.topView.frame.size.height, self.view.frame.size.width, 100)];
@@ -104,9 +110,9 @@ NSArray<NSString*> *groups_uid;
         
         
         [self.view addSubview:scrollView];
+         [spinner stopAnimating];
     }];
-
-
+   
 }
 
 
