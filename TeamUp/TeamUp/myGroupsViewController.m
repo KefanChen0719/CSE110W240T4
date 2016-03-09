@@ -128,6 +128,7 @@ NSArray<NSString*> *groups_uid;
   
     MessagesViewController* vc = (MessagesViewController *) viewcontroller;
     vc.groupID = currentGroupUid;
+    vc.viewWidth = [NSString stringWithFormat: @"%.2f", self.view.frame.size.width];
     [self presentViewController:viewcontroller animated:YES completion:nil];
 }
 

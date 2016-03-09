@@ -18,7 +18,12 @@
 - (void)viewDidLoad {
     __block NSString* QR_UID = @"";
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
+    
+    CGRect quit_frame = self.quitButton.frame;
+    quit_frame.size.width = self.view.frame.size.width / 2;
+    quit_frame.origin.x = self.view.frame.size.width / 4;
+    quit_frame.origin.y = self.view.frame.size.height - quit_frame.size.height - 10;
+    self.quitButton.frame = quit_frame;
 
     if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
         Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
