@@ -249,7 +249,7 @@ UIPickerView *course_picker;
         return;
     }
     
-    [appDelegate.firebase changePasswordForUser:email fromOld:changeOldPasswordText.text
+    [appDelegate.firebase changePasswordForUser:appDelegate.email fromOld:changeOldPasswordText.text
     toNew:changeNewPasswordText.text withCompletionBlock:^(NSError *error) {
         if (error) {
             NSString *errorMessage = [error localizedDescription];
