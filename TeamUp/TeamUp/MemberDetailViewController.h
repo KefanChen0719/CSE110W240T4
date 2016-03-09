@@ -21,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *GroupNameLabel;
 - (IBAction)quitGroup:(id)sender;
 - (IBAction)UpdateGroupInfo:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *backToChatButton;
+- (void) backToChat:(id) chat;
 @end
 #endif /* MemberDetailViewController_h */

@@ -33,6 +33,8 @@ UITextField *maxNumer;
     detail_frame.origin.x = self.view.frame.size.width / 4;
     detail_frame.origin.y = quit_frame.origin.y - detail_frame.size.height - 5;
     self.memberDetailButton.frame = detail_frame;
+    
+    [self.backToChatButton addTarget:self action:@selector(backToChat:) forControlEvents:(UIControlEventTouchUpInside)];
 
     if(appDelegate.currentGroupUid && ![appDelegate.currentGroupUid isEqualToString:@""]){
         Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
@@ -135,6 +137,15 @@ UITextField *maxNumer;
     [self presentViewController:viewcontroller animated:YES completion:nil];
     
     
+}
+
+-(void) backToChat:(id)sender {
+    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"MessagesViewContr"];
+    
+    MessagesViewController* vc = (MessagesViewController *) viewcontroller;
+    vc.groupID = appDelegate.currentGroupUid;
+    vc.viewWidth = [NSString stringWithFormat: @"%.2f", self.view.frame.size.width];
+    [self presentViewController:viewcontroller animated:YES completion:nil];
 }
 
 

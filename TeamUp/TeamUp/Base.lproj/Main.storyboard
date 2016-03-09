@@ -827,12 +827,9 @@ send you a temporary password.</string>
                                         <rect key="frame" x="8" y="17" width="93" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="My Groups">
+                                        <state key="normal" title="Back">
                                             <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="qix-Aq-Vg8" kind="modal" id="9BC-IL-v2N"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f6n-Q8-Iwe">
                                         <rect key="frame" x="296" y="22" width="68" height="30"/>
@@ -885,6 +882,7 @@ send you a temporary password.</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="GroupNameLabel" destination="gad-Lu-gFM" id="ZM3-0W-lfg"/>
+                        <outlet property="backToChatButton" destination="pu5-Yn-v2t" id="cXR-ed-wle"/>
                         <outlet property="memberDetailButton" destination="nBB-wF-UeF" id="Wa1-yY-5Rm"/>
                         <outlet property="quitButton" destination="ELo-zg-TyW" id="Ij5-iC-aod"/>
                         <outlet property="updateButton" destination="f6n-Q8-Iwe" id="80u-2e-yIB"/>
@@ -1264,10 +1262,10 @@ send you a temporary password.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ysN-Fc-aia"/>
+        <segue reference="tPV-cf-Y4b"/>
         <segue reference="nvB-E5-fds"/>
-        <segue reference="9BC-IL-v2N"/>
+        <segue reference="712-gk-ksQ"/>
         <segue reference="8BB-u2-kuq"/>
-        <segue reference="wMe-kH-TiM"/>
         <segue reference="oxH-Qg-Ugh"/>
     </inferredMetricsTieBreakers>
 </document>
