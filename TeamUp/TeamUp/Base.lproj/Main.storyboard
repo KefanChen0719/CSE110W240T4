@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vDl-nW-5oo">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+>>>>>>> d12fe0951baf60af88e5710711417db6497136a8
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -775,7 +779,7 @@ send you a temporary password.</string>
                                         </connections>
                                     </button>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Se4-zg-kBX">
-                                        <rect key="frame" x="263" y="25.5" width="75" height="34"/>
+                                        <rect key="frame" x="263" y="26" width="75" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="Create">
@@ -820,7 +824,7 @@ send you a temporary password.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ut7-xI-WtS">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="434" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pu5-Yn-v2t">
@@ -841,12 +845,24 @@ send you a temporary password.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+<<<<<<< HEAD
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DAE-4y-dzy">
                                         <rect key="frame" x="311" y="23" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <segue destination="vDl-nW-5oo" kind="push" id="Z9Z-tr-QZ3"/>
+=======
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f6n-Q8-Iwe">
+                                        <rect key="frame" x="296" y="21" width="68" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UpdateGroupInfo:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="wRa-4M-RzS"/>
+>>>>>>> d12fe0951baf60af88e5710711417db6497136a8
                                         </connections>
                                     </button>
                                 </subviews>
@@ -864,13 +880,31 @@ send you a temporary password.</string>
                                     <action selector="quitGroup:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="pjv-3c-032"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nBB-wF-UeF">
+                                <rect key="frame" x="80" y="579" width="228" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<!-- <<<<<<< HEAD
+                                <state key="normal" title="Member Details"/>
+                                <connections>
+                                    <segue destination="6yP-8B-GXm" kind="modal" id="tid-sc-g4a"/>
+                                </connections>
+======= -->
+                                <color key="backgroundColor" red="0.87941880230000002" green="1" blue="0.99064612289999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Member Details">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+<!-- >>>>>>> ee3f3a875e2c583d85e0c68656cfb569cf60df7b -->
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jkg-WU-uGd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="GroupNameLabel" destination="gad-Lu-gFM" id="ZM3-0W-lfg"/>
+                        <outlet property="memberDetailButton" destination="nBB-wF-UeF" id="Wa1-yY-5Rm"/>
                         <outlet property="quitButton" destination="ELo-zg-TyW" id="Ij5-iC-aod"/>
+                        <outlet property="updateButton" destination="f6n-Q8-Iwe" id="80u-2e-yIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdB-4g-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1206,12 +1240,33 @@ send you a temporary password.</string>
             </objects>
             <point key="canvasLocation" x="217" y="79"/>
         </scene>
+        <!--groupMembers-->
+        <scene sceneID="uGz-uk-7xT">
+            <objects>
+                <viewController id="6yP-8B-GXm" userLabel="groupMembers" customClass="groupMemberViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lg2-dN-diM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BN1-a6-zng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1876" y="1629"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="JZL-so-WAM"/>
         <segue reference="tPV-cf-Y4b"/>
         <segue reference="u1L-c5-W4l"/>
         <segue reference="oxH-Qg-Ugh"/>
         <segue reference="tg4-g5-1Tm"/>
+=======
+        <segue reference="9BC-IL-v2N"/>
+        <segue reference="u1L-c5-W4l"/>
+        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="ysN-Fc-aia"/>
+>>>>>>> d12fe0951baf60af88e5710711417db6497136a8
     </inferredMetricsTieBreakers>
 </document>

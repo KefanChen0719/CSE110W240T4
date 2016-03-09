@@ -52,6 +52,7 @@
 		8E048DCC1C8FD99900244245 /* GroupMemberDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E048DCB1C8FD99900244245 /* GroupMemberDetails.m */; };
 		8E9543241C8E14A3002C35E3 /* Batch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543231C8E14A3002C35E3 /* Batch.framework */; };
 		8E9543261C8E14AB002C35E3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */; };
+		940390C71C8FDCAA0096B3B7 /* groupMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940390C61C8FDCAA0096B3B7 /* groupMemberViewController.m */; };
 		94FD5D291C88B7D3005C8FBF /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FD5D281C88B7D3005C8FBF /* AddGroupViewController.m */; };
 		9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
 		9820D2151C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
@@ -161,6 +162,8 @@
 		8E048DCB1C8FD99900244245 /* GroupMemberDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMemberDetails.m; sourceTree = "<group>"; };
 		8E9543231C8E14A3002C35E3 /* Batch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Batch.framework; path = Pods/Batch.embeddedframework/Batch.framework; sourceTree = "<group>"; };
 		8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		940390C51C8FDCAA0096B3B7 /* groupMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupMemberViewController.h; sourceTree = "<group>"; };
+		940390C61C8FDCAA0096B3B7 /* groupMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupMemberViewController.m; sourceTree = "<group>"; };
 		94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FD5D271C88B7D3005C8FBF /* AddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGroupViewController.h; sourceTree = "<group>"; };
 		94FD5D281C88B7D3005C8FBF /* AddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupViewController.m; sourceTree = "<group>"; };
@@ -307,8 +310,13 @@
 				52ED95501C88179B00B71B4A /* ClassGroupsViewController.m */,
 				52D7C0241C8F90FA005652F7 /* MemberDetailViewController.h */,
 				52D7C0251C8F9111005652F7 /* MemberDetailViewController.m */,
+<<<<<<< HEAD
 				8E048DCA1C8FD97B00244245 /* GroupMemberDetails.h */,
 				8E048DCB1C8FD99900244245 /* GroupMemberDetails.m */,
+=======
+				940390C51C8FDCAA0096B3B7 /* groupMemberViewController.h */,
+				940390C61C8FDCAA0096B3B7 /* groupMemberViewController.m */,
+>>>>>>> d12fe0951baf60af88e5710711417db6497136a8
 			);
 			path = TeamUp;
 			sourceTree = "<group>";
@@ -552,6 +560,7 @@
 			files = (
 				52EEA4271C7E7B0900EC8A5A /* myGroupsViewController.m in Sources */,
 				94FD5D291C88B7D3005C8FBF /* AddGroupViewController.m in Sources */,
+				940390C71C8FDCAA0096B3B7 /* groupMemberViewController.m in Sources */,
 				52ED95771C8CE29600B71B4A /* rscode.c in Sources */,
 				52ED95611C8CCE1000B71B4A /* QRToggleTorchButton.m in Sources */,
 				52ED955E1C8CCE1000B71B4A /* QRCodeReader.m in Sources */,
