@@ -87,15 +87,7 @@ NSString* QR_UID;
 //    NSLog(@"Button %ld %@", (long)button.tag, class_groups[class_groups_uid[button.tag]]);
 //    appDelegate.currentGroupUid = class_groups_uid[button.tag];
 //    appDelegate.currentGroupDictionary = class_groups[class_groups_uid[button.tag]];
-    Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
-    curr_user = [curr_user childByAppendingPath:@"groups"];
-    [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
-        if(snapshot.childrenCount!=0)
-            [groups addEntriesFromDictionary:snapshot.value];
-        [groups setObject:appDelegate.currentClassUid forKey:appDelegate.currentGroupUid];
-        [curr_user updateChildValues:groups];
-    }];
+   
     
     Firebase *curr_group = [appDelegate.firebase childByAppendingPath:@"classes"];
     curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
@@ -120,9 +112,18 @@ NSString* QR_UID;
         }
         NSDictionary *update_info = @{@"teammember" : member};
         [curr_group updateChildValues:update_info];
-        }
+            Firebase *curr_user = [appDelegate.users_ref childByAppendingPath:appDelegate.firebase.authData.uid];
+            curr_user = [curr_user childByAppendingPath:@"groups"];
+            [curr_user observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
+                if(snapshot.childrenCount!=0)
+                    [groups addEntriesFromDictionary:snapshot.value];
+                [groups setObject:appDelegate.currentClassUid forKey:appDelegate.currentGroupUid];
+                [curr_user updateChildValues:groups];
+            }];
         viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
         [self presentViewController:viewcontroller animated:YES completion:nil];
+        }
         }
     }];
  
