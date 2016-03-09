@@ -16,7 +16,16 @@
 @synthesize appDelegate,viewcontroller;
 
 -(void)viewDidLoad{
-    _nameLabel.text = @"hello";
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    Firebase *member= [appDelegate.firebase childByAppendingPath:@"users"];
+    member =[member childByAppendingPath:appDelegate.member_uid];
+    NSLog(@"%@", appDelegate.member_uid);
+    [member observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"we are lookng: %@", snapshot.value[@"name"]);
+        _nameLabel.text = snapshot.value[@"name"];
+        _majorLabel.text = snapshot.value[@"major"];
+        _yearLabel.text = snapshot.value[@"year"];
+    }];
 }
 
 @end
