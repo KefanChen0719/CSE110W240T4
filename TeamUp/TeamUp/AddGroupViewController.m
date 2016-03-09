@@ -102,19 +102,33 @@ NSString* QR_UID;
     curr_group = [curr_group childByAppendingPath:@"group"];
     curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
     Firebase *teammember = [curr_group childByAppendingPath:@"teammember"];
+    __block bool value = true;
     [teammember observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         if(snapshot.childrenCount!=0){
         NSMutableArray<NSString *> *member = snapshot.value;
+        
+        if (member.count == [appDelegate.currentGroupDictionary[@"maxnumber"] integerValue]) {
+            value = false;
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"This is group is full!" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:appDelegate.defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+            
+        else {
         if(![member containsObject:appDelegate.firebase.authData.uid]){
             [member insertObject:appDelegate.firebase.authData.uid atIndex:member.count];
         }
         NSDictionary *update_info = @{@"teammember" : member};
         [curr_group updateChildValues:update_info];
         }
+        viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
+        [self presentViewController:viewcontroller animated:YES completion:nil];
+        }
     }];
-    viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
-    [self presentViewController:viewcontroller animated:YES completion:nil];
+ 
 
+    
+   
 }
 
 
