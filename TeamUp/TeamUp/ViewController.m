@@ -100,7 +100,7 @@ UIPickerView *course_picker;
     
     
     addSectionText.text = [NSString stringWithFormat:@"%@%@",term_text,date_year];
-
+    addSectionText.enabled = NO;
     
     memberNameText.text = (appDelegate.name == nil)? @"" : appDelegate.name;
     memberMajorText.text = (appDelegate.major == nil)? @"" : appDelegate.major;
