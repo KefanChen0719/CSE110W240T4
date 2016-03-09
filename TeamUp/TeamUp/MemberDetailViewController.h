@@ -11,11 +11,10 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "TeamUp-Swift.h"
-
+#import "UIImage+MDQRCode.h"
 @interface MemberDetailViewController : UIViewController
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UIViewController *viewcontroller;
-@property (weak, nonatomic) IBOutlet UIScrollView *TeamMemberScrollView;
 - (IBAction)quitGroup:(id)sender;
 @end
 #endif /* MemberDetailViewController_h */
