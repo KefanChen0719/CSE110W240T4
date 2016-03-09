@@ -25,9 +25,9 @@
         curr_group = [curr_group childByAppendingPath:appDelegate.currentClassUid];
         curr_group = [curr_group childByAppendingPath:@"group"];
         curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
-        curr_group = [curr_group childByAppendingPath:@"teammember"];
+        //curr_group = [curr_group childByAppendingPath:@"teammember"];
         [curr_group observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-            NSMutableArray<NSString *> *member = snapshot.value;
+            NSDictionary *member = snapshot.value;
             //__block NSString* memberName = @"";
             if([appDelegate.firebase.authData.uid isEqualToString:@""]){
                 QR_UID = @"ERROR";
@@ -37,14 +37,16 @@
                 QR_UID = [QR_UID stringByAppendingString:appDelegate.currentGroupUid];
             }
             CGFloat imageSize = ceilf(self.view.bounds.size.width * 0.6f);
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.5f - imageSize * 0.5f), floorf(0), imageSize, imageSize)];
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.5f - imageSize * 0.5f), floorf(self.view.frame.size.height*0.15), imageSize, imageSize)];
             imageView.image = [UIImage mdQRCodeForString:QR_UID size:imageView.bounds.size.width fillColor:[UIColor darkGrayColor]];
-            UIScrollView *TeamMemberScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
-            [TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width,  member.count * self.view.frame.size.height*0.1 + imageSize + 200)];
-            [TeamMemberScrollView addSubview:imageView];
-            UITextView *groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, imageSize, 200, 100)];
-            [groupinfo setText:[NSString stringWithFormat: @"%@", appDelegate.currentGroupDictionary[@"groupinfo"]]];
-            [TeamMemberScrollView addSubview:groupinfo];
+            //UIScrollView *TeamMemberScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
+            //[TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width,  member.count * self.view.frame.size.height*0.1 + imageSize + 200)];
+            //[TeamMemberScrollView addSubview:imageView];
+            UITextView *groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, floorf(self.view.frame.size.height*0.15) + imageSize, 200, 100)];
+            [groupinfo setText:[NSString stringWithFormat: @"%@", member[@"groupinfo"]]];
+            [self.view addSubview:imageView];
+            [self.view addSubview:groupinfo];
+            //[TeamMemberScrollView addSubview:groupinfo];
 //            for (NSInteger index = 0; index < member.count; index++)
 //            {
 //                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -62,7 +64,7 @@
 //                }];
 //                [TeamMemberScrollView addSubview:button];
 //            }
-            [self.view addSubview:TeamMemberScrollView];
+            //[self.view addSubview:TeamMemberScrollView];
         }];
         
     }
