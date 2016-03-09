@@ -788,8 +788,8 @@ send you a temporary password.</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Class Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p0O-pm-fge">
-                                <rect key="frame" x="73" y="98" width="233" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Class " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p0O-pm-fge">
+                                <rect key="frame" x="67" y="103" width="282" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1262,11 +1262,11 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nvB-E5-fds"/>
         <segue reference="ysN-Fc-aia"/>
         <segue reference="tPV-cf-Y4b"/>
+        <segue reference="nvB-E5-fds"/>
         <segue reference="oxH-Qg-Ugh"/>
-        <segue reference="s2f-eg-0mM"/>
         <segue reference="wMe-kH-TiM"/>
+        <segue reference="8BB-u2-kuq"/>
     </inferredMetricsTieBreakers>
 </document>

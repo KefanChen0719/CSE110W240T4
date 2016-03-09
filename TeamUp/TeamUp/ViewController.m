@@ -393,7 +393,7 @@ UIPickerView *course_picker;
     update_frame.origin.x = view_frame.size.width - update_frame.size.width - 10;
     self.createCourseButton.frame = update_frame;
     CGRect createLabel_frame = self.createCourseLabel.frame;
-    createLabel_frame.size.width = view_frame.size.width / 2;
+    createLabel_frame.size.width = view_frame.size.width/2;
     createLabel_frame.origin.x = view_frame.size.width / 4;
     self.createCourseLabel.frame = createLabel_frame;
 }
