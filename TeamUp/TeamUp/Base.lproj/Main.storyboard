@@ -1047,7 +1047,7 @@ send you a temporary password.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="eZD-TA-eDz">
-                                <rect key="frame" x="0.0" y="-15" width="401" height="81"/>
+                                <rect key="frame" x="0.0" y="-15" width="461" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kEu-wp-TZh">
