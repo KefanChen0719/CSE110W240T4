@@ -57,6 +57,7 @@ NSString* QR_UID;
     
     UITextView *groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/8 * 5 + 50, 200, 100)];
     [groupinfo setText:[NSString stringWithFormat: @"%@", appDelegate.currentGroupDictionary[@"groupinfo"]]];
+    [groupinfo setEditable:NO];
     [self.view addSubview:groupinfo];
     
     if([appDelegate.firebase.authData.uid isEqualToString:@""]){
