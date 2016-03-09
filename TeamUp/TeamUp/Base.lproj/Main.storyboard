@@ -824,10 +824,10 @@ send you a temporary password.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pu5-Yn-v2t">
-                                        <rect key="frame" x="-7" y="18" width="93" height="38"/>
+                                        <rect key="frame" x="5" y="18" width="93" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="Chat">
+                                        <state key="normal" title="My Groups">
                                             <color key="titleColor" red="0.0" green="0.027450980390000001" blue="0.031372549020000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -1176,6 +1176,6 @@ send you a temporary password.</string>
         <segue reference="oxH-Qg-Ugh"/>
         <segue reference="ysN-Fc-aia"/>
         <segue reference="Rdq-ky-7Zm"/>
-        <segue reference="W4o-04-TMG"/>
+        <segue reference="9BC-IL-v2N"/>
     </inferredMetricsTieBreakers>
 </document>
