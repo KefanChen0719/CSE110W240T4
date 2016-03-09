@@ -254,7 +254,7 @@ send you a temporary password.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="vTX-7N-eMX">
-                                <rect key="frame" x="0.0" y="0.0" width="431" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="432" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kMY-qr-q2X">
@@ -275,9 +275,12 @@ send you a temporary password.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="MRy-Ce-n7u">
-                                        <rect key="frame" x="329" y="26" width="22" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="La2-MQ-Uo8">
+                                        <rect key="frame" x="271" y="26" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="R9Z-w6-5Kk" kind="modal" id="O3U-AN-jyQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,13 +289,13 @@ send you a temporary password.</string>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="MRy-Ce-n7u" id="Wel-e1-RP2"/>
+                        <outlet property="addButton" destination="La2-MQ-Uo8" id="OR1-Fo-5Bq"/>
                         <outlet property="classNameLabel" destination="XTw-BL-FeA" id="HaU-rJ-mO5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knc-mj-DV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1369" y="1683"/>
+            <point key="canvasLocation" x="-1375" y="1641"/>
         </scene>
         <!--groupChat-->
         <scene sceneID="Afe-up-4ge">
@@ -492,7 +495,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgc-5y-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-350" y="1684"/>
+            <point key="canvasLocation" x="-356" y="1641"/>
         </scene>
         <!--signUp-->
         <scene sceneID="5JJ-HN-npT">
@@ -1102,9 +1105,6 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W4o-04-TMG"/>
-        <segue reference="u1L-c5-W4l"/>
-        <segue reference="ysN-Fc-aia"/>
-        <segue reference="oxH-Qg-Ugh"/>
+
     </inferredMetricsTieBreakers>
 </document>

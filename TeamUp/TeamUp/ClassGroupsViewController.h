@@ -19,6 +19,7 @@
 //@property (weak, nonatomic) IBOutlet UILabel *CourseLabel;
 //@property (weak, nonatomic) IBOutlet UIButton *AddButton;
 //@property (weak, nonatomic) IBOutlet UIButton *BackButton;
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
 
 - (NSString *) getNameFromGroupUid:(NSString*) group_uid;
 

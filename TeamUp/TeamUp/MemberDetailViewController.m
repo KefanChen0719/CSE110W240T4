@@ -45,23 +45,23 @@
             UITextView *groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, imageSize, 200, 100)];
             [groupinfo setText:[NSString stringWithFormat: @"%@", appDelegate.currentGroupDictionary[@"groupinfo"]]];
             [TeamMemberScrollView addSubview:groupinfo];
-            for (NSInteger index = 0; index < member.count; index++)
-            {
-                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                Firebase* curr_user_name = [appDelegate.firebase childByAppendingPath:@"users"];
-                curr_user_name = [curr_user_name childByAppendingPath: member[index]];
-                [curr_user_name observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                    button.frame = CGRectMake(0, 100+imageSize + self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
-                    [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
-                    button.tag = index;
-                    [button setTitle:[NSString stringWithFormat:snapshot.value[@"name"], ((long)index + 1)] forState:UIControlStateNormal];
-                    [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
-                    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                    [[button layer] setBorderWidth:2.0f];
-                    button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
-                }];
-                [TeamMemberScrollView addSubview:button];
-            }
+//            for (NSInteger index = 0; index < member.count; index++)
+//            {
+//                __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//                Firebase* curr_user_name = [appDelegate.firebase childByAppendingPath:@"users"];
+//                curr_user_name = [curr_user_name childByAppendingPath: member[index]];
+//                [curr_user_name observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//                    button.frame = CGRectMake(0, 100+imageSize + self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
+//                    [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
+//                    button.tag = index;
+//                    [button setTitle:[NSString stringWithFormat:snapshot.value[@"name"], ((long)index + 1)] forState:UIControlStateNormal];
+//                    [button.titleLabel setFont:[UIFont systemFontOfSize:20]];
+//                    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//                    [[button layer] setBorderWidth:2.0f];
+//                    button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
+//                }];
+//                [TeamMemberScrollView addSubview:button];
+//            }
             [self.view addSubview:TeamMemberScrollView];
         }];
         
@@ -95,11 +95,14 @@
     temp = [temp childByAppendingPath:appDelegate.currentGroupUid];
     temp = [temp childByAppendingPath:@"teammember"];
     [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-    NSMutableArray *member = snapshot.value;
-    NSString *user_uid = appDelegate.uid;
-    [member removeObject:user_uid];
-    NSDictionary* update_group = @{@"teammember" : member};
-    [[temp parent] updateChildValues:update_group];
+        if (snapshot.childrenCount!=0) {
+            NSMutableArray *member = snapshot.value;
+            NSString *user_uid = appDelegate.uid;
+            [member removeObject:user_uid];
+            //NSLog(@"NEW GROUP: %@", member);
+            NSDictionary* update_group = @{@"teammember" : member};
+            [[temp parent] updateChildValues:update_group];
+        }
     }];
     
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];

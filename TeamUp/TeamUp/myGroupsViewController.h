@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *add;
 @property (weak, nonatomic) IBOutlet UIButton *accountButton;
 @property (strong, nonatomic) UIViewController *viewcontroller;
+
+
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
+
 - (IBAction)signOut:(id)sender;
 
 - (NSString *) getNameFromGroupUid:(NSString*) group_uid;
