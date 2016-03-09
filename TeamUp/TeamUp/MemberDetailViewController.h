@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
 @property (weak, nonatomic) IBOutlet UIButton *memberDetailButton;
 @property (weak, nonatomic) IBOutlet UILabel *GroupNameLabel;
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
+
 - (IBAction)quitGroup:(id)sender;
 - (IBAction)UpdateGroupInfo:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *backToChatButton;

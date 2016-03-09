@@ -270,7 +270,7 @@ UIPickerView *course_picker;
     NSDictionary *new_group_info = @{@"name" : groupName,
                                      @"teammember" : teamMember,
                                      @"leader" : appDelegate.firebase.authData.uid,
-                                     @"groupinfo" : @"Please report bug to sgu@ucsd.edu",
+                                     @"groupinfo" : @"Please report bug to gnehsaijuhz@gmail.com",
                                      @"maxnumber" : groupNum,
                                      @"isprivate" : isPrivate,
                                      @"password" : @"password"};
