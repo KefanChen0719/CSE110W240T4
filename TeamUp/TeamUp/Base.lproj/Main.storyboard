@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -841,6 +841,14 @@ send you a temporary password.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f6n-Q8-Iwe">
+                                        <rect key="frame" x="313" y="21" width="51" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="UpdateGroupInfo:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="wRa-4M-RzS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -867,6 +875,7 @@ send you a temporary password.</string>
                     <navigationItem key="navigationItem" id="Jkg-WU-uGd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="GroupNameLabel" destination="gad-Lu-gFM" id="ZM3-0W-lfg"/>
                         <outlet property="quitButton" destination="ELo-zg-TyW" id="Ij5-iC-aod"/>
                     </connections>
                 </viewController>
@@ -1002,7 +1011,7 @@ send you a temporary password.</string>
             <objects>
                 <viewController title="changeNewPassword" id="wta-lS-iQI" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkz-FY-T8n">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" id="J5s-9Q-JOg">
@@ -1113,6 +1122,9 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-
+        <segue reference="9BC-IL-v2N"/>
+        <segue reference="u1L-c5-W4l"/>
+        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="ysN-Fc-aia"/>
     </inferredMetricsTieBreakers>
 </document>

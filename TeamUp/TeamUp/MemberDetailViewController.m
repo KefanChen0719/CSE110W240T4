@@ -13,8 +13,8 @@
 @end
 
 @implementation MemberDetailViewController
-@synthesize appDelegate,viewcontroller;
-
+@synthesize appDelegate,viewcontroller, GroupNameLabel;
+UITextView *groupinfo;
 - (void)viewDidLoad {
     __block NSString* QR_UID = @"";
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -40,7 +40,7 @@
                 QR_UID = [QR_UID stringByAppendingString:appDelegate.currentGroupUid];
             }
             CGFloat infoSize = ceilf(self.view.bounds.size.width * 0.8f);
-            UITextView *groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15), infoSize, infoSize/2)];
+            groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15), infoSize, infoSize/2)];
             [groupinfo setText:[NSString stringWithFormat: @"%@", member[@"groupinfo"]]];
             CGFloat imageSize = ceilf(self.view.bounds.size.width * 0.8f);
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15) + infoSize/2, imageSize, imageSize)];
@@ -52,7 +52,21 @@
     }
 }
 
+- (IBAction)UpdateGroupInfo:(id)sender{
+    Firebase* temp = [appDelegate.firebase childByAppendingPath:@"classes"];
+    temp = [temp childByAppendingPath:appDelegate.Quit_ClassUid];
+    temp = [temp childByAppendingPath:@"group"];
+    temp = [temp childByAppendingPath:appDelegate.currentGroupUid];
+    [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if (snapshot.childrenCount!=0) {
+            NSMutableDictionary *group_info = snapshot.value;
+            NSString *new_group_info = groupinfo.text;
+            [group_info setValue:new_group_info forKey:@"groupinfo"];
+            [temp updateChildValues:group_info];
+        }
+    }];
 
+}
 
 - (IBAction)quitGroup:(id)sender {
     
@@ -85,7 +99,6 @@
             NSMutableArray *member = snapshot.value;
             NSString *user_uid = appDelegate.uid;
             [member removeObject:user_uid];
-            //NSLog(@"NEW GROUP: %@", member);
             NSDictionary* update_group = @{@"teammember" : member};
             [[temp parent] updateChildValues:update_group];
         }
