@@ -102,12 +102,14 @@ NSString* QR_UID;
     curr_group = [curr_group childByAppendingPath:appDelegate.currentGroupUid];
     Firebase *teammember = [curr_group childByAppendingPath:@"teammember"];
     [teammember observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if(snapshot.childrenCount!=0){
         NSMutableArray<NSString *> *member = snapshot.value;
         if(![member containsObject:appDelegate.firebase.authData.uid]){
             [member insertObject:appDelegate.firebase.authData.uid atIndex:member.count];
         }
         NSDictionary *update_info = @{@"teammember" : member};
         [curr_group updateChildValues:update_info];
+        }
     }];
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
     [self presentViewController:viewcontroller animated:YES completion:nil];

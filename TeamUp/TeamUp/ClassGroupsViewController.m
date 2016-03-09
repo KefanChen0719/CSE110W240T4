@@ -56,10 +56,10 @@ NSArray<NSString*> *class_groups_uid;
         
         for (NSInteger index = 0; index < numGroups; index++)
         {
-            if([class_groups[class_groups_uid[index]][@"isprivate"] isEqualToString:@"private"]){
-                index++;
-                continue;
-            }
+//            if([class_groups[class_groups_uid[index]][@"isprivate"] isEqualToString:@"private"]){
+//                index++;
+//                continue;
+//            }
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             button.frame = CGRectMake(0, self.view.frame.size.height*0.1 * (CGFloat)index, self.view.frame.size.width,self.view.frame.size.height*0.1);
             [button setBackgroundColor:[UIColor colorWithRed:229.0/255.0 green:247.0/255.0 blue:248.0/255.0 alpha:1]];
@@ -72,8 +72,8 @@ NSArray<NSString*> *class_groups_uid;
             [button addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
             [scrollView addSubview:button];
             contentRect = CGRectUnion(contentRect, button.frame);
+            scrollView.contentSize = contentRect.size;
         }
-        scrollView.contentSize = contentRect.size;
         
         [self.view addSubview:scrollView];
     }];

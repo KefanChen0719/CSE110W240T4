@@ -845,24 +845,17 @@ send you a temporary password.</string>
                                 <color key="backgroundColor" red="1" green="0.1122704859737057" blue="0.21968304723541188" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Quit">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="quitGroup:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="pjv-3c-032"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tUE-WL-SV3">
-                                <rect key="frame" x="20" y="87" width="335" height="511"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jkg-WU-uGd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="TeamMemberScrollView" destination="tUE-WL-SV3" id="uWW-mp-Pcx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdB-4g-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
