@@ -250,11 +250,11 @@ send you a temporary password.</string>
             <objects>
                 <viewController storyboardIdentifier="ClassGroupsViewController" title="ClassGroups" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r7I-xe-ELr" customClass="ClassGroupsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tDr-T3-PNV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="vTX-7N-eMX">
-                                <rect key="frame" x="0.0" y="0.0" width="431" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="432" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kMY-qr-q2X">
@@ -275,9 +275,12 @@ send you a temporary password.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="MRy-Ce-n7u">
-                                        <rect key="frame" x="329" y="26" width="22" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="La2-MQ-Uo8">
+                                        <rect key="frame" x="271" y="26" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="R9Z-w6-5Kk" kind="modal" id="O3U-AN-jyQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,7 +289,7 @@ send you a temporary password.</string>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="MRy-Ce-n7u" id="Wel-e1-RP2"/>
+                        <outlet property="addButton" destination="La2-MQ-Uo8" id="OR1-Fo-5Bq"/>
                         <outlet property="classNameLabel" destination="XTw-BL-FeA" id="HaU-rJ-mO5"/>
                     </connections>
                 </viewController>
@@ -1102,13 +1105,9 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<!--/* <<<<<<< HEAD-->
-<!--        <segue reference="s2f-eg-0mM"/>-->
-<!--        <segue reference="aqp-Cg-JfB"/>-->
-<!--        <segue reference="Wb6-fH-OsW"/>-->
-<!--        <segue reference="JZL-so-WAM"/>-->
-<!--=======-->
-<!---->
-<!-->>>>>>> 6eb70c5f710871726218e905dcc761a10c7c2ecf */-->
+        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="s2f-eg-0mM"/>
+        <segue reference="ysN-Fc-aia"/>
+        <segue reference="tPV-cf-Y4b"/>
     </inferredMetricsTieBreakers>
 </document>
