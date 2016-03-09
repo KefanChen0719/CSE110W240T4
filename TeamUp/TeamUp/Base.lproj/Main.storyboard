@@ -268,7 +268,7 @@ send you a temporary password.</string>
                                             <segue destination="JD1-bk-77F" kind="modal" id="s2f-eg-0mM"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Groups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XTw-BL-FeA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Groups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XTw-BL-FeA">
                                         <rect key="frame" x="89" y="21" width="147" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
@@ -1102,9 +1102,13 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+/* <<<<<<< HEAD
         <segue reference="s2f-eg-0mM"/>
         <segue reference="aqp-Cg-JfB"/>
         <segue reference="Wb6-fH-OsW"/>
         <segue reference="JZL-so-WAM"/>
+=======
+
+>>>>>>> 6eb70c5f710871726218e905dcc761a10c7c2ecf */
     </inferredMetricsTieBreakers>
 </document>
