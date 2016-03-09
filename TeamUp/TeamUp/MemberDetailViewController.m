@@ -15,6 +15,7 @@
 @implementation MemberDetailViewController
 @synthesize appDelegate,viewcontroller, GroupNameLabel;
 UITextView *groupinfo;
+UITextField *maxNumer;
 - (void)viewDidLoad {
     __block NSString* QR_UID = @"";
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -40,12 +41,18 @@ UITextView *groupinfo;
                 QR_UID = [QR_UID stringByAppendingString:appDelegate.currentGroupUid];
             }
             CGFloat infoSize = ceilf(self.view.bounds.size.width * 0.8f);
-            groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15), infoSize, infoSize/2)];
+            groupinfo = [[UITextView alloc]initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15), infoSize, infoSize/3.5)];
+            maxNumer = [[UITextField alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15 + infoSize/3.1), infoSize, infoSize/9)];
+            [maxNumer setBorderStyle:UITextBorderStyleRoundedRect];
+            NSString* maxNumPlaceHolder = @"Max Number Is: ";
+            [maxNumPlaceHolder stringByAppendingString:member[@"maxnumber"]];
+            [maxNumer setPlaceholder:maxNumPlaceHolder];
             [groupinfo setText:[NSString stringWithFormat: @"%@", member[@"groupinfo"]]];
             GroupNameLabel.text = member[@"name"];
             CGFloat imageSize = ceilf(self.view.bounds.size.width * 0.8f);
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(floorf(self.view.bounds.size.width * 0.1f), floorf(self.view.frame.size.height*0.15) + infoSize/2, imageSize, imageSize)];
             imageView.image = [UIImage mdQRCodeForString:QR_UID size:imageView.bounds.size.width fillColor:[UIColor darkGrayColor]];
+            [self.view addSubview:maxNumer];
             [self.view addSubview:imageView];
             [self.view addSubview:groupinfo];
         }];
@@ -62,6 +69,11 @@ UITextView *groupinfo;
         if (snapshot.childrenCount!=0) {
             NSMutableDictionary *group_info = snapshot.value;
             NSString *new_group_info = groupinfo.text;
+            NSString *new_max_number = maxNumer.text;
+            NSUInteger max_number = [new_max_number integerValue];
+            if(max_number){
+                [group_info setValue:[NSString stringWithFormat:@"%lu",max_number] forKey:@"maxnumber"];
+            }
             [group_info setValue:new_group_info forKey:@"groupinfo"];
             [temp updateChildValues:group_info];
         }

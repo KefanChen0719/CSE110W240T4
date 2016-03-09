@@ -47,9 +47,11 @@ UIPickerView *course_picker;
     class_ref = [appDelegate.firebase childByAppendingPath:@"classes"];
     result = [[NSMutableDictionary alloc]initWithCapacity:20];
     [class_ref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if(snapshot.childrenCount!=0){
         [self.tableView reloadData];
         classes = snapshot.value;
         allClassNames = classes.allKeys;
+        }
     }];
     
     //initialization ends here
