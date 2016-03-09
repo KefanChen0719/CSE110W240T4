@@ -95,13 +95,14 @@
     temp = [temp childByAppendingPath:appDelegate.currentGroupUid];
     temp = [temp childByAppendingPath:@"teammember"];
     [temp observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSMutableArray *member = snapshot.value;
-        
-        NSString *user_uid = appDelegate.uid;
-        [member removeObject:user_uid];
-        //NSLog(@"NEW GROUP: %@", member);
-        NSDictionary* update_group = @{@"teammember" : member};
-        [[temp parent] updateChildValues:update_group];
+        if (snapshot.childrenCount!=0) {
+            NSMutableArray *member = snapshot.value;
+            NSString *user_uid = appDelegate.uid;
+            [member removeObject:user_uid];
+            //NSLog(@"NEW GROUP: %@", member);
+            NSDictionary* update_group = @{@"teammember" : member};
+            [[temp parent] updateChildValues:update_group];
+        }
     }];
     
     viewcontroller = [appDelegate.storyboard instantiateViewControllerWithIdentifier:@"myGroupsViewController"];
