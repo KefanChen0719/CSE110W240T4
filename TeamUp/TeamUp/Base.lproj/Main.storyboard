@@ -295,7 +295,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knc-mj-DV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1369" y="1683"/>
+            <point key="canvasLocation" x="-1375" y="1641"/>
         </scene>
         <!--groupChat-->
         <scene sceneID="Afe-up-4ge">
@@ -495,7 +495,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgc-5y-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-350" y="1684"/>
+            <point key="canvasLocation" x="-356" y="1641"/>
         </scene>
         <!--signUp-->
         <scene sceneID="5JJ-HN-npT">
@@ -994,7 +994,7 @@ send you a temporary password.</string>
             <objects>
                 <viewController title="changeNewPassword" id="wta-lS-iQI" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkz-FY-T8n">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" id="J5s-9Q-JOg">
@@ -1105,5 +1105,9 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="s2f-eg-0mM"/>
+        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="ysN-Fc-aia"/>
+        <segue reference="tPV-cf-Y4b"/>
     </inferredMetricsTieBreakers>
 </document>
