@@ -841,6 +841,14 @@ send you a temporary password.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f6n-Q8-Iwe">
+                                        <rect key="frame" x="313" y="21" width="51" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="UpdateGroupInfo:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="wRa-4M-RzS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.75686274509999996" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -856,12 +864,21 @@ send you a temporary password.</string>
                                     <action selector="quitGroup:" destination="6Y2-d6-1gv" eventType="touchUpInside" id="pjv-3c-032"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nBB-wF-UeF">
+                                <rect key="frame" x="133" y="579" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Member Details"/>
+                                <connections>
+                                    <segue destination="6yP-8B-GXm" kind="modal" id="tid-sc-g4a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jkg-WU-uGd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="GroupNameLabel" destination="gad-Lu-gFM" id="ZM3-0W-lfg"/>
                         <outlet property="quitButton" destination="ELo-zg-TyW" id="Ij5-iC-aod"/>
                     </connections>
                 </viewController>
@@ -1111,20 +1128,20 @@ send you a temporary password.</string>
             <objects>
                 <viewController id="6yP-8B-GXm" userLabel="groupMembers" customClass="groupMemberViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lg2-dN-diM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.85882352939999995" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BN1-a6-zng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="761"/>
+            <point key="canvasLocation" x="-1876" y="1629"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="u1L-c5-W4l"/>
         <segue reference="9BC-IL-v2N"/>
-        <segue reference="ysN-Fc-aia"/>
+        <segue reference="u1L-c5-W4l"/>
         <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="ysN-Fc-aia"/>
     </inferredMetricsTieBreakers>
 </document>
