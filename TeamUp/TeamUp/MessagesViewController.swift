@@ -26,6 +26,7 @@ import Foundation
   var batchMessages = true
   var ref: Firebase!
   var groupID: String!
+  var viewWidth: NSString!
   
   // *** STEP 1: STORE FIREBASE REFERENCES
   var messagesRef: Firebase!
@@ -99,11 +100,9 @@ import Foundation
     super.viewDidLoad()
   
     //self.topContentAdditionalInset = 44
-    // self.edgesForExtendedLayout = UIRectEdgeNone
 
     self.collectionView!.superview!.addSubview(self.groupChatNavigation)
     //self.detailButton.frame.origin.x = (self.detailButton.superview?.frame.size.width)! - self.detailButton.frame.size.width - 10
-    //self.detailButton.frame.origin.x = self.view.frame.size.width - self.detailButton.frame.size.width
     
         
     inputToolbar!.contentView!.leftBarButtonItem = nil
@@ -120,7 +119,8 @@ import Foundation
     }
     
     setupFirebase()
-    //self.topView.frame.size.width = self.collectionView!.superview!.frame.size.width
+    self.topView.frame.size.width = CGFloat(viewWidth.floatValue)
+    self.detailButton.frame.origin.x = self.topView.frame.size.width - self.detailButton.frame.size.width
     let index = groupID.startIndex.advancedBy(36)
     self.groupName.text = groupID.substringFromIndex(index)
     self.groupName.frame.size.width = self.groupName.superview!.frame.size.width / 2
