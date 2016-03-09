@@ -41,9 +41,9 @@
             imageView.image = [UIImage mdQRCodeForString:QR_UID size:imageView.bounds.size.width fillColor:[UIColor darkGrayColor]];
             UIScrollView *TeamMemberScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height*0.1, self.view.frame.size.width, self.view.frame.size.height*0.8)];
             [TeamMemberScrollView setContentSize:CGSizeMake(TeamMemberScrollView.bounds.size.width,  member.count * self.view.frame.size.height*0.1 + imageSize)];
-            CGRect contentRect = CGRectZero;
+            //CGRect contentRect = CGRectZero;
             [TeamMemberScrollView addSubview:imageView];
-            contentRect = CGRectUnion(contentRect, imageView.frame);
+            //contentRect = CGRectUnion(contentRect, imageView.frame);
             for (NSInteger index = 0; index < member.count; index++)
             {
                 __block UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -60,7 +60,7 @@
                     button.layer.borderColor = [[UIColor colorWithRed:219.0/255.0 green:237.0/255.0 blue:238.0/255.0 alpha:1] CGColor];
                 }];
                 [TeamMemberScrollView addSubview:button];
-                contentRect = CGRectUnion(contentRect, button.frame);
+                //contentRect = CGRectUnion(contentRect, button.frame);
             }
             [self.view addSubview:TeamMemberScrollView];
         }];

@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *memberYearText;
 @property (weak, nonatomic) IBOutlet UIButton *changePassword;
 @property (weak, nonatomic) IBOutlet UIView *topView;
-@property (weak, nonatomic) IBOutlet UIButton *courseUpdate;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *addProfText;
@@ -39,6 +38,8 @@
 @property (weak, nonatomic) IBOutlet UIView *courseView;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UILabel *courseLabel;
+@property (weak, nonatomic) IBOutlet UIButton *createCourseButton;
+@property (weak, nonatomic) IBOutlet UILabel *createCourseLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *changeOldPasswordText;
 @property (weak, nonatomic) IBOutlet UITextField *changeNewPasswordText;
@@ -49,7 +50,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *searchCourseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createNewGroupLabel;
 
-@property (weak, nonatomic) IBOutlet UIView *addCourseLabel;
 @property (weak, nonatomic) IBOutlet UITextField *addGroupNameText;
 @property (weak, nonatomic) IBOutlet UITextField *addMaxPeopleText;
 @property (weak, nonatomic) IBOutlet UILabel *privateLabel;

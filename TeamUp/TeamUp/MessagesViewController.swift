@@ -103,7 +103,7 @@ import Foundation
 
     self.collectionView!.superview!.addSubview(self.groupChatNavigation)
     //self.detailButton.frame.origin.x = (self.detailButton.superview?.frame.size.width)! - self.detailButton.frame.size.width - 10
-    self.detailButton.frame.origin.x = self.view.frame.size.width - self.detailButton.frame.size.width
+    //self.detailButton.frame.origin.x = self.view.frame.size.width - self.detailButton.frame.size.width
     
         
     inputToolbar!.contentView!.leftBarButtonItem = nil
@@ -120,7 +120,7 @@ import Foundation
     }
     
     setupFirebase()
-    self.topView.frame.size.width = self.collectionView!.superview!.frame.size.width
+    //self.topView.frame.size.width = self.collectionView!.superview!.frame.size.width
     let index = groupID.startIndex.advancedBy(36)
     self.groupName.text = groupID.substringFromIndex(index)
     self.groupName.frame.size.width = self.groupName.superview!.frame.size.width / 2

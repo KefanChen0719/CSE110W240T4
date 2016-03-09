@@ -387,13 +387,13 @@ UIPickerView *course_picker;
 - (void)addCourseLayout {
     UIView *view = self.view;
     CGRect view_frame = view.frame;
-    CGRect update_frame = self.courseUpdate.frame;
+    CGRect update_frame = self.createCourseButton.frame;
     update_frame.origin.x = view_frame.size.width - update_frame.size.width - 10;
-    self.courseUpdate.frame = update_frame;
-    CGRect add_course_frame = self.addCourseLabel.frame;
-    add_course_frame.size.width = view_frame.size.width / 2;
-    add_course_frame.origin.x = view_frame.size.width / 4;
-    self.addCourseLabel.frame = add_course_frame;
+    self.createCourseButton.frame = update_frame;
+    CGRect createLabel_frame = self.createCourseLabel.frame;
+    createLabel_frame.size.width = view_frame.size.width / 2;
+    createLabel_frame.origin.x = view_frame.size.width / 4;
+    self.createCourseLabel.frame = createLabel_frame;
 }
 
 - (void)allGroupsLayout {
