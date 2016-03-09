@@ -792,7 +792,7 @@ send you a temporary password.</string>
                                 <rect key="frame" x="73" y="98" width="233" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -861,6 +861,9 @@ send you a temporary password.</string>
                     </view>
                     <navigationItem key="navigationItem" id="Jkg-WU-uGd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="quitButton" destination="ELo-zg-TyW" id="Ij5-iC-aod"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdB-4g-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1105,9 +1108,9 @@ send you a temporary password.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s2f-eg-0mM"/>
-        <segue reference="oxH-Qg-Ugh"/>
         <segue reference="ysN-Fc-aia"/>
-        <segue reference="tPV-cf-Y4b"/>
+        <segue reference="oxH-Qg-Ugh"/>
+        <segue reference="s2f-eg-0mM"/>
+        <segue reference="9BC-IL-v2N"/>
     </inferredMetricsTieBreakers>
 </document>
