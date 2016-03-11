@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ClassGroupsViewController.h"
+
 
 @interface TeamUpTests : XCTestCase
 
@@ -15,25 +17,22 @@
 @implementation TeamUpTests
 
 - (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+  [super setUp];
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+
+// unit test for getNameFromGroupUid in ClassGroupsViewController
+- (void)testGetGroupName {
+  
+  // initialize view controller object
+  ClassGroupsViewController *vc = [[ClassGroupsViewController alloc] init];
+  
+  // call the method to get the substring of group uid
+  NSString *result = [vc getNameFromGroupUid:@"921eb1c8-50e1-4628-8e7b-9bd0d7d7fe12testGroup"];
+  
+  // compare the result with the correct result
+  XCTAssertEqualObjects(result, @"testGroup");
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
 
 @end
