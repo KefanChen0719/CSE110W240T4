@@ -48,19 +48,30 @@
   
   XCUIElement *yourUcsdEmailTextField = app.textFields[@"Your UCSD Email"];
   [yourUcsdEmailTextField tap];
-  [yourUcsdEmailTextField typeText:@""];
-  [yourUcsdEmailTextField typeText:@"123@ucsd.edu"];
+  //[yourUcsdEmailTextField typeText:@""];
+  [yourUcsdEmailTextField typeText:@"bbbb@ucsd.edu"];
+  
   
   XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];
   [passwordSecureTextField tap];
   //[passwordSecureTextField tap];
-  [passwordSecureTextField typeText:@"1234"];
+  [passwordSecureTextField typeText:@"12345"];
+  
   
   XCUIElement *confirmPasswordSecureTextField = app.secureTextFields[@"Confirm password"];
   [confirmPasswordSecureTextField tap];
-  [confirmPasswordSecureTextField typeText:@"1234"];
+  [confirmPasswordSecureTextField typeText:@"12345"];
+  
+  
+  [app.statusBars.element tap];
   [app.buttons[@"Sign Up!"] tap];
-  XCTAssert(true, "pass");
+  
+  XCUIElement *doneButton = app.buttons[@"Done"];
+  
+  XCTAssertTrue(doneButton.hittable);
+  
+  
+  
   
 }
 

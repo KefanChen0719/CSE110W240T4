@@ -122,4 +122,11 @@ NSString *major3;
     }
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  [self.view endEditing:YES];
+  [super touchesBegan:touches withEvent:event];
+}
+
+
 @end
