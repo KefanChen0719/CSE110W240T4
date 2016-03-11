@@ -49,7 +49,7 @@
   XCUIElement *yourUcsdEmailTextField = app.textFields[@"Your UCSD Email"];
   [yourUcsdEmailTextField tap];
   //[yourUcsdEmailTextField typeText:@""];
-  [yourUcsdEmailTextField typeText:@"bbbb@ucsd.edu"];
+  [yourUcsdEmailTextField typeText:@"zzzz@ucsd.edu"];
   
   
   XCUIElement *passwordSecureTextField = app.secureTextFields[@"Password"];

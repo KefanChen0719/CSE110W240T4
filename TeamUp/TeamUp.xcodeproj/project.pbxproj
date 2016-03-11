@@ -65,8 +65,10 @@
 		5AC47BAA1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC47BA81C726C23006DD3B5 /* SignInViewController.m */; };
 		8E048DD11C8FEE6D00244245 /* groupMemberDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E048DD01C8FEE6D00244245 /* groupMemberDetails.m */; };
+		8E5DAD7A1C93885D00ABDDEA /* AddGroupUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DAD791C93885D00ABDDEA /* AddGroupUITest.m */; };
 		8E9543241C8E14A3002C35E3 /* Batch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543231C8E14A3002C35E3 /* Batch.framework */; };
 		8E9543261C8E14AB002C35E3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */; };
+		8EA8A23B1C937B330007846A /* SignInUiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8A23A1C937B330007846A /* SignInUiTest.m */; };
 		940390C71C8FDCAA0096B3B7 /* groupMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940390C61C8FDCAA0096B3B7 /* groupMemberViewController.m */; };
 		94FD5D291C88B7D3005C8FBF /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FD5D281C88B7D3005C8FBF /* AddGroupViewController.m */; };
 		9820D2141C793F4C0001805F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820D2131C793F4C0001805F /* ForgetPasswordViewController.m */; };
@@ -177,8 +179,10 @@
 		5AC47BA81C726C23006DD3B5 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		8E048DCE1C8FEE0100244245 /* groupMemberDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = groupMemberDetails.h; sourceTree = "<group>"; };
 		8E048DD01C8FEE6D00244245 /* groupMemberDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupMemberDetails.m; sourceTree = "<group>"; };
+		8E5DAD791C93885D00ABDDEA /* AddGroupUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupUITest.m; sourceTree = "<group>"; };
 		8E9543231C8E14A3002C35E3 /* Batch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Batch.framework; path = Pods/Batch.embeddedframework/Batch.framework; sourceTree = "<group>"; };
 		8E9543251C8E14AB002C35E3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8EA8A23A1C937B330007846A /* SignInUiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInUiTest.m; sourceTree = "<group>"; };
 		940390C51C8FDCAA0096B3B7 /* groupMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupMemberViewController.h; sourceTree = "<group>"; };
 		940390C61C8FDCAA0096B3B7 /* groupMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupMemberViewController.m; sourceTree = "<group>"; };
 		94D56AEECF75E39C576FAED8 /* libPods-TeamUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeamUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,6 +365,8 @@
 				54EA6C5F1C58A5E600BF3DC6 /* TeamUpUITests.m */,
 				54EA6C611C58A5E600BF3DC6 /* Info.plist */,
 				543177EB1C9344F600186140 /* SignUpUITest.m */,
+				8EA8A23A1C937B330007846A /* SignInUiTest.m */,
+				8E5DAD791C93885D00ABDDEA /* AddGroupUITest.m */,
 			);
 			path = TeamUpUITests;
 			sourceTree = "<group>";
@@ -633,8 +639,10 @@
 				5ABF97261C7A45C300AD8F82 /* SignUpViewController.m in Sources */,
 				543177F21C93491100186140 /* QRCameraSwitchButton.m in Sources */,
 				543177EF1C9347C200186140 /* ViewController.m in Sources */,
+				8E5DAD7A1C93885D00ABDDEA /* AddGroupUITest.m in Sources */,
 				543177F41C93491C00186140 /* QRCodeReaderView.m in Sources */,
 				5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */,
+				8EA8A23B1C937B330007846A /* SignInUiTest.m in Sources */,
 				9820D2161C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
 				543177F01C9348DE00186140 /* QRCodeReader.m in Sources */,
 				54EA6C601C58A5E600BF3DC6 /* TeamUpUITests.m in Sources */,
