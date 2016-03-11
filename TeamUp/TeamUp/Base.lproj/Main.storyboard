@@ -388,7 +388,7 @@ send you a temporary password.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="yZa-gw-152">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="465" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0dx-MG-8wZ">
@@ -438,7 +438,7 @@ send you a temporary password.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPB-D4-MFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849.5" y="1690.5"/>
+            <point key="canvasLocation" x="-849.5" y="1648.5"/>
         </scene>
         <!--AddGroup-->
         <scene sceneID="HWx-8l-H4J">
@@ -1127,7 +1127,7 @@ send you a temporary password.</string>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" id="LER-Cc-hid">
-                                <rect key="frame" x="0.0" y="0.0" width="401" height="66"/>
+                                <rect key="frame" x="0.0" y="0.0" width="470" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CQp-UO-QlN">
