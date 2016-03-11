@@ -36,6 +36,15 @@
 		543177E51C928D6600186140 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5496120F1C5C024800F8E67B /* Security.framework */; };
 		543177E61C928D7A00186140 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5410FFB81C65D6C1001DA96D /* SystemConfiguration.framework */; };
 		543177EA1C92948500186140 /* TeamUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EA6C541C58A5E600BF3DC6 /* TeamUpTests.m */; };
+		543177EC1C9344F600186140 /* SignUpUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 543177EB1C9344F600186140 /* SignUpUITest.m */; };
+		543177ED1C9347B900186140 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EA6C3B1C58A5E600BF3DC6 /* AppDelegate.m */; };
+		543177EE1C9347C200186140 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EA6C3E1C58A5E600BF3DC6 /* ViewController.m */; };
+		543177EF1C9347C200186140 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EA6C3E1C58A5E600BF3DC6 /* ViewController.m */; };
+		543177F01C9348DE00186140 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95551C8CCE1000B71B4A /* QRCodeReader.m */; };
+		543177F11C9348FA00186140 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED955A1C8CCE1000B71B4A /* QRCodeReaderViewController.m */; };
+		543177F21C93491100186140 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95531C8CCE1000B71B4A /* QRCameraSwitchButton.m */; };
+		543177F31C93491A00186140 /* QRToggleTorchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED955C1C8CCE1000B71B4A /* QRToggleTorchButton.m */; };
+		543177F41C93491C00186140 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ED95581C8CCE1000B71B4A /* QRCodeReaderView.m */; };
 		5496120E1C5C024100F8E67B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5496120D1C5C024100F8E67B /* CFNetwork.framework */; };
 		549612101C5C024800F8E67B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5496120F1C5C024800F8E67B /* Security.framework */; };
 		54EA6C3C1C58A5E600BF3DC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EA6C3B1C58A5E600BF3DC6 /* AppDelegate.m */; };
@@ -137,7 +146,7 @@
 		5410FFBA1C65D6E8001DA96D /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
 		5410FFBC1C65D715001DA96D /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
 		543177E31C928D5C00186140 /* libFirebase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFirebase.a; path = "Pods/../build/Debug-iphoneos/libFirebase.a"; sourceTree = "<group>"; };
-		543177E71C928DED00186140 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = ../Pods/Firebase/Firebase.h; sourceTree = "<group>"; };
+		543177EB1C9344F600186140 /* SignUpUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpUITest.m; sourceTree = "<group>"; };
 		5496120D1C5C024100F8E67B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5496120F1C5C024800F8E67B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		549612111C5C028000F8E67B /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../../usr/lib/libxml2.2.dylib; sourceTree = "<group>"; };
@@ -340,7 +349,6 @@
 		54EA6C531C58A5E600BF3DC6 /* TeamUpTests */ = {
 			isa = PBXGroup;
 			children = (
-				543177E71C928DED00186140 /* Firebase.h */,
 				54EA6C541C58A5E600BF3DC6 /* TeamUpTests.m */,
 				54EA6C561C58A5E600BF3DC6 /* Info.plist */,
 			);
@@ -352,6 +360,7 @@
 			children = (
 				54EA6C5F1C58A5E600BF3DC6 /* TeamUpUITests.m */,
 				54EA6C611C58A5E600BF3DC6 /* Info.plist */,
+				543177EB1C9344F600186140 /* SignUpUITest.m */,
 			);
 			path = TeamUpUITests;
 			sourceTree = "<group>";
@@ -605,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				543177EE1C9347C200186140 /* ViewController.m in Sources */,
 				5AC47BA51C726BF4006DD3B5 /* main.m in Sources */,
 				5ABF97251C7A45C300AD8F82 /* SignUpViewController.m in Sources */,
 				543177E21C928AD000186140 /* AppDelegate.m in Sources */,
@@ -619,10 +629,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC47BA61C726BF4006DD3B5 /* main.m in Sources */,
+				543177F31C93491A00186140 /* QRToggleTorchButton.m in Sources */,
 				5ABF97261C7A45C300AD8F82 /* SignUpViewController.m in Sources */,
+				543177F21C93491100186140 /* QRCameraSwitchButton.m in Sources */,
+				543177EF1C9347C200186140 /* ViewController.m in Sources */,
+				543177F41C93491C00186140 /* QRCodeReaderView.m in Sources */,
 				5AC47BAB1C726C23006DD3B5 /* SignInViewController.m in Sources */,
 				9820D2161C793F4C0001805F /* ForgetPasswordViewController.m in Sources */,
+				543177F01C9348DE00186140 /* QRCodeReader.m in Sources */,
 				54EA6C601C58A5E600BF3DC6 /* TeamUpUITests.m in Sources */,
+				543177F11C9348FA00186140 /* QRCodeReaderViewController.m in Sources */,
+				543177EC1C9344F600186140 /* SignUpUITest.m in Sources */,
+				543177ED1C9347B900186140 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
