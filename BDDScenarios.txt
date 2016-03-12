@@ -1,0 +1,27 @@
+CSE110W240T4
+BDD Testing sample Scenarios 
+
+1. sign up
+  given: I¡¯m at the [signUp] page and try to sign up an account
+  when: I type in a ucsd email that has not signed up before and password and click on sign up
+  then: the app will create an account and bring me to [memberDetail] page
+
+2.  sign in 
+  given: I¡¯m now at [signIn] page
+  when: I type in my username(ucsd email address) and correct password and tap signin button
+  then: the app will sign in successfully and bring me to [myGroups] page
+
+3. add a group
+  given: I¡¯m at the [myGroups] page and there are some groups available to join
+  when: I tap the add button at the top right corner
+  then: the app will jump to a new page where I can search for classes
+  when: I search for a class in the search bar
+  then: a list of available courses should appear
+  when: I tap a course in the list
+  then: I will be brought to the page to join groups or create a new group
+  when: I tap the add button at the top right corner
+  then: the app will bring me to a page where I can type group name and max number of group members
+  when: I type in group name and max number of members and tap create
+  then: the app will prompt a alert and tell me the group has successfully created
+  when: I tap ¡°ok¡± on the alert window
+  then: I will be brought back to the [myGroups] page and I should see the group that I just created
